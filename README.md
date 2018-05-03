@@ -13,6 +13,8 @@ You will need to have VirtualBox version 5.1 installed.
 After installing that software, you can install VVV here:
 https://varyingvagrantvagrants.org/docs/en-US/installation/
 (Git is probably the easiest way to install)
+Note: Where you install VVV ($command ending with vagrant-local) is the directory that the
+project will live, so run that command with the directory you want to store the site.
 
 Go through the instructions that it details about starting the virtual
 machine.
