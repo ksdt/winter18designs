@@ -15,8 +15,7 @@
 
 get_header(); ?>
 
-	<!DOCTYPE html>
-<html lang="en">
+
 <head>
     <title>KSDT - About</title>
 
@@ -27,19 +26,6 @@ get_header(); ?>
     <meta name="author" content="Tanislav Robert">
     <meta name="description" content="KARMO is a creative and modern template for digital agencies">
 
-    <!-- STYLES -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/flexslider.css">
-    <link rel="stylesheet" href="../css/animsition.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/owl.carousel.css">
-    <link rel="stylesheet" href="../css/owl.theme.css">
-    <link rel="stylesheet" type="text/css" href="../js/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="../js/slick/slick-theme.css"/>
-
-    <!-- Fontawesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 </head>
 
 <body class="animsition">
@@ -48,40 +34,7 @@ get_header(); ?>
     <span class="frame-line bottom-frame visible-lg"></span>
     <span class="frame-line left-frame visible-lg"></span>
     
-    <!-- Begin Nav Bar -->
-    <nav role="nav" class="nav-pos navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
   
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-         
-                <!-- Button that shows on mobile view -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <!-- KSDT Branding -->
-                <a class="navbar-brand" href="../index.html">
-                    <img src="../img/Logos/LOGO.png" width="80" alt="KSDT">
-                </a> 
-            </div>
-        
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="../index.html">Home</a></li>
-                    <li class="active-nav"><a href="about.html">About</a></li>
-                    <li><a href="Events.html">Events</a></li>
-                    <li><a href="schedule.html">Schedule</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
-    <!-- End nav bar -->
 
 
   <!-- SPLASH IMAGE  -->
@@ -97,7 +50,7 @@ get_header(); ?>
   <!-- BACK TO TOP -->
   <a id="top"></a>
   <div id="back-to-top">
-    <img src="../img/Home/back-to-top.png" id="topImg-home" onclick="topFunction()"></img>
+    <img src="img/Home/back-to-top.png" id="topImg-home" onclick="topFunction()"></img>
   </div>
 
     <!-- Blurb -->
@@ -128,7 +81,7 @@ get_header(); ?>
                         <!--<h2 class="mb-50" style="font-size: 35px">Our History</h2>-->
                         <h2 class="section-title-3 dark-section-text mt-25 mb-25" style="font-size:40px; color: black">OUR HISTORY</h2>
                     </div>
-                    <img class="showImg inline smallerImg" src="../img/gif/tv.gif">
+                    <img class="showImg inline smallerImg" src="img/gif/tv.gif">
                     <h4 class="mb-20"><i>It all began in 1967...</i></h4>
                     <p style="line-height:24px"> when a small group of UCSD students came together to broadcast from a garage in Pacific Beach. Now, KSDT is a completely student-run radio station located in the heart of UC San Diego. After first airing on radio in June 1968, we've switched to blasting our music on the internet for our listeners to live stream from. <br> <!--<br>Come find us at the Old Student Center, where we're operated by a group of student staff and now over 100 club members. We offer a space for students to share music and thoughts, and a place where students can practice and make music. We also offer activities to the community with our events and giveaways, so be sure to keep up with us on social media!--></p>
                 </div>
@@ -142,55 +95,55 @@ get_header(); ?>
             <!--CAROUSEL-->
             <div class="autoplay">
                 <div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
-                    <img src="../img/About/carousel/1.JPG" alt="img" style="width:100%; border: 1px solid #EEEEEE">
+                    <img src="img/About/carousel/1.JPG" alt="img" style="width:100%; border: 1px solid #EEEEEE">
                 </div>
 
                 <div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
-                    <img src="../img/About/carousel/2.JPG" alt="img" style="width:100%; border: 1px solid #EEEEEE;">
+                    <img src="img/About/carousel/2.JPG" alt="img" style="width:100%; border: 1px solid #EEEEEE;">
                 </div>
             
                 <div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
-                    <img src="../img/About/carousel/3.JPG" alt="img" style="width:100%; border: 1px solid #EEEEEE;">
+                    <img src="img/About/carousel/3.JPG" alt="img" style="width:100%; border: 1px solid #EEEEEE;">
                 </div>
 
                 <div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
-                    <img src="../img/About/carousel/4.jpg" alt="img" style="width:100%; border: 1px solid #EEEEEE;">
+                    <img src="img/About/carousel/4.jpg" alt="img" style="width:100%; border: 1px solid #EEEEEE;">
                 </div>
 
                 <div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
-                    <img src="../img/About/carousel/5.jpg" alt="img" style="width:100%; border: 1px solid #EEEEEE;">
+                    <img src="img/About/carousel/5.jpg" alt="img" style="width:100%; border: 1px solid #EEEEEE;">
                 </div>
 
                 <div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
-                    <img src="../img/About/carousel/10.JPG" alt="img" style="width:100%; border: 1px solid #EEEEEE;">
+                    <img src="img/About/carousel/10.JPG" alt="img" style="width:100%; border: 1px solid #EEEEEE;">
                 </div>
 
                 <div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
-                    <img src="../img/About/carousel/11.JPG" alt="img" style="width:100%; border: 1px solid #EEEEEE;">
+                    <img src="img/About/carousel/11.JPG" alt="img" style="width:100%; border: 1px solid #EEEEEE;">
                 </div>
 
                 <div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
-                    <img src="../img/About/carousel/12.JPG" alt="img" style="width:100%; border: 1px solid #EEEEEE;">
+                    <img src="img/About/carousel/12.JPG" alt="img" style="width:100%; border: 1px solid #EEEEEE;">
                 </div>
 
                 <div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
-                    <img src="../img/About/carousel/13.JPG" alt="img" style="width:100%; border: 1px solid #EEEEEE;">
+                    <img src="img/About/carousel/13.JPG" alt="img" style="width:100%; border: 1px solid #EEEEEE;">
                 </div>
 
                 <div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
-                    <img src="../img/About/carousel/6.jpg" alt="img" style="width:100%; border: 1px solid #EEEEEE;">
+                    <img src="img/About/carousel/6.jpg" alt="img" style="width:100%; border: 1px solid #EEEEEE;">
                 </div>
 
                 <div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
-                    <img src="../img/About/carousel/7.png" alt="img" style="width:100%; border: 1px solid #EEEEEE;">
+                    <img src="img/About/carousel/7.png" alt="img" style="width:100%; border: 1px solid #EEEEEE;">
                 </div>
 
                 <div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
-                    <img src="../img/About/carousel/8.JPG" alt="img" style="width:100%; border: 1px solid #EEEEEE;">
+                    <img src="img/About/carousel/8.JPG" alt="img" style="width:100%; border: 1px solid #EEEEEE;">
                 </div>
 
                 <div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
-                    <img src="../img/About/carousel/9.JPG" alt="img" style="width:100%; border: 1px solid #EEEEEE;">
+                    <img src="img/About/carousel/9.JPG" alt="img" style="width:100%; border: 1px solid #EEEEEE;">
                 </div>
             </div><!--end of carousel-->
         </div><!--end of container-->
@@ -350,70 +303,22 @@ get_header(); ?>
         <a href="https://ksdt.ucsd.edu/faq/" target="_blank"><button class="button-home">View FAQ</button></a>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="main-footer">
-        <svg preserveAspectRatio="none" viewBox="0 0 100 102" height="100" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="svgcolor-light">
-            <path d="M0 0 L50 100 L100 0 Z" fill="#fff" stroke="#fff"></path>
-        </svg>
-    
-        <div class="container">
-            <div class="row footer-widgets">
-        
-                <!-- Start Contact Widget -->
-                <div class="col-md-4">
-                    <div class="footer-widget contact-widget">
-                        <p class="footerText">The views presented on this website are not necessarily those of The University of California Regents, The University of California San Diego, or KSDT Radio.</p>
-                    </div>
-                </div>
-            
-                <div class="col-md-4">
-                    <img src="../img/Logos/cassette-logo2.jpg" class="logo-footer img-responsive" alt="Footer Logo" />
-                </div><!-- END CLEFT MOST COL -->
-                <!-- End Contact Widget -->
-
-                <!-- Start Twitter Widget -->
-                <div class="col-md-4 footer-right">
-                    <div class="footer-widget twitter-widget">
-                        <h4> Contact </h4>
-                        <p> Email: gm@ksdt.org</p>
-                        <p> Phone: (858) 534 – KSDT </p>
-                        <ul class="social-icons" style="vertical-align: middle;">
-                            <li>
-                                <a class="facebook" href="https://www.facebook.com/KSDTCollegeRadio/"><i class="fa fa-facebook"></i></a>
-                            </li>
-
-                            <li>
-                                <a class="twitter" href="https://twitter.com/RADIOKSDT"><i class="fa fa-twitter"></i></a>
-                            </li>
-                           
-                            <li>
-                                <a class="instgram" href="https://www.instagram.com/ksdtradio/"><i class="fa fa-instagram"></i></a>
-                            </li>
-                        </ul>                 
-                    </div>
-
-                </div><!-- .col-md-3 -->
-                <!-- End Twitter Widget -->
-
-            </div><!-- .row -->
-        </div>
-    </footer>
-    <!-- END OF FOOTER-->
+   
   
   <!-- SCRIPTS -->
-  <script type="text/javascript" src="../js/jquery-2.2.3.min.js"></script>
-  <script type="text/javascript" src="../js/animated-headline.js"></script>
-  <script type="text/javascript" src="../js/menu.js"></script>
-  <script type="text/javascript" src="../js/modernizr.js"></script>
-  <script type="text/javascript" src="../js/isotope.pkgd.min.js"></script>
-  <script type="text/javascript" src="../js/jquery.flexslider-min.js"></script>
-  <script type="text/javascript" src="../js/jquery.animsition.min.js"></script>
-  <script type="text/javascript" src="../js/init.js"></script>
-  <script type="text/javascript" src="../js/main.js"></script>
-  <script type="text/javascript" src="../js/smooth-scroll.js"></script>
-  <script type="text/javascript" src="../js/numscroller.js"></script>
-  <script type="text/javascript" src="../js/wow.min.js"></script>
-  <script type="text/javascript" src="../js/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+  <script type="text/javascript" src="js/animated-headline.js"></script>
+  <script type="text/javascript" src="js/menu.js"></script>
+  <script type="text/javascript" src="js/modernizr.js"></script>
+  <script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
+  <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+  <script type="text/javascript" src="js/jquery.animsition.min.js"></script>
+  <script type="text/javascript" src="js/init.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript" src="js/smooth-scroll.js"></script>
+  <script type="text/javascript" src="js/numscroller.js"></script>
+  <script type="text/javascript" src="js/wow.min.js"></script>
+  <script type="text/javascript" src="js/owl.carousel.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -526,7 +431,6 @@ get_header(); ?>
   </script>
 
 </body>
-</html>
 <?php
 get_sidebar();
 get_footer();
