@@ -10,9 +10,6 @@
  */
 
 ?>
-
-	</div><!-- #content -->
-
 	<!-- FOOTER -->
   	<footer class="main-footer">
   		<svg preserveAspectRatio="none" viewBox="0 0 100 102" height="100" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="svgcolor-light">
@@ -68,9 +65,37 @@
     	</div>
   	</footer>
   	<!-- END OF FOOTER-->
+	                <!-- Start Twitter Widget -->
+	                <div class="col-md-4 footer-right">
+	                    <div class="footer-widget twitter-widget">
+	                        <h4> Contact </h4>
+	                        <p> Email: gm@ksdt.org</p>
+	                        <p> Phone: (858) 534 – KSDT </p>
+	                        <ul class="social-icons" style="vertical-align: middle;">
+	                            <li>
+	                                <a class="facebook" href="https://www.facebook.com/KSDTCollegeRadio/"><i class="fa fa-facebook"></i></a>
+	                            </li>
+
+	                            <li>
+	                                <a class="twitter" href="https://twitter.com/RADIOKSDT"><i class="fa fa-twitter"></i></a>
+	                            </li>
+	                           
+	                            <li>
+	                                <a class="instgram" href="https://www.instagram.com/ksdtradio/"><i class="fa fa-instagram"></i></a>
+	                            </li>
+	                        </ul>                 
+	                    </div>
+
+	                </div><!-- .col-md-3 -->
+	                <!-- End Twitter Widget -->
+
+	            </div><!-- .row -->
+	        </div>
+	    </footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
 
 </body>
 </html>
+    

@@ -59,4 +59,8 @@ var o = {
 		
 	}
 }
+<<<<<<< HEAD
 jQuery(function(){ o.init(); });
+=======
+$(function(){ o.init(); });
+>>>>>>> b35c61fc5267d7542cdcc6c121420177e4620547

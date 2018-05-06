@@ -122,6 +122,7 @@ get_header(); ?>
 
                 <div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
                     <img src="<?php echo get_template_directory_uri();?>/img/About/carousel/9.JPG" alt="img" style="width:100%; border: 1px solid #EEEEEE;">
+
                 </div>
             </div><!--end of carousel-->
         </div><!--end of container-->
@@ -280,21 +281,26 @@ get_header(); ?>
         </div>
         <a href="https://ksdt.ucsd.edu/faq/" target="_blank"><button class="button-home">View FAQ</button></a>
     </section>
+<<<<<<< HEAD
+=======
+
+   
+>>>>>>> b35c61fc5267d7542cdcc6c121420177e4620547
   
   <!-- SCRIPTS -->
-  <script type="text/javascript" src="../js/jquery-2.2.3.min.js"></script>
-  <script type="text/javascript" src="../js/animated-headline.js"></script>
-  <script type="text/javascript" src="../js/menu.js"></script>
-  <script type="text/javascript" src="../js/modernizr.js"></script>
-  <script type="text/javascript" src="../js/isotope.pkgd.min.js"></script>
-  <script type="text/javascript" src="../js/jquery.flexslider-min.js"></script>
-  <script type="text/javascript" src="../js/jquery.animsition.min.js"></script>
-  <script type="text/javascript" src="../js/init.js"></script>
-  <script type="text/javascript" src="../js/main.js"></script>
-  <script type="text/javascript" src="../js/smooth-scroll.js"></script>
-  <script type="text/javascript" src="../js/numscroller.js"></script>
-  <script type="text/javascript" src="../js/wow.min.js"></script>
-  <script type="text/javascript" src="../js/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+  <script type="text/javascript" src="js/animated-headline.js"></script>
+  <script type="text/javascript" src="js/menu.js"></script>
+  <script type="text/javascript" src="js/modernizr.js"></script>
+  <script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
+  <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+  <script type="text/javascript" src="js/jquery.animsition.min.js"></script>
+  <script type="text/javascript" src="js/init.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript" src="js/smooth-scroll.js"></script>
+  <script type="text/javascript" src="js/numscroller.js"></script>
+  <script type="text/javascript" src="js/wow.min.js"></script>
+  <script type="text/javascript" src="js/owl.carousel.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
