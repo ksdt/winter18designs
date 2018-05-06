@@ -123,7 +123,10 @@ function winter18redesign_scripts() {
 	wp_enqueue_style( 'winter18redesign-bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
 	wp_enqueue_style( 'winter18redesign-flexslider', get_template_directory_uri() . '/css/flexslider.css' );	
 	wp_enqueue_style( 'winter18redesign-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
-	wp_enqueue_style( 'winter18redesign-owlCarousel', get_template_directory_uri() . '/css/owl.carousel.css' );
+	wp_enqueue_style( 'winter18redesign-owl-carousel', get_template_directory_uri() . '/css/owl.carousel.css' );
+	wp_enqueue_style( 'winter18redesign-owl-theme', get_template_directory_uri() . '/css/owl.theme.css' );
+	wp_enqueue_style( 'winter18redesign-owl-transitions', get_template_directory_uri() . '/css/owl.transitions.css' );
+
 	wp_enqueue_style( 'winter18redesign-slick', get_template_directory_uri() . '/js/slick/slick.css' );
 	wp_enqueue_style( 'winter18redesign-slick-theme', get_template_directory_uri() . '/js/slick/slick-theme.css' );
 
