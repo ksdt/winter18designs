@@ -36,17 +36,15 @@ if ( ! function_exists( 'winter18redesign_setup' ) ) :
 		add_theme_support( 'title-tag' );
 
 		/*
+		 * Use a custom ksdt logo in the header
+		 */
+		add_theme_support( 'custom-logo' );
+		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
-
-		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'winter18redesign' ),
-		) );
-
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
@@ -121,10 +119,20 @@ add_action( 'widgets_init', 'winter18redesign_widgets_init' );
  */
 function winter18redesign_scripts() {
 	wp_enqueue_style( 'winter18redesign-style', get_stylesheet_uri() );
-
+	wp_enqueue_style( 'winter18redesign-animsition', get_template_directory_uri() . '/css/animsition.min.css' );	
+	wp_enqueue_style( 'winter18redesign-bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
+	wp_enqueue_style( 'winter18redesign-flexslider', get_template_directory_uri() . '/css/flexslider.css' );	
+	wp_enqueue_style( 'winter18redesign-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
+	wp_enqueue_style( 'winter18redesign-owlCarousel', get_template_directory_uri() . '/css/owl.carousel.css' );
+	/*JS scripts */
 	wp_enqueue_script( 'winter18redesign-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
 	wp_enqueue_script( 'winter18redesign-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'winter18redesign-animated-headline', get_template_directory_uri() . '/js/animated-headline.js', array('jquery'), '20151215', true );
+	wp_enqueue_script( 'winter18redesign-init', get_template_directory_uri() . '/js/init.js', array('jquery'), '20151215', true );
+	wp_enqueue_script( 'winter18redesign-main', get_template_directory_uri() . '/js/main.js', array(), '20151215', true );
+	wp_enqueue_script( 'winter18redesign-menu', get_template_directory_uri() . '/js/menu.js', array(), '20151215', true );
+	wp_enqueue_script( 'winter18redesign-owlCarousel', get_template_directory_uri() . '/js/owl.carousel.min.js', array(), '20151215', true );
+	wp_enqueue_script( 'winter18redesign-smooth-scroll', get_template_directory_uri() . '/js/smooth-scroll.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

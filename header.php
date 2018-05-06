@@ -16,42 +16,36 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<!-- STYLES -->
+	<link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="js/slick/slick-theme.css"/>
 
+	<!-- Fontawesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'winter18redesign' ); ?></a>
-
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$winter18redesign_description = get_bloginfo( 'description', 'display' );
-			if ( $winter18redesign_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $winter18redesign_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+			<img src="<?php echo get_template_directory_uri();?>/img/Logos/LOGO.png" width="80" alt="KSDT">
 
+		</div><!-- .site-branding -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		    <ul class="nav navbar-nav navbar-right">
+				<li class="active-nav"><a href="index.html">Home</a></li>
+				<li><a href="http://local.wordpress.test/?page_id=4">About</a></li>
+				<li><a href="html/Events.html">Events</a></li>
+				<li><a href="html/schedule.html">Schedule</a></li>
+				<li><a href="html/contact.html">Contact</a></li>
+	      		</ul>
+	    	</div><!-- /.navbar-collapse -->
+  		</div><!-- /.container-fluid -->
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'winter18redesign' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
+			
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
