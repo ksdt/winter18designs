@@ -124,6 +124,10 @@ function winter18redesign_scripts() {
 	wp_enqueue_style( 'winter18redesign-flexslider', get_template_directory_uri() . '/css/flexslider.css' );	
 	wp_enqueue_style( 'winter18redesign-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
 	wp_enqueue_style( 'winter18redesign-owlCarousel', get_template_directory_uri() . '/css/owl.carousel.css' );
+	wp_enqueue_style( 'winter18redesign-slick', get_template_directory_uri() . '/js/slick/slick.css' );
+	wp_enqueue_style( 'winter18redesign-slick-theme', get_template_directory_uri() . '/js/slick/slick-theme.css' );
+
+
 	/*JS scripts */
 	wp_enqueue_script( 'winter18redesign-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'winter18redesign-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -133,6 +137,8 @@ function winter18redesign_scripts() {
 	wp_enqueue_script( 'winter18redesign-menu', get_template_directory_uri() . '/js/menu.js', array(), '20151215', true );
 	wp_enqueue_script( 'winter18redesign-owlCarousel', get_template_directory_uri() . '/js/owl.carousel.min.js', array(), '20151215', true );
 	wp_enqueue_script( 'winter18redesign-smooth-scroll', get_template_directory_uri() . '/js/smooth-scroll.js', array(), '20151215', true );
+	wp_enqueue_script( 'winter18redesign-slick-min', get_template_directory_uri('jquery') . '/js/slick/slick.min.js', array(), '20151215', true );
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

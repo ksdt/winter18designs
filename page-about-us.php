@@ -281,38 +281,13 @@ get_header(); ?>
         </div>
         <a href="https://ksdt.ucsd.edu/faq/" target="_blank"><button class="button-home">View FAQ</button></a>
     </section>
-<<<<<<< HEAD
-=======
-
-   
->>>>>>> b35c61fc5267d7542cdcc6c121420177e4620547
-  
-  <!-- SCRIPTS -->
-  <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
-  <script type="text/javascript" src="js/animated-headline.js"></script>
-  <script type="text/javascript" src="js/menu.js"></script>
-  <script type="text/javascript" src="js/modernizr.js"></script>
-  <script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
-  <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
-  <script type="text/javascript" src="js/jquery.animsition.min.js"></script>
-  <script type="text/javascript" src="js/init.js"></script>
-  <script type="text/javascript" src="js/main.js"></script>
-  <script type="text/javascript" src="js/smooth-scroll.js"></script>
-  <script type="text/javascript" src="js/numscroller.js"></script>
-  <script type="text/javascript" src="js/wow.min.js"></script>
-  <script type="text/javascript" src="js/owl.carousel.min.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="../js/slick/slick.min.js"></script>
-
 
   <script type="text/javascript">
-    $(window).load(function() {
+    jQuery(window).load(function() {
       new WOW().init();
 
       // initialise flexslider
-      $('.flexslider').flexslider({
+      jQuery('.flexslider').flexslider({
         animation: "fade",
         directionNav: true,
         controlNav: false,
@@ -326,17 +301,17 @@ get_header(); ?>
       smoothScroll.init();
 
       // initialize isotope
-      var $container = $('.portfolio_container');
-      $container.isotope({
+      var jQuerycontainer = jQuery('.portfolio_container');
+      jQuerycontainer.isotope({
         filter: '*',
       });
 
-      $('.portfolio_filter a').click(function(){
-        $('.portfolio_filter .active').removeClass('active');
-        $(this).addClass('active');
+      jQuery('.portfolio_filter a').click(function(){
+        jQuery('.portfolio_filter .active').removeClass('active');
+        jQuery(this).addClass('active');
 
-        var selector = $(this).attr('data-filter');
-        $container.isotope({
+        var selector = jQuery(this).attr('data-filter');
+        jQuerycontainer.isotope({
           filter: selector,
           animationOptions: {
             duration: 500,
@@ -349,8 +324,8 @@ get_header(); ?>
   </script>
 
   <script type="text/javascript">
-        $(document).ready(function(){
-            $('.autoplay').slick({
+        jQuery(document).ready(function(){
+            jQuery('.autoplay').slick({
               slidesToShow: 2,
               slidesToScroll: 1,
               autoplay: false,
@@ -408,7 +383,7 @@ get_header(); ?>
 
     // When the user clicks on the button, scroll to the top of the document
     function topFunction() {
-        $('html, body').animate({scrollTop:0},'slow');
+        jQuery('html, body').animate({scrollTop:0},'slow');
     }
   </script>
 
