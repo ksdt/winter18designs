@@ -30,7 +30,7 @@
 	<span class="frame-line left-frame visible-lg"></span>
 
 	<!-- Begin Nav Bar -->
-	<nav role="nav" class="nav-pos navbar navbar-default navbar-fixed-top">
+	<nav id="no-ajax"role="nav" class="nav-pos navbar navbar-default navbar-fixed-top">
   		<div class="container-fluid">
   
 	    	<!-- Brand and toggle get grouped for better mobile display -->
@@ -55,6 +55,11 @@
 		    	<ul class="nav navbar-nav navbar-right">
 		    		<!--php code to nativly get the menu items and find the current
 		    			page to color the link underneath-->
+		    			 <audio controls>
+							
+							  <source src="https://ksdt.ucsd.edu/stream.mp3" type="audio/mpeg">
+							Your browser does not support the audio element.
+						</audio> 
 					<?php $main_menu = wp_get_nav_menu_items('Main'); ?>
 			        	<?php foreach ((array) $main_menu as $key => $menu_item): ?>
 			        	<?php
