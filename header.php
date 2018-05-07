@@ -16,7 +16,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<!-- Fontawesome -->
+	<!-- Fontawesome, TODO: Move to functions.php? -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 
@@ -24,29 +24,58 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<!--Border rules, clips stuff currently
+<!-- Border -->
 	<span class="frame-line right-frame visible-lg"></span>
 	<span class="frame-line bottom-frame visible-lg"></span>
-	<span class="frame-line left-frame visible-lg"></span> -->
-<div id="page" class="site">
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<img src="<?php echo get_template_directory_uri();?>/img/Logos/LOGO.png" width="80" alt="KSDT">
-		</div><!-- .site-branding TODO: Instead of hard coding the header pages, integrate wp_menu with the CSS-->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		    <ul class="nav navbar-nav navbar-right">
-				<li class="active-nav"><a href="index.html">Home</a></li>
-				<li><a href="http://local.wordpress.test/?page_id=4">About</a></li>
-				<li><a href="html/Events.html">Events</a></li>
-				<li><a href="html/schedule.html">Schedule</a></li>
-				<li><a href="html/contact.html">Contact</a></li>
+	<span class="frame-line left-frame visible-lg"></span>
+
+	<!-- Begin Nav Bar -->
+	<nav role="nav" class="nav-pos navbar navbar-default navbar-fixed-top">
+  		<div class="container-fluid">
+  
+	    	<!-- Brand and toggle get grouped for better mobile display -->
+	    	<div class="navbar-header">
+
+		      	<!-- Button that shows on mobile view -->
+		      	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			    </button>
+
+		      	<!-- KSDT Branding -->
+		      	<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+		      		<img src="<?php echo get_template_directory_uri();?>/img/Logos/LOGO.png" width="80" alt="KSDT">
+		      	</a>
+	    	</div>
+	    
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		    	<ul class="nav navbar-nav navbar-right">
+		    		<!--php code to nativly get the menu items and find the current
+		    			page to color the link underneath-->
+					<?php $main_menu = wp_get_nav_menu_items('Main'); ?>
+			        	<?php foreach ((array) $main_menu as $key => $menu_item): ?>
+			        	<?php
+			            $title = $menu_item->title;
+			            $url = $menu_item->url;
+			            ?>
+			            <?php if(strcasecmp($title, $pagename) == 0): ?>
+			            	<li class="active-nav">
+			              		<a href="<?php echo $url; ?>"><?php echo $title; ?></a>
+			            	</li>
+			            <?php  else: ?>
+			            	<li>
+			              		<a href="<?php echo $url; ?>"><?php echo $title; ?></a>
+			            	</li>
+			        	<?php endif; ?>
+
+			          <?php endforeach; ?>
 	      		</ul>
 	    	</div><!-- /.navbar-collapse -->
   		</div><!-- /.container-fluid -->
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'winter18redesign' ); ?></button>
-			
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+	</nav>
+	<!-- End nav bar -->
 
 	<div id="content" class="site-content">
