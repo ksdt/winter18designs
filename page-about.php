@@ -279,8 +279,6 @@ get_header(); ?>
         <a href="https://ksdt.ucsd.edu/faq/" target="_blank"><button class="button-home">View FAQ</button></a>
     </section>
 
-<link rel='stylesheet'  href='<?php get_template_directory_uri();?>/js/slick/slick.css' type='text/css' media='all' />
-<link rel='stylesheet' href='<?php get_template_directory_uri();?>/js/slick/slick-theme.css?ver=4.9.5' type='text/css' media='all' />
   <script type="text/javascript">
     jQuery(window).load(function() {
       new WOW().init();

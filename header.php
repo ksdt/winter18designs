@@ -16,7 +16,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<!-- Fontawesome, TODO: Move to functions.php? -->
+	<!-- Fontawesome-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 
@@ -24,7 +24,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-<!-- Border -->
+	<!-- Border -->
 	<span class="frame-line right-frame visible-lg"></span>
 	<span class="frame-line bottom-frame visible-lg"></span>
 	<span class="frame-line left-frame visible-lg"></span>
@@ -55,9 +55,8 @@
 		    	<ul class="nav navbar-nav navbar-right">
 		    		<!--php code to nativly get the menu items and find the current
 		    			page to color the link underneath-->
-		    			 <audio controls>
-							
-							  <source src="https://ksdt.ucsd.edu/stream.mp3" type="audio/mpeg">
+		    			<audio controls>
+							<source src="https://ksdt.ucsd.edu/stream.mp3" type="audio/mpeg">
 							Your browser does not support the audio element.
 						</audio> 
 					<?php $main_menu = wp_get_nav_menu_items('Main'); ?>

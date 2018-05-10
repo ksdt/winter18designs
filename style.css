@@ -244,7 +244,7 @@ section{
     left: 0;
     height: 100%;
     z-index: 1;
-    background-image: url(/img/gif/dot.gif);
+    background-image: url(img/gif/dot.gif);
     opacity: 0.06;
 }
 
