@@ -132,13 +132,15 @@ function winter18redesign_scripts() {
 	/*JS scripts */
 	wp_enqueue_script( 'winter18redesign-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'winter18redesign-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-	wp_enqueue_script( 'winter18redesign-animated-headline', get_template_directory_uri() . '/js/animated-headline.js', array('jquery'), '20151215', true );
-	wp_enqueue_script( 'winter18redesign-init', get_template_directory_uri() . '/js/init.js', array('jquery'), '20151215', true );
+	wp_enqueue_script( 'winter18redesign-animated-headline', get_template_directory_uri() . '/js/animated-headline.js', array('jquery'), '20151215', true);
 	wp_enqueue_script( 'winter18redesign-main', get_template_directory_uri() . '/js/main.js', array(), '20151215', true );
 	wp_enqueue_script( 'winter18redesign-menu', get_template_directory_uri() . '/js/menu.js', array(), '20151215', true );
 	wp_enqueue_script( 'winter18redesign-owlCarousel', get_template_directory_uri() . '/js/owl.carousel.min.js', array(), '20151215', true );
 	wp_enqueue_script( 'winter18redesign-smooth-scroll', get_template_directory_uri() . '/js/smooth-scroll.js', array(), '20151215', true );
-	wp_enqueue_script( 'winter18redesign-slick-min', get_template_directory_uri('jquery') . '/js/slick/slick.min.js', array(), '20151215', true );
+	wp_enqueue_script( 'winter18redesign-slick-min', get_template_directory_uri() . '/js/slick/slick.min.js', array(), '20151215', true );
+	wp_enqueue_script( 'winter18redesign-wow', get_template_directory_uri() . '/js/wow.min.js', array(), '20151215', true );
+	wp_enqueue_script( 'winter18redesign-top-function', get_template_directory_uri() . '/js/top-function.js', array(), '20151215', true );
+
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

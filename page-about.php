@@ -279,41 +279,7 @@ get_header(); ?>
         <a href="https://ksdt.ucsd.edu/faq/" target="_blank"><button class="button-home">View FAQ</button></a>
     </section>
 
-  <script type="text/javascript">
-    jQuery(window).load(function() {
-      new WOW().init();
-      // initialise flexslider
-      jQuery('.flexslider').flexslider({
-        animation: "fade",
-        directionNav: true,
-        controlNav: false,
-        keyboardNav: true,
-        slideToStart: 0,
-        animationLoop: true,
-        pauseOnHover: false,
-        slideshowSpeed: 4000,
-      });
-      smoothScroll.init();
-      // initialize isotope
-      var jQuerycontainer = jQuery('.portfolio_container');
-      jQuerycontainer.isotope({
-        filter: '*',
-      });
-      jQuery('.portfolio_filter a').click(function(){
-        jQuery('.portfolio_filter .active').removeClass('active');
-        jQuery(this).addClass('active');
-        var selector = jQuery(this).attr('data-filter');
-        jQuerycontainer.isotope({
-          filter: selector,
-          animationOptions: {
-            duration: 500,
-            animationEngine : "jquery"
-          }
-        });
-        return false;
-      });
-    });
-  </script>
+  
 
   <script type="text/javascript">
         jQuery(document).ready(function(){
@@ -360,22 +326,6 @@ get_header(); ?>
             });
          });
     </script>
-
-  <script>
-    // When the user scrolls down 50px from the top of the document, show the button
-    window.onscroll = function() {scrollFunction()};
-    function scrollFunction() {
-        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 20) {
-            document.getElementById("back-to-top").style.display = "block";
-        } else {
-            document.getElementById("back-to-top").style.display = "none";
-        }
-    }
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-        jQuery('html, body').animate({scrollTop:0},'slow');
-    }
-  </script>
 
 <?php
 get_sidebar();
