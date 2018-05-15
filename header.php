@@ -82,4 +82,10 @@
 	</nav>
 	<!-- End nav bar -->
 
+	<!-- BACK TO TOP -->
+	<a id="top"></a>
+	<div id="back-to-top">
+		<img src="<?php echo get_template_directory_uri();?>/img/Home/back-to-top.png" id="topImg-home" onclick="topFunction()"></img>
+	</div>
+	
 	<div id="content" class="site-content">

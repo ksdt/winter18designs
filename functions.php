@@ -119,7 +119,7 @@ add_action( 'widgets_init', 'winter18redesign_widgets_init' );
  * Note: The order of loading CSS matters!  Check it against the raw template code in a browser
  */
 function winter18redesign_scripts() {
-	wp_enqueue_style( 'winter18redesign-bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
+	wp_enqueue_style( 'winter18redesign-bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css' );
 	wp_enqueue_style( 'winter18redesign-flexslider', get_template_directory_uri() . '/css/flexslider.css' );
 	wp_enqueue_style( 'winter18redesign-animsition', get_template_directory_uri() . '/css/animsition.min.css' );		
 	wp_enqueue_style( 'winter18redesign-style', get_stylesheet_uri() );
@@ -130,6 +130,7 @@ function winter18redesign_scripts() {
 	wp_enqueue_style( 'winter18redesign-slick-theme', get_template_directory_uri() . '/js/slick/slick-theme.css' );
 
 	/*JS scripts */
+	wp_enqueue_script( 'winter18redesign-boostrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '20151215', true );
 	wp_enqueue_script( 'winter18redesign-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'winter18redesign-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	wp_enqueue_script( 'winter18redesign-animated-headline', get_template_directory_uri() . '/js/animated-headline.js', array('jquery'), '20151215', true);

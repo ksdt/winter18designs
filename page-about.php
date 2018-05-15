@@ -22,11 +22,7 @@ get_header(); ?>
     </div>
     </div>
 
-  <!-- BACK TO TOP -->
-  <a id="top"></a>
-  <div id="back-to-top">
-    <img src="<?php echo get_template_directory_uri();?>/img/Home/back-to-top.png" id="topImg-home" onclick="topFunction()"></img>
-  </div>
+
 
     <!-- Blurb -->
     <section class="about_descr" style="background-color:#353789">
@@ -312,7 +308,7 @@ get_header(); ?>
                   breakpoint: 600,
                   settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 2
+                    sdlidesToScroll: 2
                   }
                 },
                 {
