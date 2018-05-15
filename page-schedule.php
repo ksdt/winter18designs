@@ -63,7 +63,13 @@ get_header(); ?>
                     if (intval(explode(':', $show['OnairTime'])[0]) > 12) {
                         $show['OnairTimeAMPM'] = 'pm';
                         $show['OnairTime'] = intval(explode(':', $show['OnairTime'])[0]) - 12;
-                    } else {
+                    } 
+                    //noon edge case
+                    elseif(intval(explode(':', $show['OnairTime'])[0]) == 12) {
+                      $show['OnairTimeAMPM'] = 'pm';
+                      $show['OnairTime'] = intval(explode(':', $show['OnairTime'])[0]);
+                    }
+                    else {
                         $show['OnairTime'] = intval(explode(':', $show['OnairTime'])[0]);
                     }
                     /* process djs */
@@ -76,7 +82,6 @@ get_header(); ?>
         }
     ?>
     	<!-- Schedule -->
-    	<?php print_r($sp); ?>
 	<section class="about_descr mt-100">
 		<div class="container">
 			<div class="row center">
@@ -95,34 +100,21 @@ get_header(); ?>
 		<!-- TABS AT THE TOP -->
 		<div class="container">
 			<ul class="nav nav-tabs nav-tab-container" id="myTab" role="tablist">
-			<li class="nav-item">
-    			<a class="nav-link tab" id="sunday-tab" data-toggle="tab" href="#sunday" role="tab" aria-controls="home" aria-selected="true">Su</a>
-  			</li>
-  			<li class="nav-item">
-    			<a class="nav-link tab" id="monday-tab" data-toggle="tab" href="#monday" role="tab" aria-controls="home" aria-selected="true">M</a>
-  			</li>
-  			<li class="nav-item">
-    			<a class="nav-link tab" id="tuesday-tab" data-toggle="tab" href="#tuesday" role="tab" aria-controls="profile" aria-selected="false">T</a>
-  			</li>
-  			<li class="nav-item">
-    			<a class="nav-link tab" id="wednesday-tab" data-toggle="tab" href="#wednesday" role="tab" aria-controls="contact" aria-selected="false">W</a>
-  			</li>
-  			<li class="nav-item">
-    			<a class="nav-link tab" id="thursday-tab" data-toggle="tab" href="#thursday" role="tab" aria-controls="contact" aria-selected="false">Th</a>
-  			</li>
-  			  <li class="nav-item">
-    			<a class="nav-link tab" id="friday-tab" data-toggle="tab" href="#friday" role="tab" aria-controls="contact" aria-selected="false">F</a>
-  			  </li>
-  			  <li class="nav-item">
-    			<a class="nav-link tab" id="saturday-tab" data-toggle="tab" href="#saturday" role="tab" aria-controls="contact" aria-selected="false">Sa</a>
-  			  </li>
+			  <?php 
+        $days_of_week = 7;
+        echo $days_of_week;
+           for($i = 0; $i < $days_of_week; $i++) { ?>
+          <li class="nav-item">
+            <a class="nav-link tab" id="<?php echo jddayofweek($i,2)?>-tab" data-toggle="tab" href="#<?php echo jddayofweek($i,2)?>" role="tab" aria-controls="home" aria-selected="true"><?php echo jddayofweek($i,2)?></a>
+          </li>
+        <?php } ?>
 			</ul>
       <!-- END TABS -->
 
 			<!-- SCHEDULE TAB CONTENT -->
 			<div class="tab-content tab-container" id="myTabContent">
 				<?php foreach ($shows as $day => $showsDay): ?>
-			<div class="tab-pane fade in" id="fdsa<?php echo $day?>" role="tabpanel">
+			<div class="tab-pane fade in" id="<?php echo $day?>" role="tabpanel">
             <h2 class="tab-title"><?php echo $day?></h2>
             <div class="container-fluid content-container">
             	<div class="row">
@@ -130,23 +122,42 @@ get_header(); ?>
                 <h1 class="tab-header"> Midnight - 2PM </h1>
                 <?php foreach ($showsDay as $show): ?>
                  	<?php if(!$show) continue; /*if show obj is bad, just skip */ ?>
+                  <?php if($show['OnairTime'] == 3 && $show['OnairTimeAMPM'] === "pm") break;?>
 	                <div class="card">
 	              		<div class="card-block">
-	                		<h4 class="card-title-am"><span class="time-header"><?php echo $show['OnairTime']; ?></span> | <?php echo $show['ShowName']; ?>
+	                		<h4 class="card-title-am"><span class="time-header"><?php echo $show['OnairTime'] . $show['OnairTimeAMPM']; ?></span> | <?php echo $show['ShowName']; ?>
 	                		</h4>
 	                		<div class="cardContent inline">
-	                     		<h6 class="card-subtitle mb-2 text-muteds">DJ Petrichorus</h6>
-	                     		<p> <?php echo $show['ShowDescription']; ?> </p> 
+	                     		<h6 class="card-subtitle mb-2 text-muteds"><?php echo $show['djs']; ?></h6>
+	                     		<p><?php echo $show['ShowDescription']; ?></p> 
 	                		</div>
 	              		</div>
 	            </div>
 	            <?php endforeach; ?>
           </div>
+          <div class="col-md-6">
+            <h1 class="tab-header"> 3PM - 11PM </h1>
+            <?php foreach ($showsDay as $show): ?>
+            <?php if(!$show) continue; /*if show obj is bad, just skip */ ?>
+
+            <?php if($show['OnairTime'] < 3 || $show['OnairTimeAMPM'] === "am" || $show['OnairTime'] == 12) continue; /*inelegant way of filtering the shows */ ?>
+            <div class="card">
+              <div class="card-block">
+                <h4 class="card-title-pm"><span class="time-header"><?php echo $show['OnairTime'] . $show['OnairTimeAMPM']; ?></span> | <?php echo $show['ShowName']; ?></h4>
+                  <div class="cardContent inline">
+                     <h6 class="card-subtitle mb-2 text-muteds"><?php echo $show['djs'] . " | " . $show['ShowCategory']; ?></h6>
+                     <p><?php echo $show['ShowDescription']; ?></p> 
+                </div> 
+              </div>
+            </div>
+            <?php endforeach; ?>
+
         </div>
         </div>
 		</div>
-	<?php endforeach; ?>
 		</div>
+      <?php endforeach; ?>
+
 	</section>
 
   <!-- LAST DIVIDER -->
@@ -162,72 +173,17 @@ get_header(); ?>
       </div>
     </div>
     <!-- END LAST DIVIDER -->
-<script>  
-  var d = new Date();
-  var weekday = new Array(7);
-  weekday[0] = "sunday";
-  weekday[1] = "monday";
-  weekday[2] = "tuesday";
-  weekday[3] = "wednesday";
-  weekday[4] = "thursday";
-  weekday[5] = "friday";
-  weekday[6] = "saturday";
-
-  var n = weekday[d.getDay()];
-
-  var tabs = document.getElementsByClassName("nav-item");
-  var tabContent = document.getElementsByClassName("tab-pane");
-  console.log("day: "  + n);
-  switch(n) {
-  	case "sunday":
-  		tabs[0].className += " active";
-  		tabContent[0].className += " active";
-  		break;
-   	case "monday":
-  		tabs[1].className += " active";
-  		tabContent[1].className += " active";
-  		break;
-   	case "tuesday":
-  		tabs[2].className += " active";
-  		tabContent[2].className += " active";
-  		break;
-   	case "wednesday":
-  		tabs[3].className += " active";
-  		tabContent[3].className += " active";
-  		break;
-   	case "thursday":
-  		tabs[4].className += " active";
-  		tabContent[4].className += " active";
-  		break;
-   	case "friday":
-  		tabs[5].className += " active";
-  		tabContent[5].className += " active";
-  		break;
-   	case "saturday":
-  		tabs[6].className += " active";
-  		tabContent[6].className += " active";
-  		break;
-  	 	
-  }
-	/*for(var i = 0; i < tabs.length; i++) {
-	  if(tabContent[i].id == n) {
-	    console.log(n);
-	    tabs[i].className += " active";
-	    tabContent[i].className += " active";
-	  }
-	}*/
-</script>
 <!-- Script to make tabs active according to day of the week -->
 <script>  
   var d = new Date();
   var weekday = new Array(7);
-  weekday[0] = "sunday";
-  weekday[1] = "monday";
-  weekday[2] = "tuesday";
-  weekday[3] = "wednesday";
-  weekday[4] = "thursday";
-  weekday[5] = "friday";
-  weekday[6] = "saturday";
+  weekday[0] = "Sun";
+  weekday[1] = "Mon";
+  weekday[2] = "Tue";
+  weekday[3] = "Wed";
+  weekday[4] = "Thu";
+  weekday[5] = "Fri";
+  weekday[6] = "Sat";
 
   var n = weekday[d.getDay()];
 
@@ -235,31 +191,31 @@ get_header(); ?>
   var tabContent = document.getElementsByClassName("tab-pane");
   console.log("day: "  + n);
   switch(n) {
-  	case "sunday":
+  	case "Sun":
   		tabs[0].className += " active";
   		tabContent[0].className += " active";
   		break;
-   	case "monday":
+   	case "Mon":
   		tabs[1].className += " active";
   		tabContent[1].className += " active";
   		break;
-   	case "tuesday":
+   	case "Tue":
   		tabs[2].className += " active";
   		tabContent[2].className += " active";
   		break;
-   	case "wednesday":
+   	case "Wed":
   		tabs[3].className += " active";
   		tabContent[3].className += " active";
   		break;
-   	case "thursday":
+   	case "Thu":
   		tabs[4].className += " active";
   		tabContent[4].className += " active";
   		break;
-   	case "friday":
+   	case "Fri":
   		tabs[5].className += " active";
   		tabContent[5].className += " active";
   		break;
-   	case "saturday":
+   	case "Sat":
   		tabs[6].className += " active";
   		tabContent[6].className += " active";
   		break;
