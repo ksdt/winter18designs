@@ -1,39 +1,56 @@
 # winter18designs
-## Setting up the development environment for a Wordpress Site
+### Setting up the development environment for a Wordpress Site
 
-To run Wp locally, download and install VVV version 2.1
-https://varyingvagrantvagrants.org/docs/en-US/installation/software-requirements/
+To run the wordpress site locally, we use Varying Vagrant Vagrants (VVV).
+VVV is essentially a dev environment and a server(in a virtual machine).
 
-Installing VVV entails install Vagrant and Virtual Box
-The links for both are found on the link above.
+To use VVV, we need some additional software:
+  - Vagrant 2.x (the newest version is fine)
+  -- https://www.vagrantup.com/downloads.html
+  - VirtualBox (5.1, newer versions will not work with VVV)
+  --https://www.virtualbox.org/wiki/Download_Old_Builds_5_1 
 
-You will need to have VirtualBox version 5.1 installed.
-(5.2 is the current release, but it is not compatible with VVV)
+### After installing Vagrant and VirtualBox
+Run this command to install some needed plugins, its possible
+VVV may complain later on about conflicts, if so, just uninstall the
+plugin that is conflicting and the problem should resolve.
+```sh
+$ vagrant plugin install vagrant-hostsupdater vagrant-triggers vagrant-vbguest
+```
+After this, considering rebooting your machine to be safe the install is configuring properly
 
-After installing that software, you can install VVV here:
-https://varyingvagrantvagrants.org/docs/en-US/installation/
-(Git is probably the easiest way to install)
-Note: Where you install VVV (git command ending with vagrant-local) is the directory that the
-project will live, so run that command with the directory you want to store the site, as well
-as the name of the folder you want.
+### Installing VVV
+Run this command, feel free to change the location and name of the folder to what you want
+```sh
+$ git clone -b master git://github.com/Varying-Vagrant-Vagrants/VVV.git ~/vagrant-local
+```
+### Initial Configuartion
+Once everything is installed, run
+```sh
+$ vagrant up
+```
+to create a virtual machine and local environment.
+The first time this is run will take a while as a lot of software needs
+to be installed on the virtual machine, but future runs will only take
+a few seconds.
 
-Go through the instructions that it details about starting the virtual machine.
+### Seeing the local site
+Go to [vvv.test] in a browser to verify the site is up.
+It will give you more links to go to, in particular,
+[local.wordpress.test], which is the local wordpress site.
 
-Once thats done, you can check that its up at vvv.test in any browser.
+You can sign into wordpress via [local.wordpress.test/wp-admin]
+It will ask you some basic setup info(username,lang,etc).  What you put does not matter too much since it is exclusive to your machine.
 
-Then, clone this repo (using SSH) into www/wordpress-default/public_html/wp-content/themes.
+### Seting up the theme
+Clone this folder into
+```sh
+[your_vagrant_folder]/www/wordpress-default/public_html/wp-content/themes
+```
+You can then go into the wordpress backend ([local.wordpress.test/wp-admin]),
+navigate to Appearance->Themes and the theme should already be installed if you cloned it properly.  
+Everything is now setup and you can begin working on the theme.
 
-You can install the theme at
-local.wordpress.test/wp-admin
-If you put the folder in themes, wordpress should see it and install it automatically,
-you just need to activate it.
-
-From there, you can work on the theme files and simply refresh to see changes.
-
-##Current Work
-1) Setup dynamic/lazy loading so that changing pages does not refresh the entire site and
-stop the stream playback
-
-2) Properly order CSS file loading to match the mock up
-
-3) Tighten up the header
+   [local.wordpress.test]: <http://local.wordpress.test>
+   [local.wordpress.test/wp-admin]: <http://local.wordpress.test/wp-admin>
+   [vvv.test]: <http://vvv.test>
