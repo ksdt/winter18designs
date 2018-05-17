@@ -4,6 +4,9 @@
 To run the wordpress site locally, we use Varying Vagrant Vagrants (VVV).
 VVV is essentially a dev environment and a server(in a virtual machine).
 
+(Everything in this document comes from the Software Requirements and Installation pages 
+from the Getting Started section at https://varyingvagrantvagrants.org/)
+
 To use VVV, we need some additional software:
   - Vagrant 2.x (the newest version is fine)
   -- https://www.vagrantup.com/downloads.html
@@ -25,7 +28,7 @@ Run this command, feel free to change the location and name of the folder to wha
 $ git clone -b master git://github.com/Varying-Vagrant-Vagrants/VVV.git ~/vagrant-local
 ```
 ### Initial Configuartion
-Once everything is installed, run
+Once everything is installed, run this command within the VVV folder
 ```sh
 $ vagrant up
 ```
