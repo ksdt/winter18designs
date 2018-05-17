@@ -32,26 +32,26 @@ get_header(); ?>
                 return intval(explode(':', $a['OnairTime'])[0]) < intval(explode(':', $b['OnairTime'])[0]) ? -1 : 1;
             }
             $shows = array(
-                'Sun' => array_filter($shows, function($e) {
+                'Sunday' => array_filter($shows, function($e) {
                     // Checks if the sunday value exists in the array
                     return in_array('Sun', $e['Weekdays']);
                 }),
-                'Mon' => array_filter($shows, function($e) {
+                'Monday' => array_filter($shows, function($e) {
                     return in_array('Mon', $e['Weekdays']);
                 }),
-                'Tue' => array_filter($shows, function($e) {
+                'Tueday' => array_filter($shows, function($e) {
                     return in_array('Tue', $e['Weekdays']);
                 }),
-                'Wed' => array_filter($shows, function($e) {
+                'Wednesday' => array_filter($shows, function($e) {
                     return in_array('Wed', $e['Weekdays']);
                 }),
-                'Thu' => array_filter($shows, function($e) {
+                'Thuday' => array_filter($shows, function($e) {
                     return in_array('Thu', $e['Weekdays']);
                 }),
-                'Fri' => array_filter($shows, function($e) {
+                'Friday' => array_filter($shows, function($e) {
                     return in_array('Fri', $e['Weekdays']);
                 }),
-                'Sat' => array_filter($shows, function($e) {
+                'Saturday' => array_filter($shows, function($e) {
                     return in_array('Sat', $e['Weekdays']);
                 }),
             );
@@ -89,7 +89,7 @@ get_header(); ?>
 					<div class="section-title">
             <h2 class="section-title-3 dark-section-text mb-25" style="font-size:40px; color: black">WEEKLY SCHEDULE</h2>
 						<!--<h2 class="mb-50">Weekly Schedule</h2>-->
-						<p class="module-subtitle">Our schedule is updated quarterly.</p>
+						<p class="module-subtitle">Our schedule is updated quarterly</p>
             <div class="km-space"></div>
 
 					</div>
@@ -102,10 +102,9 @@ get_header(); ?>
 			<ul class="nav nav-tabs nav-tab-container" id="myTab" role="tablist">
 			  <?php 
         $days_of_week = 7;
-        echo $days_of_week;
            for($i = 0; $i < $days_of_week; $i++) { ?>
-          <li class="nav-item">
-            <a class="nav-link tab" id="<?php echo jddayofweek($i,2)?>-tab" data-toggle="tab" href="#<?php echo jddayofweek($i,2)?>" role="tab" aria-controls="home" aria-selected="true"><?php echo jddayofweek($i,2)?></a>
+          <li class="nav-item <?php if (jddayofweek($i,0) == date("N")) echo "active";?>">
+            <a class="nav-link tab" id="<?php echo jddayofweek($i,1)?>-tab" data-toggle="tab" href="#<?php echo jddayofweek($i,1)?>" role="tab" aria-controls="home" aria-selected="true"><?php echo jddayofweek($i,2)?></a>
           </li>
         <?php } ?>
 			</ul>
@@ -114,7 +113,7 @@ get_header(); ?>
 			<!-- SCHEDULE TAB CONTENT -->
 			<div class="tab-content tab-container" id="myTabContent">
 				<?php foreach ($shows as $day => $showsDay): ?>
-			<div class="tab-pane fade in" id="<?php echo $day?>" role="tabpanel">
+			<div class="tab-pane fade in <?php if ($day == date("l")) echo "active";?>" id="<?php echo $day?>" role="tabpanel">
             <h2 class="tab-title"><?php echo $day?></h2>
             <div class="container-fluid content-container">
             	<div class="row">
@@ -122,7 +121,7 @@ get_header(); ?>
                 <h1 class="tab-header"> Midnight - 2PM </h1>
                 <?php foreach ($showsDay as $show): ?>
                  	<?php if(!$show) continue; /*if show obj is bad, just skip */ ?>
-                  <?php if($show['OnairTime'] == 3 && $show['OnairTimeAMPM'] === "pm") break;?>
+                  <?php if($show['OnairTime'] >= 3 && $show['OnairTimeAMPM'] === "pm") break;?>
 	                <div class="card">
 	              		<div class="card-block">
 	                		<h4 class="card-title-am"><span class="time-header"><?php echo $show['OnairTime'] . $show['OnairTimeAMPM']; ?></span> | <?php echo $show['ShowName']; ?>
@@ -156,8 +155,7 @@ get_header(); ?>
         </div>
 		</div>
 		</div>
-      <?php endforeach; ?>
-
+    <?php endforeach; ?>
 	</section>
 
   <!-- LAST DIVIDER -->
@@ -174,61 +172,7 @@ get_header(); ?>
     </div>
     <!-- END LAST DIVIDER -->
 <!-- Script to make tabs active according to day of the week -->
-<script>  
-  var d = new Date();
-  var weekday = new Array(7);
-  weekday[0] = "Sun";
-  weekday[1] = "Mon";
-  weekday[2] = "Tue";
-  weekday[3] = "Wed";
-  weekday[4] = "Thu";
-  weekday[5] = "Fri";
-  weekday[6] = "Sat";
 
-  var n = weekday[d.getDay()];
-
-  var tabs = document.getElementsByClassName("nav-item");
-  var tabContent = document.getElementsByClassName("tab-pane");
-  console.log("day: "  + n);
-  switch(n) {
-  	case "Sun":
-  		tabs[0].className += " active";
-  		tabContent[0].className += " active";
-  		break;
-   	case "Mon":
-  		tabs[1].className += " active";
-  		tabContent[1].className += " active";
-  		break;
-   	case "Tue":
-  		tabs[2].className += " active";
-  		tabContent[2].className += " active";
-  		break;
-   	case "Wed":
-  		tabs[3].className += " active";
-  		tabContent[3].className += " active";
-  		break;
-   	case "Thu":
-  		tabs[4].className += " active";
-  		tabContent[4].className += " active";
-  		break;
-   	case "Fri":
-  		tabs[5].className += " active";
-  		tabContent[5].className += " active";
-  		break;
-   	case "Sat":
-  		tabs[6].className += " active";
-  		tabContent[6].className += " active";
-  		break;
-  	 	
-  }
-	/*for(var i = 0; i < tabs.length; i++) {
-	  if(tabContent[i].id == n) {
-	    console.log(n);
-	    tabs[i].className += " active";
-	    tabContent[i].className += " active";
-	  }
-	}*/
-</script>
 
 <?php
 get_sidebar();
