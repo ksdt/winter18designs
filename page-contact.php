@@ -34,7 +34,7 @@ get_header(); ?>
         <div class="container">
             <div class="row center">
 				<h2 class="section-title-3 dark-section-text" style="font-size:40px; color: black">LOCATION</h2>
-          		<p class="module-subtitle black-font mt-25" style="font-size:22px;"> Follow the good music - we are located across from the General Store in the old student center. </p> 
+          		<p class="module-subtitle black-font mt-25" style="font-size:22px;"> Follow the good music - we are located across from the General Store in the old student center</p> 
         	</div>
 		
 		</div>
@@ -97,7 +97,7 @@ get_header(); ?>
                 	<div class="card-contact">
                     	<div class="card-block">
                    			<div class="module-subtitle-contact2">General</div>
-	                        <div class="small-meeting-time">5PM - 6PM Friday</div>
+	                        <div class="small-meeting-time"><?php the_field('general_meeting_time');?></div>
 	                        <p class="small-title-contact mb-25" style="color:#353789; height: 5px; font-size: 15px;">Open to everyone!</p>
 	                        <p class="small-title-contact mb-25">Where we discuss station updates and upcoming events. Perfect meeting for those interested in getting involved or working with KSDT.</p> 
 
@@ -106,7 +106,7 @@ get_header(); ?>
                 
                     	<div class="column-contact">
 	                        <div class="module-subtitle-contact2 mt-25">Staff</div>
-	                        <div class="small-meeting-time"> 4PM - 5PM Friday</div>
+	                        <div class="small-meeting-time"><?php the_field('staff_meeting_time');?></div>
 	                       	<p class="small-title-contact mb-25" style="color:#353789; height: 5px; font-size: 15px">Open to staff + djs!</p>
 
 	                        <p class="small-title-contact"> Where the details get worked out and ideas get introduced. Perfect meeting for those interested in becoming a staff member.</p>
@@ -173,7 +173,7 @@ get_header(); ?>
           	<div class="col-md-8 col-md-offset-2 col-sm-12">
               	<div class="section-title-events"></div>
                 <h2 class="section-title-3 dark-section-text" style="font-size:40px;color: black">STAFF INFO</h2>
-                <p class="module-subtitle black-font mt-25" style="font-size:22px;"> E-mail us or come by our office hours. Internships available for all staff positions (excluding general manager).</p>
+                <p class="module-subtitle black-font mt-25" style="font-size:22px;"> E-mail us or come by our office hours. Internships available for all staff positions (excluding general manager)</p>
             </div>
         </div>
     </div>
@@ -189,8 +189,8 @@ get_header(); ?>
 							<div class="contact-card">
 								<li>
 									<p class="module-subtitle-contact2" style="text-align:center"><strong>General Manager</strong></p>
-									<p class="small-title-contact3" style="color:black;">Tennyson Holloway<br> <span>email@ksdt.org</span></p>
-									<p class="small-title-contact2" style="color:black;">Friday 9am-11am, or by appt.</p>
+									<p class="small-title-contact3" style="color:black;"><?php the_field('gm1');?><br> <span>gm@ksdt.org</span></p>
+									<p class="small-title-contact2" style="color:black;"><?php the_field('gm1-oh');?></p>
 								</li>
 							</div>
 
@@ -198,8 +198,8 @@ get_header(); ?>
 			                <div class="contact-card">
 				                <li>
 				                	<p class="module-subtitle-contact2" style="text-align:center"> <strong>Programming</strong></p>
-				                  	<p class="small-title-contact3" style="color:black;">Anser Abbas<br> <span>programming@ksdt.org</span></p>
-				                  	<p class="small-title-contact2" style="color:black;">Wednesday, Friday 10am-11am</p>
+				                  	<p class="small-title-contact3" style="color:black;"><?php the_field('programming');?><br> <span>programming@ksdt.org</span></p>
+				                  	<p class="small-title-contact2" style="color:black;"><?php the_field('programming-oh');?></p>
 				                </li>
 			                </div>
 
@@ -207,8 +207,8 @@ get_header(); ?>
 			                <div class="contact-card">
 				                <li>
 				                	<p class="module-subtitle-contact2" style="text-align:center"> <strong>Engineer</strong></p>
-				                  	<p class="small-title-contact3" style="color:black;">Caleb Hess<br> <span>engineer@ksdt.org</span></p>
-				                  	<p class="small-title-contact2" style="color:black;">Friday 12pm-2pm </p>
+				                  	<p class="small-title-contact3" style="color:black;"><?php the_field('engineer1');?><br> <span>engineer@ksdt.org</span></p>
+				                  	<p class="small-title-contact2" style="color:black;"><?php the_field('engineer1-oh');?></p>
 				                </li>
 			                </div>
 
@@ -228,24 +228,24 @@ get_header(); ?>
 							<div class="contact-card">
 								<li>
 									<p class="module-subtitle-contact2" style="text-align:center"><strong>General Manager</strong></p>
-									<p class="small-title-contact3" style="color:black;">Patty Cuen<br> <span>email@ksdt.org</span></p>
-									<p class="small-title-contact2" style="color:black;">Tuesday, Thursday 2-3pm, or by appt.</p>
+									<p class="small-title-contact3" style="color:black;"><?php the_field('gm2');?><br> <span>gm@ksdt.org</span></p>
+									<p class="small-title-contact2" style="color:black;"><?php the_field('gm2-oh');?></p>
 								</li>
 							</div>
 
 							<div class="contact-card">
 								<li>
 									<p class="module-subtitle-contact2" style="text-align:center"> <strong>Music Director</strong></p>
-									<p class="small-title-contact3" style="color:black;">Ray Stachowiak<br> <span>music@ksdt.org</span></p>
-									<p class="small-title-contact2" style="color:black;">Friday 3pm-5pm</p>
+									<p class="small-title-contact3" style="color:black;"><?php the_field('music_director');?><br> <span>music@ksdt.org</span></p>
+									<p class="small-title-contact2" style="color:black;"><?php the_field('music_director-oh');?></p>
 								</li>
 							</div>
 
 							<div class="contact-card">
 								<li>
 									<p class="module-subtitle-contact2" style="text-align:center"> <strong>Graphics</strong></p>
-									<p class="small-title-contact3" style="color:black;">Tzinti Medina<br> <span>graphics@ksdt.org</span></p>
-									<p class="small-title-contact2" style="color:black;">Friday 3pm-5pm</p>
+									<p class="small-title-contact3" style="color:black;"><?php the_field('graphics');?><br> <span>graphics@ksdt.org</span></p>
+									<p class="small-title-contact2" style="color:black;"><?php the_field('graphics-oh');?></p>
 								</li>
 							</div>
 
@@ -263,16 +263,16 @@ get_header(); ?>
 							<div class="contact-card item7">
 								<li>
 									<p class="module-subtitle-contact2" style="text-align:center"> <strong>Promotions</strong></p>
-									<p class="small-title-contact3" style="color:black;">Karen Liou<br> <span>promotions@ksdt.org</span></p>
-									<p class="small-title-contact2" style="color:black;">TBD</p>
+									<p class="small-title-contact3" style="color:black;"><?php the_field('promotions');?><br> <span>promotions@ksdt.org</span></p>
+									<p class="small-title-contact2" style="color:black;"><?php the_field('promotions-oh');?></p>
 								</li>
 							</div>
 
 							<div class="contact-card">
 								<li>
 									<p class="module-subtitle-contact2" style="text-align:center"> <strong>Technology</strong></p>
-									<p class="small-title-contact3" style="color:black;">Bijan Farahani<br> <span>webmaster@ksdt.org</span></p>
-									<p class="small-title-contact2" style="color:black;">Thursday 2pm-4pm</p>
+									<p class="small-title-contact3" style="color:black;"><?php the_field('tech');?><br> <span>webmaster@ksdt.org</span></p>
+									<p class="small-title-contact2" style="color:black;"><?php the_field('tech-oh');?></p>
 								</li>
 							</div>
 
@@ -281,8 +281,8 @@ get_header(); ?>
 			                <div class="contact-card item9">
 				                <li>
 				                	<p class="module-subtitle-contact2" style="text-align:center"> <strong>Secretary</strong></p>
-				                  	<p class="small-title-contact3" style="color:black;">Natalia Cameroni<br> <span>secretary@ksdt.org</span></p>
-				                  	<p class="small-title-contact2" style="color:black;">Wednesday 3:30pm-5:30pm</p>
+				                  	<p class="small-title-contact3" style="color:black;"><?php the_field('secretary');?><br> <span>secretary@ksdt.org</span></p>
+				                  	<p class="small-title-contact2" style="color:black;"><?php the_field('secretary-oh');?></p>
 				                </li>
 			                </div>
           				</ul>

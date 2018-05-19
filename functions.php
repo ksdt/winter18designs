@@ -149,7 +149,6 @@ function winter18redesign_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'winter18redesign_scripts' );
-
 /**
  * Implement the Custom Header feature.
  */
