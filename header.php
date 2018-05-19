@@ -66,7 +66,7 @@
 			            $url = $menu_item->url;
 			            ?>
 			            <?php if(strcasecmp($title, $pagename) == 0): ?>
-			            	<li class="active-nav">
+			            	<li class="active-nav" id="no-ajax1">
 			              		<a href="<?php echo $url; ?>"><?php echo $title; ?></a>
 			            	</li>
 			            <?php  else: ?>

@@ -637,7 +637,6 @@ a{
     background-color: #D53B80; 
     border: none;
     color: white;
-    /*padding: 15px 75px;*/
     padding: 10px 30px;
     text-align: center;
     text-decoration: none;
@@ -1171,7 +1170,6 @@ ul.tags li a:hover{
     height: 100vh;
     width: 100%;
     background-image: url(img/gif/sound6.gif);
-    /*background-image: url(/Users/Agykbon/Library/Containers/com.apple.Preview/Data/Desktop/rainbow-sound.jpg);*/
 
         background-attachment: fixed;
     background-position: center center;
@@ -1214,7 +1212,6 @@ b i:last-child {
 .box-intro h1{
     font-size: 40px;
     margin-top: 35px;
-    /* color: #333; */
     color: #fff;
     letter-spacing: 40px;
     font-weight: 700;
@@ -1262,7 +1259,6 @@ b i:last-child {
     height: 50px;
     line-height: 50px;
     border-radius: 15px;
-    /*border: 1px solid #888;*/
     -webkit-animation: intro 1s;
     animation: intro 1s;
     z-index: 3;
@@ -1724,8 +1720,6 @@ footer a:hover {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
-    /**background-color: #D53B80;
-    padding: 0px 20px 0px 20px;**/
 }
 
 
@@ -1743,7 +1737,6 @@ footer a:hover {
     font-weight: 700;
     letter-spacing: 1px;
     font-size: 24px;
-  /* text-shadow: 2px 2px #000;*/
 }
 
 .dark-section{
@@ -1758,12 +1751,6 @@ footer a:hover {
   font-weight: 600;
   text-shadow: 0px 2px #ff0000;
 }
-
-/*.light-section-text{
-  color:white;
-  font-weight: 600;
-  text-shadow: 0px 2px #d53b80;
-}*/
 
 .dark-section-text-concert{
   color:black;
@@ -2005,7 +1992,6 @@ SCHEDULE
 .card-title-am {
     border-style: none;
     border-width: 1px;
-    /*background-color: #EC8838;*/
     background-color: #D53B80;
     padding: 20px;
     position: relative;
@@ -4074,9 +4060,7 @@ ul.staff-list li{
         height: 100vh;
         width: 100%;
         background-image: url("img/Home/homepage-splash.jpg");
-        /*background-image: url(/Users/Agykbon/Library/Containers/com.apple.Preview/Data/Desktop/rainbow-sound.jpg);*/
-
-            background-attachment: fixed;
+        background-attachment: fixed;
         background-position: center center;
         -webkit-background-size: cover;
         -moz-background-size: cover;
