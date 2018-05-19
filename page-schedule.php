@@ -62,7 +62,7 @@ get_header(); ?>
                     $show['OnairTimeAMPM'] = 'am';
                     if (intval(explode(':', $show['OnairTime'])[0]) > 12) {
                         $show['OnairTimeAMPM'] = 'pm';
-                        $show['OnairTime'] = intval(explode(':', $show['OnairTime'])[0]) - 12;
+                        $show['OnairTime'] = intval(explode(':', $show['OnairTime'])[0]);
                     } 
                     //noon edge case
                     elseif(intval(explode(':', $show['OnairTime'])[0]) == 12) {
@@ -88,10 +88,8 @@ get_header(); ?>
 				<div class="col-md-8 col-md-offset-2 col-sm-12">
 					<div class="section-title">
             <h2 class="section-title-3 dark-section-text mb-25" style="font-size:40px; color: black">WEEKLY SCHEDULE</h2>
-						<!--<h2 class="mb-50">Weekly Schedule</h2>-->
 						<p class="module-subtitle">Our schedule is updated quarterly</p>
             <div class="km-space"></div>
-
 					</div>
 				</div>
 			</div>
@@ -117,32 +115,32 @@ get_header(); ?>
             <h2 class="tab-title"><?php echo $day?></h2>
             <div class="container-fluid content-container">
             	<div class="row">
-                <div class="col-md-6">
-                <h1 class="tab-header"> Midnight - 2PM </h1>
-                <?php foreach ($showsDay as $show): ?>
-                 	<?php if(!$show) continue; /*if show obj is bad, just skip */ ?>
-                  <?php if($show['OnairTime'] >= 3 && $show['OnairTimeAMPM'] === "pm") break;?>
-	                <div class="card">
-	              		<div class="card-block">
-	                		<h4 class="card-title-am"><span class="time-header"><?php echo $show['OnairTime'] . $show['OnairTimeAMPM']; ?></span> | <?php echo $show['ShowName']; ?>
-	                		</h4>
-	                		<div class="cardContent inline">
-	                     		<h6 class="card-subtitle mb-2 text-muteds"><?php echo $show['djs']; ?></h6>
-	                     		<p><?php echo $show['ShowDescription']; ?></p> 
-	                		</div>
-	              		</div>
-	            </div>
-	            <?php endforeach; ?>
-          </div>
+	                <div class="col-md-6">
+	                <h1 class="tab-header"> Midnight - 2PM </h1>
+	                <?php foreach ($showsDay as $show): ?>
+	                 	<?php if(!$show) continue; /*if show obj is bad, just skip */ ?>
+	                  <?php if($show['OnairTime'] >= 15) break;?>
+		                <div class="card">
+		              		<div class="card-block">
+		                		<h4 class="card-title-am"><span class="time-header"><?php $time = $show['OnairTime'] % 12; if($time == 0) $time = 12; echo $time . $show['OnairTimeAMPM']; ?></span> | <?php echo $show['ShowName']; ?>
+		                		</h4>
+		                		<div class="cardContent inline">
+		                     		<h6 class="card-subtitle mb-2 text-muteds"><?php echo $show['djs']; ?></h6>
+		                     		<p><?php echo $show['ShowDescription']; ?></p> 
+		                		</div>
+		              		</div>
+		            </div>
+		            <?php endforeach; ?>
+	          		</div>
           <div class="col-md-6">
             <h1 class="tab-header"> 3PM - 11PM </h1>
             <?php foreach ($showsDay as $show): ?>
             <?php if(!$show) continue; /*if show obj is bad, just skip */ ?>
 
-            <?php if($show['OnairTime'] < 3 || $show['OnairTimeAMPM'] === "am" || $show['OnairTime'] == 12) continue; /*inelegant way of filtering the shows */ ?>
+            <?php if($show['OnairTime'] < 15) continue;?>
             <div class="card">
               <div class="card-block">
-                <h4 class="card-title-pm"><span class="time-header"><?php echo $show['OnairTime'] . $show['OnairTimeAMPM']; ?></span> | <?php echo $show['ShowName']; ?></h4>
+                <h4 class="card-title-pm"><span class="time-header"><?php echo $show['OnairTime'] %12 . $show['OnairTimeAMPM']; ?></span> | <?php echo $show['ShowName']; ?></h4>
                   <div class="cardContent inline">
                      <h6 class="card-subtitle mb-2 text-muteds"><?php echo $show['djs'] . " | " . $show['ShowCategory']; ?></h6>
                      <p><?php echo $show['ShowDescription']; ?></p> 
