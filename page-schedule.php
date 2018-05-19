@@ -39,13 +39,13 @@ get_header(); ?>
                 'Monday' => array_filter($shows, function($e) {
                     return in_array('Mon', $e['Weekdays']);
                 }),
-                'Tueday' => array_filter($shows, function($e) {
+                'Tuesday' => array_filter($shows, function($e) {
                     return in_array('Tue', $e['Weekdays']);
                 }),
                 'Wednesday' => array_filter($shows, function($e) {
                     return in_array('Wed', $e['Weekdays']);
                 }),
-                'Thuday' => array_filter($shows, function($e) {
+                'Thursday' => array_filter($shows, function($e) {
                     return in_array('Thu', $e['Weekdays']);
                 }),
                 'Friday' => array_filter($shows, function($e) {
