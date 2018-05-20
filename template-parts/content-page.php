@@ -26,7 +26,7 @@
 		) );
 		?>
 	</div><!-- .entry-content -->
-
+	<h1>fasd;lkj</h1>
 	<?php if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer">
 			<?php
