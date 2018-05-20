@@ -23,7 +23,8 @@ get_header(); ?>
             'method' => 'getRegularShowsInfo',
             'When' => 'all'
         ));
-        //echo '<pre>' . var_export($shows, true) . '</pre>';
+        /*Use this to debug spinitron request*/
+        echo '<pre>' . var_export($shows, true) . '</pre>';
 
         if ($shows && $shows['success']) {
             $shows = $shows['results'];

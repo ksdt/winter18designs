@@ -12,7 +12,8 @@
  * @package winter18redesign
  */
 get_header(); ?>
-
+<div id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
   <!-- SPLASH IMAGE  -->
     <div class="about-hero">
         <div class="section-overlay"></div>
@@ -322,6 +323,8 @@ get_header(); ?>
             });
          });
     </script>
+</main>
+</div>
 
 <?php
 get_sidebar();

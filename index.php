@@ -14,45 +14,307 @@
 
 get_header();
 ?>
+<?php
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+        include(get_template_directory() . '/inc/SpinPapiConf.inc.php');
 
-		<?php
-		if ( have_posts() ) :
+        $sp = new SpinPapiClient($mySpUserID, $mySpSecret, 'ksdt', true, $papiVersion);
+        $sp->fcInit(get_template_directory() . '/.fc');
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
+        $shows = $sp->query(array(
+            'method' => 'getRegularShowsInfo',
+            'When' => 'all'
+        ));
+       echo '<pre>' . var_export($shows, true) . '</pre>';
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+        if ($shows && $shows['success']) {
+            $shows = $shows['results'];
+            //sort shows into day of week buckets
+            function showCmp($a, $b) {
+                return intval(explode(':', $a['OnairTime'])[0]) < intval(explode(':', $b['OnairTime'])[0]) ? -1 : 1;
+            }
+            foreach ($shows as &$dayOfWeek) {
+                usort($dayOfWeek, 'showCmp');
+                foreach($dayOfWeek as &$show) {
+                    /* process time to human output */
+                    $show['OnairTimeAMPM'] = 'am';
+                    if (intval(explode(':', $show['OnairTime'])[0]) > 12) {
+                        $show['OnairTimeAMPM'] = 'pm';
+                        $show['OnairTime'] = intval(explode(':', $show['OnairTime'])[0]);
+                    } 
+                    /*noon edge case*/
+                    elseif(intval(explode(':', $show['OnairTime'])[0]) == 12) {
+                      $show['OnairTimeAMPM'] = 'pm';
+                      $show['OnairTime'] = intval(explode(':', $show['OnairTime'])[0]);
+                    }
+                    else {
+                        $show['OnairTime'] = intval(explode(':', $show['OnairTime'])[0]);
+                    }
+                    /* process djs */
+                    $show['djs'] = join(' & ', array_map('djs', $show['ShowUsers']));
+                }
+            }
+        }
+        function djs($a) {
+            return $a['DJName'];
+        }
+?>
+<div id="primary" class="content-area">
+	<main id="main" class="site-main">
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+	
+		<!-- HEADER  -->
+	<header class="main-header">
+		<div class="container-fluid" style="padding-left: 0px; padding-right: 0px;">
 
-			endwhile;
+			<!-- splash page box-intro -->
+			<section class="box-intro bg-film">
+				<div class="button-area">
+					<!--<div id="listen-live">TUNE IN NOW</div>-->
+					<a href="https://ksdt.ucsd.edu/listen/stream.mp3" target="_blank" class="button-listen-live" style="font-size: 20px;">TUNE IN NOW&nbsp;<i class="lnr lnr-music-note"></i></a>
+				</div>
+			</section>
+			<!-- end box-intro -->
+		</div>
+	</header>
 
-			the_posts_navigation();
+	<!-- CURRENTLY PLAYING AND UP NEXT -->
+	<section class="about_descr">
+		<div class="container carousel-container">
+			<div class="row center">
+				<div class="col-md-8 col-md-offset-2 col-sm-12 mt-50 mb-25">
+					<div class="section-title" style="margin: 0 auto 10px;">
+						<!--<h2 class="mb-50" style="font-size: 35px;">WHAT'S PLAYING</h2>-->
+						<h2 class="section-title-3 dark-section-text mb-25" style="font-size:40px; color: black">WHAT'S PLAYING</h2>
+						<div class="col-md-8 col-md-offset-2">
+							<img src="<?php echo get_template_directory_uri();?>/img/Home/turntable-dripping2.png" alt="Turntable">  
+	          			</div>
+	        		</div>
+	      		</div>
+	    	</div>
 
-		else :
+	    	<!--CAROUSEL-->
+		    <div class="autoplay">
+		    	<?php foreach($shows as $show): ?>
 
-			get_template_part( 'template-parts/content', 'none' );
+		    	<div class="col-md-6 wow fadeInUp img-playing" data-wow-delay=".1s">
+					<img src="img/Home/banana.jpg" alt="img" style="width:100%;">
+		    		<div class="text-home" style="background-color: #4B5257;"><?php echo print_r($show)?></div>
+				</div>
+				<?php endforeach; ?>
+			</div>
 
-		endif;
-		?>
+		    <!--CAROUSEL-->
+		    <!--<div class="autoplay">
+		    	
+				<div class="col-md-6 wow fadeInUp img-playing" data-wow-delay=".1s">
+					<img src="../img/Home/banana.jpg" alt="img" style="width:100%;">
+		    		<div class="text-home" style="background-color: #4B5257;">9 AM | DJ Nina<br>Turn Off That Noise</div>
+				</div>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+				<div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
+					<img src="../img/Home/carousel/album1.jpg" alt="img" style="width:100%">
+		    		<div class="text-home3">10 AM | DJ Katie Lit<br>On Air w Arry</div>
+				</div>
+			
+				<div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
+					<img src="../img/Home/carousel/album2.jpg" alt="img" style="width:100%">
+		    		<div class="text-home3">11 PM | DJ toast <br>bread &amp; butter</div>
+				</div>
+
+				<div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
+					<img src="../img/Home/carousel/album3.jpg" alt="img" style="width:100%">
+		    		<div class="text-home3">12 PM | Bry Guy<br>Lost in the Sauce</div>
+				</div>
+
+				<div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
+					<img src="../img/Home/carousel/album4.jpg" alt="img" style="width:100%">
+		    		<div class="text-home3">1 PM | DJ B4BY G1RL<br>Warm Skim Milk</div>
+				</div>
+
+				<div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
+					<img src="../img/Home/carousel/album5.jpg" alt="img" style="width:100%">
+		    		<div class="text-home3">2 PM | A Florida Man<br>Tree Meet</div>
+				</div>
+
+				<div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
+					<img src="../img/Home/carousel/album6.jpg" alt="img" style="width:100%">
+		    		<div class="text-home3">3 PM | DJ william strangeland<br>Minkowski's Ghost</div>
+				</div>
+
+				<div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
+					<img src="../img/Home/carousel/album7.jpg" alt="img" style="width:100%">
+		    		<div class="text-home3">4 PM | DJ Nat<br>Drink Me Mixtape</div>
+				</div>
+
+				<div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
+					<img src="../img/Home/carousel/album8.jpg" alt="img" style="width:100%">
+		    		<div class="text-home3">5 PM | DJ Wednesday<br>Return of the Synth</div>
+				</div>
+			</div>-->
+			
+		<div class="km-space"></div>
+		<a href="html/schedule.html"><button class="button-home">See Full Schedule</button></a>
+	</section>
+	 <!-- END OF CURRENTLY PLAYING AND UP NEXT -->
+
+
+	<!-- DJS OF THE WEEK SECTION -->
+	<footer class="main-footer2" style="background-color: black">
+		<svg preserveAspectRatio="none" viewBox="0 0 100 102" height="100" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="svgcolor-light">
+			<path d="M0 0 L50 100 L100 0 Z" fill="#fff" stroke="#fff"></path>
+		</svg>
+      
+      	<div class="container">
+      		<div class="row mt-25 mb-10 footer-widgets">
+	          	<div style="text-align:center;" class="section-title-2">
+	          		<div class="section-title mt-25 mb-25">
+			            <!--<h2 class="mb-25" style="font-size: 35px;">DJS OF THE WEEK</h2>-->
+			            <h2 class="section-title-3 dark-section-text mb-25" style = "font-size: 40px"><strong>DJS OF THE MONTH</h2>
+			            <p class="module-subtitle2" style="color:#9F9F9F;">Every month we highlight DJs who have been mixing it up at UCSD! Check out their show schedules and catch them on air during the week!</p>  
+	        		</div>
+	        	</div>
+         	</div>
+      	</div>
+	</footer>
+
+	<!--INDIVIDUAL DJS-->
+	<section style="background-color: black;" id="team" class="team2 mbr-box mbr-section mbr-section--relative">
+		<div class="container" div style="background-color: black;">
+			<div class="row">
+
+			  	<!-- single member -->
+		      	<div class="team-member col-md-4 col-sm-4 text-center">
+		      		<div class="member-thumb">
+		          		<div class="cover"><div class="cover-inner-left"></div></div>
+		              	<img src="img/Home/dj-standout1.jpg" alt="Team Member" class="img-responsive">
+		              	<div class="team_cover"><div class="team_cover_inner"></div></div>  
+		          	</div>
+		          	<h6 style="color:white;">dj&nbsp;soctopus</h6>
+		          	<span style="color: #9F9F9F;"><strong>Thursdays @ 1pm</strong></span>
+
+		      	</div>
+		    	<!-- end single member -->
+
+		    	<!-- single member -->
+		      	<div class="team-member col-md-4 col-sm-4 text-center">
+		          	<div class="member-thumb">
+		          		<div class="cover"><div class="cover-inner-middle"></div></div>
+		              	<img src="img/Home/ray-standout.jpg" alt="Team Member" class="img-responsive">
+		              	<div class="team_cover"><div class="team_cover_inner"></div></div>        
+		          	</div>
+		          	<h6 style="color:white;">dj&nbsp;blah blah</h6>
+		          	<span style="color: #9F9F9F;"><strong>Wednesdays @ 2pm</strong></span>
+
+		      	</div>
+		    	<!-- end single member -->
+
+  				<!-- single member -->
+	      		<div class="team-member col-md-4 col-sm-4 text-center">
+	          		<div class="member-thumb">
+	          			<div class="cover"><div class="cover-inner-right"></div></div>
+	              		<img src="img/Home/cindy-standout.JPG" alt="Team Member" class="img-responsive">
+	              		<div class="team_cover"><div class="team_cover_inner"></div></div>    
+	          		</div>
+	          		<h6 style="color:white;">dj&nbsp;tangy</h6>
+	          		<span style="color: #9F9F9F;"><strong>Mondays @ 5pm</strong></span>
+
+	      		</div>
+		    	<!-- end single member -->
+		     
+     	 	</div>
+    	</div>
+		<div class="bottom-separator hidden-xs"></div>
+	</section>
+	<!--END OF DJS OF THE WEEK SECTION-->
+	
+	<!--SEPARATOR-->
+	<div class="site-hero_Home2" style="color: black;">
+		<div class="section-overlay"></div>
+		<div class="page-title2"></div>
+	</div>
+
+	<section class="portfolio" style="background-color: black;">
+		<div class="top-right-separator hidden-xs"></div>
+		<div class="container"></div>		
+	</section>
+	<!-- END OF SEPARATOR -->
+
+
+	<!-- SERVICES PARALAX -->
+	<section class = "portfolio" style="background-color: white;"></section>
+	<!-- END OF SERVICES PARALAX -->
+
+
+	<!-- GET INVOLVED SECTION -->
+	<div class="row center">
+		<!--<h2 class="mb-10" style="letter-spacing: 15px; font-size: 35px;">GET INVOLVED</h2>-->
+		<div class="section-title" style="margin: 0 auto 10px;">
+     <h2 class="section-title-3 dark-section-text mb-25" style="font-size:40px; color: black">GET INVOLVED</h2>
+    </div>
+	</div>
+
+	<div id="features" class="features2 mbr-box mbr-section mbr-section--relative" style="background-color:white;">
+		<div class="container">
+			<div class="row center mb-25">
+
+				<!--intern service -->
+				<div class="feature-item">
+					<div class="col-md-3 col-sm-6">
+						<div class="item-head">
+							<i class="lnr lnr-briefcase" style="color:#353789;"></i>
+						</div>
+						<h6>INTERN</h6>
+						<p>Become an intern, shadowing one of our many talented artists at KSDT!</p>
+					</div>
+				</div>
+				<!--end intern service-->
+
+				<!--DJ service -->
+				<div class="feature-item">
+					<div class="col-md-3 col-sm-6">
+						<div class="item-head">
+							<i class="lnr lnr-music-note" style="color:#353789;"></i>
+						</div>
+						<h6>BECOME A DJ</h6>
+						<p>Host your own show, jam out and get connected with a fan base!</p>
+					</div>
+				</div>
+				<!--end DJ service-->
+
+
+				<!--practice service -->
+				<div class="feature-item">
+					<div class="col-md-3 col-sm-6">
+						<div class="item-head">
+							<i class="lnr lnr-enter" style="color:#353789;"></i>
+						</div>
+						<h6>BOOK A PRACTICE ROOM</h6>
+						<p>Use our practice rooms to record, play and edit your own tunes! </p>
+					</div>
+				</div>
+				<!--end practice service-->
+
+				<!--volunteer service -->
+				<div class="feature-item">
+					<div class="col-md-3 col-sm-6">
+						<div class="item-head">
+							<i class="lnr lnr-smile" style="color:#353789;"></i>
+						</div>
+						<h6>Volunteer</h6>
+						<p>Help out around the studio, or at some of our many concerts and events!</p>
+					</div>
+				</div>
+				<!--end volunteer service-->
+
+			</div>
+		</div>
+	</div>
+
+	<a href="html/about.html"><button class="button-home">Learn More</button></a>	
+	<!-- END OF GET INVOLVED -->
+	</main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
 get_sidebar();
