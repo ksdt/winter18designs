@@ -68,14 +68,12 @@ get_header();
 		if ($a==$b) return 0;
 		  return ($a['OnairTime']<=$b['OnairTime']) ? -1 : 1;
 		}
-		//echo '<pre>' . var_export($shows, true) . '</pre>';
 
 		
     ?>
 	<!-- HEADER  -->
 	<header class="main-header">
 		<div class="container-fluid" style="padding-left: 0px; padding-right: 0px;">
-
 			<!-- splash page box-intro -->
 			<section class="box-intro bg-film">
 				<div class="button-area">
@@ -104,7 +102,12 @@ get_header();
 
 	    	<!--CAROUSEL-->
 		    <div class="autoplay">
-		    	<?php $i = 0; foreach ($shows as $show) {
+		    	<?php 
+		    		$i = 0; 
+		    		/*reset show variable or else the loop is buggy */
+		    		unset($show);
+		    		foreach ($shows as $show) {
+		    		$initialIndex = 0;
 		    		if($currentShow == $show['ShowID']) $initialIndex =  $i; $i++;?>
 			    	<div class="col-md-6 wow fadeInUp img-playing<?php if($currentShow != $show['ShowID']) echo "2"?>" data-wow-delay=".1s">
 						<img src="img/Home/banana.jpg" alt="img" style="width:100%;">

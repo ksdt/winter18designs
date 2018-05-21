@@ -11,7 +11,7 @@
 		<div class="section-overlay"></div>
 		<div class="page-title">
 				<h2 style="font-size: 35px;"><?php the_title();?></h2>
-				<div class="small-title-Events">				<?php
+				<div class="small-title-Events"><?php
 								winter18redesign_posted_on();
 								winter18redesign_posted_by();
 								?> </div>
