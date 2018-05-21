@@ -25,6 +25,15 @@ get_header();
             'method' => 'getRegularShowsInfo',
             'When' => 'today'
         ));
+        $currentShow = $sp->query(array(
+            'method' => 'getRegularShowsInfo',
+            'When' => 'now'
+        ));
+        if ($currentShow && $currentShow['success'])
+            $currentShow = $currentShow['results'];
+        	$currentShow = $currentShow[0]['ShowID'];
+        	$currentShow = $currentShow;
+
         /*Use this to debug spinitron request*/
         //echo '<pre>' . var_export($shows, true) . '</pre>';
 
@@ -59,7 +68,7 @@ get_header();
 		if ($a==$b) return 0;
 		  return ($a['OnairTime']<=$b['OnairTime']) ? -1 : 1;
 		}
-		echo '<pre>' . var_export($shows, true) . '</pre>';
+		//echo '<pre>' . var_export($shows, true) . '</pre>';
 
 		
     ?>
@@ -95,13 +104,15 @@ get_header();
 
 	    	<!--CAROUSEL-->
 		    <div class="autoplay">
-		    	<?php foreach ($shows as $show) { ?>
-		    	<div class="col-md-6 wow fadeInUp img-playing" data-wow-delay=".1s">
-					<img src="img/Home/banana.jpg" alt="img" style="width:100%;">
-		    		<div class="text-home" style="background-color: #4B5257;"><?php $time = $show['OnairTime'] % 12; if($time == 0) $time = 12; echo $time . $show['OnairTimeAMPM'];?> | <?php echo $show['djs'];?><br><?php echo $show['ShowName']?></div>
-				</div>
-		    	<?php }?>;
+		    	<?php $i = 0; foreach ($shows as $show) {
+		    		if($currentShow == $show['ShowID']) $initialIndex =  $i; $i++;?>
+			    	<div class="col-md-6 wow fadeInUp img-playing<?php if($currentShow != $show['ShowID']) echo "2"?>" data-wow-delay=".1s">
+						<img src="img/Home/banana.jpg" alt="img" style="width:100%;">
+			    		<div class="text-home" style="background-color: #4B5257;"><?php $time = $show['OnairTime'] % 12; if($time == 0) $time = 12; echo $time . $show['OnairTimeAMPM'];?> | <?php echo $show['djs'];?><br><?php echo $show['ShowName']?></div>
+					</div>
+		    	<?php } ?>;
 			</div>
+
 
 		<div class="km-space"></div>
 		<a href="html/schedule.html"><button class="button-home">See Full Schedule</button></a>
@@ -280,7 +291,9 @@ get_header();
 	<script type="text/javascript">
 
 		jQuery(document).ready(function(){
+
 			jQuery('.autoplay').slick({
+			  initialSlide:  <?php echo $initialIndex?>,
 			  slidesToShow: 3,
 			  slidesToScroll: 1,
 			  centerMode: true,
@@ -327,70 +340,6 @@ get_header();
 			});
 			
 		 });
-
-	</script>
-
-	<script>
-		// When the user scrolls down 50px from the top of the document, show the button
-		window.onscroll = function() {scrollFunction()};
-
-		function scrollFunction() {
-		    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 20) {
-		        document.getElementById("back-to-top").style.display = "block";
-		    } else {
-		        document.getElementById("back-to-top").style.display = "none";
-		    }
-		}
-
-		// When the user clicks on the button, scroll to the top of the document
-		function topFunction() {
-		    jQuery('html, body').animate({scrollTop:0},'slow');
-		}
-	</script>
-
-	<script>
-		var hours = (new Date()).getHours()+1;
-		var time = new Array(18);
-		console.log("Changed1");
-
-		time[0] = "12 am";
-		time[1] = "1 pm";
-		time[2] = "2 pm";
-		time[3] = "3 pm";
-		time[4] = "4 pm";
-		time[5] = "5 pm";
-		time[6] = "6 pm";
-		time[7] = "7 pm";
-		time[8] = "8 pm";
-		time[9] = "9 pm";
-		time[10] = "10 pm";
-		time[11] = "11 pm";
-		time[12] = "12 pm";
-		time[13] = "7 am";
-		time[14] = "8 am";
-		time[15] = "9 am";
-		time[16] = "10 am";
-		time[17] = "11 am";
-
-		var n = time[hours];
-		console.log("time is " + n);
-
-
-	    var tabs = document.getElementsByClassName("nav-item");
-		var tabContent = document.getElementsByClassName("");
-
-		setActiveTab(tabs, tabContent);
-
-		function setActiveTab(tabs, tabContent) {
-
-			for(var i = 0; i < tabs.length; i++){
-			    if(tabContent[i].id == n) {
-			    	console.log(n);
-			        tabs[i].className += " active";
-			        tabContent[i].className += " active";
-			    }
-			}
-	  	}
 
 	</script>
 
