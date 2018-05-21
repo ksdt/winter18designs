@@ -115,7 +115,7 @@ get_header();
 
 
 		<div class="km-space"></div>
-		<a href="html/schedule.html"><button class="button-home">See Full Schedule</button></a>
+		<a href="/index.php?page_id=9"><button class="button-home">See Full Schedule</button></a>
 	</section>
 	 <!-- END OF CURRENTLY PLAYING AND UP NEXT -->
 
@@ -272,7 +272,7 @@ get_header();
 		</div>
 	</div>
 
-	<a href="html/about.html"><button class="button-home">Learn More</button></a>	
+	<a href="/index.php?page_id=5"><button class="button-home">Learn More</button></a>	
 	<!-- END OF GET INVOLVED -->
 
 	<!-- SCRIPTS -->
