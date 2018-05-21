@@ -24,7 +24,7 @@ get_header(); ?>
             'When' => 'all'
         ));
         /*Use this to debug spinitron request*/
-        echo '<pre>' . var_export($shows, true) . '</pre>';
+        //echo '<pre>' . var_export($shows, true) . '</pre>';
 
         if ($shows && $shows['success']) {
             $shows = $shows['results'];
@@ -102,7 +102,7 @@ get_header(); ?>
 			  <?php 
         $days_of_week = 7;
            for($i = 0; $i < $days_of_week; $i++) { ?>
-          <li class="nav-item <?php if (jddayofweek($i,0) == date("N")) echo "active";?>">
+          <li class="nav-item <?php if (jddayofweek($i,0) == date("w")) echo "active";?>">
             <a class="nav-link tab" id="<?php echo jddayofweek($i,1)?>-tab" data-toggle="tab" href="#<?php echo jddayofweek($i,1)?>" role="tab" aria-controls="home" aria-selected="true"><?php echo jddayofweek($i,2)?></a>
           </li>
         <?php } ?>

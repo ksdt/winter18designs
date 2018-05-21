@@ -309,7 +309,7 @@ get_header(); ?>
                   breakpoint: 600,
                   settings: {
                     slidesToShow: 1,
-                    sdlidesToScroll: 2
+                    slidesToScroll: 2
                   }
                 },
                 {

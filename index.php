@@ -23,47 +23,47 @@ get_header();
 
         $shows = $sp->query(array(
             'method' => 'getRegularShowsInfo',
-            'When' => 'all'
+            'When' => 'today'
         ));
-       echo '<pre>' . var_export($shows, true) . '</pre>';
+        /*Use this to debug spinitron request*/
+        //echo '<pre>' . var_export($shows, true) . '</pre>';
 
         if ($shows && $shows['success']) {
             $shows = $shows['results'];
-            //sort shows into day of week buckets
-            function showCmp($a, $b) {
-                return intval(explode(':', $a['OnairTime'])[0]) < intval(explode(':', $b['OnairTime'])[0]) ? -1 : 1;
-            }
-            foreach ($shows as &$dayOfWeek) {
-                usort($dayOfWeek, 'showCmp');
-                foreach($dayOfWeek as &$show) {
-                    /* process time to human output */
-                    $show['OnairTimeAMPM'] = 'am';
-                    if (intval(explode(':', $show['OnairTime'])[0]) > 12) {
-                        $show['OnairTimeAMPM'] = 'pm';
-                        $show['OnairTime'] = intval(explode(':', $show['OnairTime'])[0]);
-                    } 
-                    /*noon edge case*/
-                    elseif(intval(explode(':', $show['OnairTime'])[0]) == 12) {
-                      $show['OnairTimeAMPM'] = 'pm';
-                      $show['OnairTime'] = intval(explode(':', $show['OnairTime'])[0]);
-                    }
-                    else {
-                        $show['OnairTime'] = intval(explode(':', $show['OnairTime'])[0]);
-                    }
-                    /* process djs */
-                    $show['djs'] = join(' & ', array_map('djs', $show['ShowUsers']));
-                }
-            }
+           	usort($shows,'time_sort');
+
+	        foreach ($shows as &$show) {
+	                /* process time to human output */
+	                $show['OnairTimeAMPM'] = 'am';
+	                if (intval(explode(':', $show['OnairTime'])[0]) > 12) {
+	                    $show['OnairTimeAMPM'] = 'pm';
+	                    $show['OnairTime'] = intval(explode(':', $show['OnairTime'])[0]);
+	                } 
+	                //noon edge case
+	                elseif(intval(explode(':', $show['OnairTime'])[0]) == 12) {
+	                  $show['OnairTimeAMPM'] = 'pm';
+	                  $show['OnairTime'] = intval(explode(':', $show['OnairTime'])[0]);
+	                }
+	                else {
+	                    $show['OnairTime'] = intval(explode(':', $show['OnairTime'])[0]);
+	                }
+	                /* process djs */
+	                $show['djs'] = join(' & ', array_map('djs', $show['ShowUsers']));
+	            	//TODO: Sort array by time of day
+	        }
         }
         function djs($a) {
             return $a['DJName'];
         }
-?>
-<div id="primary" class="content-area">
-	<main id="main" class="site-main">
+        function time_sort($a,$b) {
+		if ($a==$b) return 0;
+		  return ($a<$b) ? -1 : 1;
+		}
+		echo '<pre>' . var_export($shows, true) . '</pre>';
 
-	
-		<!-- HEADER  -->
+		
+    ?>
+	<!-- HEADER  -->
 	<header class="main-header">
 		<div class="container-fluid" style="padding-left: 0px; padding-right: 0px;">
 
@@ -87,7 +87,7 @@ get_header();
 						<!--<h2 class="mb-50" style="font-size: 35px;">WHAT'S PLAYING</h2>-->
 						<h2 class="section-title-3 dark-section-text mb-25" style="font-size:40px; color: black">WHAT'S PLAYING</h2>
 						<div class="col-md-8 col-md-offset-2">
-							<img src="<?php echo get_template_directory_uri();?>/img/Home/turntable-dripping2.png" alt="Turntable">  
+							<img src="img/Home/turntable-dripping2.png" alt="Khaki HTML Template">  
 	          			</div>
 	        		</div>
 	      		</div>
@@ -95,64 +95,14 @@ get_header();
 
 	    	<!--CAROUSEL-->
 		    <div class="autoplay">
-		    	<?php foreach($shows as $show): ?>
-
+		    	<?php foreach ($shows as $show) { ?>
 		    	<div class="col-md-6 wow fadeInUp img-playing" data-wow-delay=".1s">
 					<img src="img/Home/banana.jpg" alt="img" style="width:100%;">
-		    		<div class="text-home" style="background-color: #4B5257;"><?php echo print_r($show)?></div>
+		    		<div class="text-home" style="background-color: #4B5257;"><?php $time = $show['OnairTime'] % 12; if($time == 0) $time = 12; echo $time . $show['OnairTimeAMPM'];?> | <?php echo $show['djs'];?><br><?php echo $show['ShowName']?></div>
 				</div>
-				<?php endforeach; ?>
+		    	<?php }?>;
 			</div>
 
-		    <!--CAROUSEL-->
-		    <!--<div class="autoplay">
-		    	
-				<div class="col-md-6 wow fadeInUp img-playing" data-wow-delay=".1s">
-					<img src="../img/Home/banana.jpg" alt="img" style="width:100%;">
-		    		<div class="text-home" style="background-color: #4B5257;">9 AM | DJ Nina<br>Turn Off That Noise</div>
-				</div>
-
-				<div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
-					<img src="../img/Home/carousel/album1.jpg" alt="img" style="width:100%">
-		    		<div class="text-home3">10 AM | DJ Katie Lit<br>On Air w Arry</div>
-				</div>
-			
-				<div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
-					<img src="../img/Home/carousel/album2.jpg" alt="img" style="width:100%">
-		    		<div class="text-home3">11 PM | DJ toast <br>bread &amp; butter</div>
-				</div>
-
-				<div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
-					<img src="../img/Home/carousel/album3.jpg" alt="img" style="width:100%">
-		    		<div class="text-home3">12 PM | Bry Guy<br>Lost in the Sauce</div>
-				</div>
-
-				<div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
-					<img src="../img/Home/carousel/album4.jpg" alt="img" style="width:100%">
-		    		<div class="text-home3">1 PM | DJ B4BY G1RL<br>Warm Skim Milk</div>
-				</div>
-
-				<div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
-					<img src="../img/Home/carousel/album5.jpg" alt="img" style="width:100%">
-		    		<div class="text-home3">2 PM | A Florida Man<br>Tree Meet</div>
-				</div>
-
-				<div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
-					<img src="../img/Home/carousel/album6.jpg" alt="img" style="width:100%">
-		    		<div class="text-home3">3 PM | DJ william strangeland<br>Minkowski's Ghost</div>
-				</div>
-
-				<div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
-					<img src="../img/Home/carousel/album7.jpg" alt="img" style="width:100%">
-		    		<div class="text-home3">4 PM | DJ Nat<br>Drink Me Mixtape</div>
-				</div>
-
-				<div class="col-md-6 wow fadeInUp img-playing2" data-wow-delay=".1s">
-					<img src="../img/Home/carousel/album8.jpg" alt="img" style="width:100%">
-		    		<div class="text-home3">5 PM | DJ Wednesday<br>Return of the Synth</div>
-				</div>
-			</div>-->
-			
 		<div class="km-space"></div>
 		<a href="html/schedule.html"><button class="button-home">See Full Schedule</button></a>
 	</section>
@@ -313,8 +263,136 @@ get_header();
 
 	<a href="html/about.html"><button class="button-home">Learn More</button></a>	
 	<!-- END OF GET INVOLVED -->
-	</main><!-- #main -->
-</div><!-- #primary -->
+
+	<!-- SCRIPTS -->
+
+	
+
+	<script type="text/javascript">
+
+		jQuery('#listen-live').click(function() {
+			console.log('clicked');
+			window.location = 'https://ksdt.ucsd.edu';
+		});
+
+	</script>
+
+	<script type="text/javascript">
+
+		jQuery(document).ready(function(){
+			jQuery('.autoplay').slick({
+			  slidesToShow: 3,
+			  slidesToScroll: 1,
+			  centerMode: true,
+			  autoplay: false,
+			  autoplaySpeed: 2000,
+			  arrows: true,
+			  dots: false,
+			  responsive: [
+			    {
+			      breakpoint: 1024,
+			      settings: {
+			        slidesToShow: 3,
+			        slidesToScroll: 3,
+			        infinite: true,
+
+			      }
+			    },
+			    {
+			      breakpoint: 800,
+			      settings: {
+			        slidesToShow: 3,
+			        slidesToScroll: 3,
+			        infinite: true,
+
+			      }
+			    },
+			    {
+			      breakpoint: 600,
+			      settings: {
+			        slidesToShow: 2,
+			        slidesToScroll: 2,
+
+			      }
+			    },
+			    {
+			      breakpoint: 480,
+			      settings: {
+		          	slidesToShow: 1,
+		          	slidesToScroll: 1
+
+			      }
+			    }
+ 			 ]
+			});
+			
+		 });
+
+	</script>
+
+	<script>
+		// When the user scrolls down 50px from the top of the document, show the button
+		window.onscroll = function() {scrollFunction()};
+
+		function scrollFunction() {
+		    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 20) {
+		        document.getElementById("back-to-top").style.display = "block";
+		    } else {
+		        document.getElementById("back-to-top").style.display = "none";
+		    }
+		}
+
+		// When the user clicks on the button, scroll to the top of the document
+		function topFunction() {
+		    jQuery('html, body').animate({scrollTop:0},'slow');
+		}
+	</script>
+
+	<script>
+		var hours = (new Date()).getHours()+1;
+		var time = new Array(18);
+		console.log("Changed1");
+
+		time[0] = "12 am";
+		time[1] = "1 pm";
+		time[2] = "2 pm";
+		time[3] = "3 pm";
+		time[4] = "4 pm";
+		time[5] = "5 pm";
+		time[6] = "6 pm";
+		time[7] = "7 pm";
+		time[8] = "8 pm";
+		time[9] = "9 pm";
+		time[10] = "10 pm";
+		time[11] = "11 pm";
+		time[12] = "12 pm";
+		time[13] = "7 am";
+		time[14] = "8 am";
+		time[15] = "9 am";
+		time[16] = "10 am";
+		time[17] = "11 am";
+
+		var n = time[hours];
+		console.log("time is " + n);
+
+
+	    var tabs = document.getElementsByClassName("nav-item");
+		var tabContent = document.getElementsByClassName("");
+
+		setActiveTab(tabs, tabContent);
+
+		function setActiveTab(tabs, tabContent) {
+
+			for(var i = 0; i < tabs.length; i++){
+			    if(tabContent[i].id == n) {
+			    	console.log(n);
+			        tabs[i].className += " active";
+			        tabContent[i].className += " active";
+			    }
+			}
+	  	}
+
+	</script>
 
 <?php
 get_sidebar();
