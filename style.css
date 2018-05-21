@@ -43,12 +43,13 @@ theme.
     07.  Team
     08.  Pricing
     09.  Testimonials
-    10. Blog
+    10. Clients
     11. Contact & Subscribe
     12. Single Project
     13. Services page
     14. Contact page
     15. Wordpress Styles
+    16. Wordpress Post
 
 */
 @import url(https://fonts.googleapis.com/css?family=Lato:400,900,300);
@@ -2896,7 +2897,7 @@ FOOTER
 
 /* --------------------------------
 
-09.CLIENTS
+10.CLIENTS
 
 -------------------------------- */
  #clients{
@@ -2933,7 +2934,7 @@ FOOTER
 
 /* --------------------------------
 
-09.TESTIMONIALS
+09d.TESTIMONIALS
 
 -------------------------------- */
 
@@ -4157,3 +4158,56 @@ blockquote.right {
 .size-large {}
 .size-medium {}
 .size-thumbnail {}
+
+/* --------------------------------
+
+16. Wordpress Blog
+
+-------------------------------- */
+
+.post-hero {
+    background: url("img/About/hero1.jpg") no-repeat;
+    background-color: black;
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+    position: relative;
+    background-attachment: fixed;
+    background-position: center bottom;
+    padding-bottom: 200px;
+}
+
+
+.post-hero .post-title {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.post-title {
+    background-color: rgba(0,0,0,0.5);
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-radius: 15px;
+}
+
+.post-hero h2{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 1;
+    letter-spacing: 10px
+}
+
+.entry-date, .url-fn-n {
+    color: white;
+    font-weight: 600;
+}
+

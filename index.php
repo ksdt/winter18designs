@@ -29,10 +29,10 @@ get_header();
             'method' => 'getRegularShowsInfo',
             'When' => 'now'
         ));
-        if ($currentShow && $currentShow['success'])
+        if ($currentShow && $currentShow['success']) {
             $currentShow = $currentShow['results'];
         	$currentShow = $currentShow[0]['ShowID'];
-        	$currentShow = $currentShow;
+        }
 
         /*Use this to debug spinitron request*/
         //echo '<pre>' . var_export($shows, true) . '</pre>';
@@ -106,8 +106,8 @@ get_header();
 		    		$i = 0; 
 		    		/*reset show variable or else the loop is buggy */
 		    		unset($show);
-		    		foreach ($shows as $show) {
 		    		$initialIndex = 0;
+		    		foreach ($shows as $show) {
 		    		if($currentShow == $show['ShowID']) $initialIndex =  $i; $i++;?>
 			    	<div class="col-md-6 wow fadeInUp img-playing<?php if($currentShow != $show['ShowID']) echo "2"?>" data-wow-delay=".1s">
 						<img src="img/Home/banana.jpg" alt="img" style="width:100%;">

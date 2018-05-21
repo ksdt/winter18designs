@@ -7,15 +7,17 @@
  * @package winter18redesign
  */
 ?>
-<div class="about-hero">
+<pre>blah<?php winter18redesign_posted_on();?> </pre>
+<div class="post-hero">
+
 		<div class="section-overlay"></div>
-		<div class="page-title">
+		<div class="post-title">
 				<h2 style="font-size: 35px;"><?php the_title();?></h2>
 				<div class="small-title-Events"><?php
 								winter18redesign_posted_on();
 								winter18redesign_posted_by();
 								?> </div>
-</div>
+		</div>
 </div>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<?php
