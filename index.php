@@ -57,7 +57,7 @@ get_header();
         }
         function time_sort($a,$b) {
 		if ($a==$b) return 0;
-		  return ($a<$b) ? -1 : 1;
+		  return ($a['OnairTime']<=$b['OnairTime']) ? -1 : 1;
 		}
 		echo '<pre>' . var_export($shows, true) . '</pre>';
 
@@ -87,7 +87,7 @@ get_header();
 						<!--<h2 class="mb-50" style="font-size: 35px;">WHAT'S PLAYING</h2>-->
 						<h2 class="section-title-3 dark-section-text mb-25" style="font-size:40px; color: black">WHAT'S PLAYING</h2>
 						<div class="col-md-8 col-md-offset-2">
-							<img src="img/Home/turntable-dripping2.png" alt="Khaki HTML Template">  
+							<img src="<?php echo get_template_directory_uri();?>/img/Home/turntable-dripping2.png" alt="Khaki HTML Template">  
 	          			</div>
 	        		</div>
 	      		</div>
