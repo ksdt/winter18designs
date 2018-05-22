@@ -94,7 +94,7 @@ if ( ! function_exists( 'winter18redesign_entry_footer' ) ) :
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'winter18redesign' ),
+					__( ' Edit <span class="screen-reader-text">%s</span>', 'winter18redesign' ),
 					array(
 						'span' => array(
 							'class' => array(),

@@ -7,34 +7,33 @@
  * @package winter18redesign
  */
 ?>
-<pre>blah<?php winter18redesign_posted_on();?> </pre>
-<div class="post-hero">
-
-		<div class="section-overlay"></div>
-		<div class="post-title">
-				<h2 style="font-size: 35px;"><?php the_title();?></h2>
-				<div class="small-title-Events"><?php
-								winter18redesign_posted_on();
-								winter18redesign_posted_by();
-								?> </div>
-		</div>
+<?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id(the_ID()), 'full' );
+if($backgroundImg[0] == '') $backgroundImg[0] = 'TODO: get a large ksdt banner as a default to use here';?>
+<div class="post-hero"style="background: url(<?php echo $backgroundImg[0]?>) no-repeat">
+	<div class="section-overlay"></div>
+	<div class="post-title">
+			<h2 style="font-size: 35px;"><?php the_title();?></h2>
+			<div class="small-title-Events">
+				<?php
+					winter18redesign_posted_on();
+					winter18redesign_posted_by();
+				?></div>
+	</div>
 </div>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<?php
-	/*	if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;*/
+<article id="post-<?php the_ID(); ?>"class="wp-post">
+	<?php
+/*	if ( is_singular() ) :
+		the_title( '<h1 class="entry-title">', '</h1>' );
+	else :
+		the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+	endif;*/
 
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
+	if ( 'post' === get_post_type() ) :
+		?>
+		<div class="entry-meta">
 
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-
-	<?php winter18redesign_post_thumbnail(); ?>
+		</div><!-- .entry-meta -->
+	<?php endif; ?>
 
 	<div class="entry-content">
 		<?php

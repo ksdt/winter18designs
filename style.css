@@ -248,6 +248,7 @@ section{
     z-index: 1;
     background-image: url(img/gif/dot.gif);
     opacity: 0.06;
+
 }
 
 .center {
@@ -4166,7 +4167,6 @@ blockquote.right {
 -------------------------------- */
 
 .post-hero {
-    background: url("img/About/hero1.jpg") no-repeat;
     background-color: black;
     background-size: cover;
     height: 600px;
@@ -4211,3 +4211,13 @@ blockquote.right {
     font-weight: 600;
 }
 
+.wp-post {
+    padding-top: 30px;
+}
+.cat-links a,.edit-link a{
+    text-decoration: none;
+    font-weight: 400;
+    color: #777;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
