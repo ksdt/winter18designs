@@ -70,7 +70,6 @@ if ( ! function_exists( 'winter18redesign_entry_footer' ) ) :
 				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'winter18redesign' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
-
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link">';
 			comments_popup_link(
