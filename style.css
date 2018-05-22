@@ -4179,13 +4179,13 @@ blockquote.right {
 
 
 .post-hero .post-title {
-    position: absolute;
-    top: 80%;
+    position: relative;
+    top: 100%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: center;
+    -webkit-transform: translate(-50%, -20%);
+    -ms-transform: translate(-50%, -20%);
+    transform: translate(-50%, -20%);
+    text-align: left;
 }
 
 .post-title {
@@ -4220,4 +4220,7 @@ blockquote.right {
     color: #777;
     -webkit-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
+}
+.wp-post-image {
+    width:100%;
 }
