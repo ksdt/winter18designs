@@ -30,16 +30,16 @@ get_header();
 			$highlight_first_post = true;
 			while ( have_posts() ) : ?>
 				<!--CAROUSEL-->
-					<a class="category-link"href="<?php echo get_permalink(the_post());?>">
-			    	<div class="col-md-6 wow fadeInUp img-playing<?php if($highlight_first_post) echo "";else echo "2"; $highlight_first_post = false;?>
+			    	<div class="col-md-6 wow fadeInUp img-playing<?php if($highlight_first_post) echo "";else echo "2"; $highlight_first_post = false;?>" data-wow-delay=".1s">
+						<img src="<?php echo get_the_post_thumbnail_url(the_post());?>" alt="img" style="width:100%;">
+						<a style="display: block;"href="<?php echo get_the_permalink(get_the_ID())?>">
+				    		<div class="text-home" style="background-color: #4B5257;">
+				    							
 
-				    	" data-wow-delay=".1s">
-						<?php echo get_the_post_thumbnail('medium');?>
-			    		<div class="text-home" style="background-color: #4B5257;">
-			    			<?php echo get_the_title();?><br>By <?php echo get_the_author();?>
-			    		</div>
+				    			<?php echo get_the_title();?><br>By <?php echo get_the_author();?>
+				    		</div>
+				    	</a>
 					</div>
-					</a>
 				<?php			
 
 				/*
