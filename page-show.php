@@ -36,6 +36,8 @@ get_header(); ?>
             'method' => 'getRegularShowsInfo',
             'When' => 'all'
         ));
+        //echo '<pre>' . var_export($shows, true) . '</pre>';
+
         /* if the spiniron request was successful and has results */
         if ($shows['success'] && $shows['results']) {
             $shows = $shows['results']; /* set $shows to the results */
@@ -72,12 +74,12 @@ get_header(); ?>
         } else { /* spinitron query failed */
         echo 'spinitron failed';
             status_header( 404 );
-            get_template_part( 404 ); exit();
+     //       get_template_part( 404 ); exit();
         }
     } else { /* showname was blank */
     echo 'no showname';
         status_header( 404 );
-        get_template_part( 404 ); exit();
+       // get_template_part( 404 ); exit();
     }
 
     function get_times($show) {
@@ -105,8 +107,6 @@ get_header(); ?>
     }
 
 ?>
-
-
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<div class="container">
