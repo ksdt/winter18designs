@@ -9,23 +9,29 @@
 
 get_header();
 ?>
-	<div class="container">
+<?php 
+//get the category name to link to that image in the theme
+$arr = explode(' ',get_the_archive_title());
+$imgUrl =  $arr[1];?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-
-		<?php if ( have_posts() ) : ?>
-
+		<div class="container">
 			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-			<div class="autoplay">
 
+			</header><!-- .page-header -->
+			
+			<div class="category-hero"style="background: url('<?php echo get_template_directory_uri();?>/img/category/<?php echo $imgUrl;?>.jpg') no-repeat">
+				<div class="section-overlay"></div>
+					<div class="category-title">
+						<h2 style="font-size: 35px;"><?php the_archive_title();?></h2>
+							<div class="small-title-Events">
+							<?php  the_archive_description();?></div>
+					</div>
+			</div>
+			<div class="autoplay">
 			<?php
 			/* Start the Loop */ //Note: You can only use the_post() once per iteration
-			//because after once it 'sets' everything to that post
+			//because after once it 'sets' everything to that post (global basically)
 			//Thats why I only do it first in get_permalink
 			$highlight_first_post = true;
 			while ( have_posts() ) : ?>
@@ -34,8 +40,6 @@ get_header();
 						<img src="<?php echo get_the_post_thumbnail_url(the_post());?>" alt="img" style="width:100%;">
 						<a style="display: block;"href="<?php echo get_the_permalink(get_the_ID())?>">
 				    		<div class="text-home" style="background-color: #4B5257;">
-				    							
-
 				    			<?php echo get_the_title();?><br>By <?php echo get_the_author();?>
 				    		</div>
 				    	</a>
@@ -52,12 +56,6 @@ get_header();
 			endwhile;
 
 			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
 		?>
 		</div>
 		</main><!-- #main -->
