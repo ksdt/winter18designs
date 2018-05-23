@@ -10,6 +10,7 @@
  */
 
 ?>
+
 	<!-- FOOTER -->
   	<footer class="main-footer">
   		<svg preserveAspectRatio="none" viewBox="0 0 100 102" height="100" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="svgcolor-light">
@@ -63,11 +64,36 @@
 
       		</div><!-- .row -->
     	</div>
+    		<div class="egg"style="transform: inherit; opacity: 1;">
+		<img src="<?php //echo get_template_directory_uri() . '/van.png'; ?>"scale="0">
+	</div>
   	</footer>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+<script>
+	var egg = 0;
+	jQuery('.egg img').click(function() {
+		if (egg == 0) {
+			jQuery('.egg img').parent().css({
+				'transform': 'inherit',
+				'opacity': 1
+			});
+			egg++;
+			return;
+		}
+		var eggElem = jQuery('.egg img');
+		eggElem.css('transform', 'translateX(-' + (egg * (jQuery(document).width() / 3)) + 'px)');
+		egg++;
+		if (egg == 4) {
+			console.log("HERE");
+			setTimeout(function() {
+				window.location.href = "https://www.youtube.com/watch?v=9Yrt9qkBQ2Q";
+			}, 400);
+		}
 
+	});
+</script>
 </body>
 </html>
     

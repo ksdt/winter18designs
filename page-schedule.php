@@ -101,9 +101,10 @@ get_header(); ?>
 			<ul class="nav nav-tabs nav-tab-container" id="myTab" role="tablist">
 			  <?php 
         $days_of_week = 7;
+        $day_ext = ['','u','','h','','a','u']; //for tues,thu, sat,sun
            for($i = 0; $i < $days_of_week; $i++) { ?>
           <li class="nav-item <?php if (jddayofweek($i,0) == date("w")) echo "active";?>">
-            <a class="nav-link tab" id="<?php echo jddayofweek($i,1)?>-tab" data-toggle="tab" href="#<?php echo jddayofweek($i,1)?>" role="tab" aria-controls="home" aria-selected="true"><?php echo jddayofweek($i,2)?></a>
+            <a class="nav-link tab" id="<?php echo jddayofweek($i,1)?>-tab" data-toggle="tab" href="#<?php echo jddayofweek($i,1)?>" role="tab" aria-controls="home" aria-selected="true"><?php echo jddayofweek($i,2)[0] . $day_ext[$i];?></a>
           </li>
         <?php } ?>
 			</ul>
