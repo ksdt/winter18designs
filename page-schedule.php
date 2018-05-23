@@ -141,7 +141,7 @@ get_header(); ?>
             <?php foreach ($showsDay as $show): ?>
             <?php if(!$show) continue; /*if show obj is bad, just skip */ ?>
 
-            <?php if($show['OnairTime'] < 15) continue;?>
+            <?php if($show['OnairTime'] < 15 /*15 is 3pm*/) continue;?>
             <div class="card">
               <div class="card-block">
                 <a href="/show/<?php echo $show['ShowName']; ?>" >

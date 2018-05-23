@@ -113,8 +113,10 @@ get_header();
 			    	<div class="col-md-6 wow fadeInUp img-playing<?php if($currentShow != $show['ShowID']) echo "2"?>" data-wow-delay=".1s">
 			    		<?php if(array_key_exists('ShowImgL',$show)) $imgUrl = $show['ShowImgL']['href'];?>
 						<img src="<?php echo $imgUrl;$imgUrl = '';?>"alt="" style="width:100%;">
-			    		<div class="text-home" style="background-color: #4B5257;"><?php $time = $show['OnairTime'] % 12; if($time == 0) $time = 12; echo $time . $show['OnairTimeAMPM'];?> | <?php echo $show['djs'];?><br><?php echo $show['ShowName']?></div>
-					</div>
+				    		<?php //Todo: make the div a link w/o messing up layout?>
+
+				    		<div class="text-home" style="background-color: #4B5257;"><?php $time = $show['OnairTime'] % 12; if($time == 0) $time = 12; echo $time . $show['OnairTimeAMPM'];?> | <?php echo $show['djs'];?><br><?php echo $show['ShowName']?></div>
+						</div>
 		    	<?php } ?>
 			</div>
 

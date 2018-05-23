@@ -30,7 +30,7 @@
 	<span class="frame-line left-frame visible-lg"></span>
 
 	<!-- Begin Nav Bar -->
-	<nav id="no-ajax"role="nav" class="nav-pos navbar navbar-default navbar-fixed-top">
+	<nav role="nav" class="nav-pos navbar navbar-default navbar-fixed-top">
   		<div class="container-fluid">
   
 	    	<!-- Brand and toggle get grouped for better mobile display -->
@@ -65,16 +65,9 @@
 			            $title = $menu_item->title;
 			            $url = $menu_item->url;
 			            ?>
-			            <?php if(strcasecmp($title, $pagename) == 0): ?>
-			            	<li class="active-nav" id="no-ajax1">
-			              		<a href="<?php echo $url; ?>"><?php echo $title; ?></a>
-			            	</li>
-			            <?php  else: ?>
-			            	<li>
-			              		<a href="<?php echo $url; ?>"><?php echo $title; ?></a>
-			            	</li>
-			        	<?php endif; ?>
-
+		            	<li>
+		              		<a href="<?php echo $url; ?>"><?php echo $title; ?></a>
+		            	</li>
 			          <?php endforeach; ?>
 	      		</ul>
 	    	</div><!-- /.navbar-collapse -->
