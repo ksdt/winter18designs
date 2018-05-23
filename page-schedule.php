@@ -124,8 +124,10 @@ get_header(); ?>
 	                  <?php if($show['OnairTime'] >= 15) break;?>
 		                <div class="card">
 		              		<div class="card-block">
-		                		<h4 class="card-title-am"><span class="time-header"><?php $time = $show['OnairTime'] % 12; if($time == 0) $time = 12; echo $time . $show['OnairTimeAMPM']; ?></span> | <?php echo $show['ShowName']; ?>
-		                		</h4>
+                                <a href="/show/<?php echo $show['ShowName']; ?>" >
+    		                		<h4 class="card-title-am"><span class="time-header"><?php $time = $show['OnairTime'] % 12; if($time == 0) $time = 12; echo $time . $show['OnairTimeAMPM']; ?></span> | <?php echo $show['ShowName']; ?>
+    		                		</h4>
+                                </a>
 		                		<div class="cardContent inline">
 		                     		<h6 class="card-subtitle mb-2 text-muteds"><?php echo $show['djs']; ?></h6>
 		                     		<p><?php echo $show['ShowDescription']; ?></p> 
@@ -142,7 +144,10 @@ get_header(); ?>
             <?php if($show['OnairTime'] < 15) continue;?>
             <div class="card">
               <div class="card-block">
-                <h4 class="card-title-pm"><span class="time-header"><?php echo $show['OnairTime'] %12 . $show['OnairTimeAMPM']; ?></span> | <?php echo $show['ShowName']; ?></h4>
+                <a href="/show/<?php echo $show['ShowName']; ?>" >
+                    <h4 class="card-title-pm"><span class="time-header"><?php echo $show['OnairTime'] %12 . $show['OnairTimeAMPM']; ?></span> | <?php echo $show['ShowName']; ?>
+                    </h4>
+                </a>
                   <div class="cardContent inline">
                      <h6 class="card-subtitle mb-2 text-muteds"><?php echo $show['djs'] . " | " . $show['ShowCategory']; ?></h6>
                      <p><?php echo $show['ShowDescription']; ?></p> 

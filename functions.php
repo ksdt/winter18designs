@@ -114,6 +114,36 @@ function winter18redesign_widgets_init() {
 }
 add_action( 'widgets_init', 'winter18redesign_widgets_init' );
 
+show_admin_bar(false);
+
+/* https://codex.wordpress.org/Rewrite_API/add_rewrite_rule */
+function custom_rewrite_basic() {
+
+	/* playlist/1015 => playlist/?playlist=1015
+
+
+	  doesn't work
+		playlist/1015 => ksdt.org/playlist => index.php?page_id=69
+
+		http://regexr.com/
+	*/
+  add_rewrite_rule('^playlist\/([0-9]+)\/?$', 'index.php?pagename=playlist&playlist=$matches[1]', 'top');
+
+  /* show/Burger Town => show/?showName=Burger Town */
+  /* http://regexr.com/3e2gg */
+  add_rewrite_rule('^show\/(.*)/?$', 'index.php?pagename=show&showName=$matches[1]', 'top');
+
+  add_rewrite_rule('^writings/blog', 'index.php?pagename=posts', 'top');
+}
+add_action('init', 'custom_rewrite_basic');
+
+
+
+function add_query_vars_filter( $vars ){
+  array_push($vars, "showName", "playlist");
+  return $vars;
+}
+add_filter( 'query_vars', 'add_query_vars_filter' );
 /**
  * Enqueue scripts and styles.
  * Note: The order of loading CSS matters!  Check it against the raw template code in a browser
