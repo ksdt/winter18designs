@@ -17,9 +17,9 @@ $post_id = the_ID();
 <div id="primary" class="content-area">
 	<main id="main" class="site-main">
 		<div class="container">
-		<?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'full' );
+		<?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'large' );
 		if($backgroundImg[0] == '') $backgroundImg[0] = 'TODO: get a large ksdt banner as a default to use here';?>
-		<div class="post-hero"style="background: url(<?php echo $backgroundImg[0]?>) no-repeat">
+		<div class="post-hero"style="background: url(<?php echo $backgroundImg[0]?>) no-repeat center center fixed">
 			<div class="section-overlay"></div>
 			<div class="post-title">
 					<h2 style="font-size: 35px;"><?php the_title();?></h2>

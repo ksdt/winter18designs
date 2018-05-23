@@ -71,6 +71,7 @@ get_header();
 
 		
     ?>
+
 	<!-- HEADER  -->
 	<header class="main-header">
 		<div class="container-fluid" style="padding-left: 0px; padding-right: 0px;">
@@ -94,7 +95,7 @@ get_header();
 						<!--<h2 class="mb-50" style="font-size: 35px;">WHAT'S PLAYING</h2>-->
 						<h2 class="section-title-3 dark-section-text mb-25" style="font-size:40px; color: black">WHAT'S PLAYING</h2>
 						<div class="col-md-8 col-md-offset-2">
-							<img src="<?php echo get_template_directory_uri();?>/img/Home/turntable-dripping2.png" alt="Khaki HTML Template">  
+							<img src="<?php echo get_template_directory_uri();?>/img/Home/turntable-dripping2.png" alt="Khaki HTML Template"max-height: "100px">  
 	          			</div>
 	        		</div>
 	      		</div>
@@ -110,10 +111,11 @@ get_header();
 		    		foreach ($shows as $show) {
 		    		if($currentShow == $show['ShowID']) $initialIndex =  $i; $i++;?>
 			    	<div class="col-md-6 wow fadeInUp img-playing<?php if($currentShow != $show['ShowID']) echo "2"?>" data-wow-delay=".1s">
-						<img src="img/Home/banana.jpg" alt="img" style="width:100%;">
+			    		<?php if(array_key_exists('ShowImgL',$show)) $imgUrl = $show['ShowImgL']['href'];?>
+						<img src="<?php echo $imgUrl;$imgUrl = '';?>"alt="" style="width:100%;">
 			    		<div class="text-home" style="background-color: #4B5257;"><?php $time = $show['OnairTime'] % 12; if($time == 0) $time = 12; echo $time . $show['OnairTimeAMPM'];?> | <?php echo $show['djs'];?><br><?php echo $show['ShowName']?></div>
 					</div>
-		    	<?php } ?>;
+		    	<?php } ?>
 			</div>
 
 
