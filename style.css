@@ -4166,7 +4166,7 @@ blockquote.right {
 
 -------------------------------- */
 
-.post-hero {
+.post-hero, {
     background-color: black;
     background-size: cover;
     height: 600px;
@@ -4248,7 +4248,39 @@ blockquote.right {
     line-height: 1;
     letter-spacing: 10px
 }
+.show-hero {
+    background: url("img/About/hero1.jpg") no-repeat;
+    background-color: black;
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+    position: relative;
+    background-attachment: fixed;
+    background-position: center bottom;
+}
 
+
+.show-hero .page-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+
+.show-hero h2{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 2;
+    letter-spacing: 10px;
+    padding-left: 20%;
+    padding-right: 20%;
+}
 .entry-date, .url-fn-n {
     color: white;
     font-weight: 600;

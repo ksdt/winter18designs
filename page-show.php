@@ -97,7 +97,7 @@ get_header(); ?>
     function get_djs($show) {
         $string = '';
         foreach($show['ShowUsers'] as $user) {
-            $string = $user['DJName'] . ' & ';
+            $string .= 'dj ' . $user['DJName'] . ' & ';
         }
         return substr($string, 0, -3);
     }
@@ -108,84 +108,125 @@ get_header(); ?>
 
 ?>
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-			<div class="container">
-                <div class="about-hero">
-                    <div class="section-overlay"></div>
-                    <div class="page-title">
-                        <h2 style="font-size: 35px;"><?php echo $show['ShowName']; ?></h2>
-                        <div class="small-title-Events"><?php echo "dj " . get_djs($show); ?><br><?php echo get_times($show); ?></div>
+	<main id="main" class="site-main" role="main">
+    <div class="container">
+    <!-- SPLASH IMAGE  -->
+        <div class="show-hero">
+            <div class="section-overlay"></div>
+            <div class="page-title">
+                <h2 style="font-size: 35px;"><?php echo $show['ShowName']; ?></h2>
+                <div class="small-title-Events">
+                    <?php echo get_djs($show); ?><br><br>
+                    <?php echo get_times($show); ?></div>
+        </div>
+        </div>
+
+
+    <div class="blackbg" style="background-color: black;">
+    <!-- Blurb -->
+    <section class="about_descr" style="background-color:#353789">
+        <div class="container">
+            <div class="row center">
+                <?php if($show['ShowDescription'] != ''):?>
+                <div class="col-md-12 col-sm-12 mt-30 mb-165">
+                    <h3 class="dark-section-text" style="line-height: 40px;margin-left: 10%; margin-right:10%;"><?php echo $show['ShowDescription']; ?></h3>
+                </div>
+            <?php endif?>
+            </div>
+        </div>
+    </section>
+    <div class="section-title" style="background: #353789; padding-bottom: 30px;">
+        <h2 class="section-title-3 dark-section-text mb-25" style="font-size:40px; color: white"><strong>Most Recent Show</strong>
+        </h2>
+    </div>
+    <!-- Recent Playlist Slider -->
+    <div class="autoplay">
+        <?php foreach($firstPlaylist as $song): ?>
+            <div class="card">
+                <div class="card-block">
+                    <h4 class="card-title-am"><span class="time-header"><?php echo timestamp($song['Timestamp']); ?></span> | <?php echo $song['SongName']; ?>
+                    </h4>
+                    <div class="cardContent inline">
+                        <h6 class="card-subtitle mb-2 text-muteds">by <?php echo $song['ArtistName']; ?></h6>
                     </div>
                 </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
 
-				<article class="page show">
-				    <div class="entry-content">
-				        <div class="show">
-				            <div class="row">
-                                <section class="about_descr" style="background-color:#353789">
-                                    <div class="row center">
-                                        <div class="col-md-12 col-sm-12 mt-10 mb-10"style="padding-left:25%;padding-right:25%;">
-                                            <h3 class="dark-section-text" style="line-height: 20px;"><?php echo $show['ShowDescription']; ?></h3>
-                                        </div>
-                                    </div>
-                                </section>
-				                <div class="col-lg-3 offset-lg-3 col-md-12 info">
-				                    <span class="tag tag-default <?php echo $show['ShowCategory']; ?>"><?php echo $show['ShowCategory']; ?></span>
-			                        <h1 class="title"><?php echo $show['ShowName']; ?></h1>
-			                        <span class="djs"><?php echo get_djs($show); ?></span>
-			                        <span class="times"><?php echo get_times($show); ?></span>
-			                        <p class="description"><?php echo $show['ShowDescription']; ?></p>
-				                </div>
-				                <div class="col-lg-6 col-md-12 other-info">
-				                    <?php if ($firstPlaylist): ?>
-				                    <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/sass/plyr.css'; ?>" type="text/css" />
-                                        <audio controls src="/playlists/<?php echo $allPlaylists[0]['PlaylistID']  . '.mp3' ?>">
-                                            Your browser does not support the <code>audio</code> element.
-                                        </audio>
-                                        <script src="<?php echo get_template_directory_uri() . '/js/plyr.js'; ?>"></script>
-				                    <script>
-				                       var $ = $ ? $ : jQuery;
-				                       var audios = plyr.setup({
-				                           controls: ['play', 'progress', 'current-time', 'mute', 'volume']
-				                       });
-				                       audios.forEach(function (audio) {
-				                           audio.on('error', function(e) {
-				                               console.log(e);
-				                               audio.destroy();
-				                               $('audio').replaceWith('Error retrieving show.');
-				                           });
-				                       });
-				                    </script>
-				                        <span class="playlist-date"><?php echo human_time_diff(strtotime($allPlaylists[0]['PlaylistDate']), get_the_time('U', true)) . ' ago'; ?></span>
-				                        <ul class="songs">
-				                            <?php foreach ($firstPlaylist as $song): ?>
-				                                <li>
-				                                    <span class="timestamp"><?php echo timestamp($song['Timestamp']); ?></span>
-				                                    <span class="song"><?php echo $song['SongName']; ?></span>
-				                                    <span class="artist"><?php echo $song['ArtistName']; ?></span>
-                                                </li>
-                                            <?php endforeach; ?>
-				                        </ul>
-				                        <h2>All Playlists</h2>
-    				                    <div class="autoplay">
-    				                        <?php foreach ($allPlaylists as $playlist): ?>
-                                                <a href="/playlist/<?php echo $playlist['PlaylistID'];?> class="text-home" style="background-color: #4B5257;"><?php echo $playlist['PlaylistDate']; ?></a>
-    				                        <?php endforeach; ?>
-    				                    </div>
-    				                <?php endif; ?>
-				                </div>
-				            </div>
-                	    </div>
-                	</div><!-- .entry-content -->
-                </article><!-- #post-## -->
-			</div>
-		</main><!-- #main -->
-	</div><!-- #primary -->
-    <script type="text/javascript">
+    <div class="section-title" style="background: #353789; padding-bottom: 30px;">
+        <h2 class="section-title-3 dark-section-text mb-25" style="font-size:40px; color: white"><strong>All Playlists</strong>
+        </h2>
+    </div>
+
+    <div class="autoplay1">
+        <?php foreach ($allPlaylists as $playlist): ?>
+            <a href="/playlist/<?php echo $playlist['PlaylistID']; ?>">
+                <h4 class="card-title-am"><span class="time-header"><?php echo $playlist['PlaylistDate']; ?>
+                </h4>
+            </a>
+        <?php endforeach; ?>
+    </div>
+
+
+
+
+
+
+
+</div>
+
+<script type="text/javascript">
 
         jQuery(document).ready(function(){
 
             jQuery('.autoplay').slick({
+              initialSlide:  0,
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              centerMode: false,
+              autoplay: false,
+              autoplaySpeed: 2000,
+              arrows: true,
+              dots: false,
+              responsive: [
+                {
+                  breakpoint: 1024,
+                  settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+
+                  }
+                },
+                {
+                  breakpoint: 800,
+                  settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+
+                  }
+                },
+                {
+                  breakpoint: 600,
+                  settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+
+                  }
+                },
+                {
+                  breakpoint: 480,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+
+                  }
+                }
+             ]
+            });
+            jQuery('.autoplay1').slick({
               initialSlide:  0,
               slidesToShow: 3,
               slidesToScroll: 1,
