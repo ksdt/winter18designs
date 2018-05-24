@@ -28,7 +28,7 @@ $imgUrl =  $arr[1];?>
 							<?php  the_archive_description();?></div>
 					</div>
 			</div>
-			<div class="autoplay">
+			<div class="autoplay"style="padding-top: 30px;">
 			<?php
 			/* Start the Loop */ //Note: You can only use the_post() once per iteration
 			//because after once it 'sets' everything to that post (global basically)

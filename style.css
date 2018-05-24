@@ -4166,35 +4166,17 @@ blockquote.right {
 
 -------------------------------- */
 
-.post-hero, {
-    background-color: black;
-    background-size: cover;
-    height: 600px;
-    width: 100%;
-    position: relative;
-    background-attachment: fixed;
-    background-position: center bottom;
-    padding-bottom: 200px;
-}
-
-
-.post-hero .post-title {
-    position: relative;
-    top: 100%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -20%);
-    -ms-transform: translate(-50%, -20%);
-    transform: translate(-50%, -20%);
-    text-align: left;
-}
-
 .post-title {
     background-color: rgba(0,0,0,0.5);
-    padding-left: 5%;
+    padding-left: 1%;
     padding-right: 5%;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
     border-radius: 15px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
 }
 
 .post-hero h2{
@@ -4203,7 +4185,6 @@ blockquote.right {
     font-weight: 600;
     font-size: 45px;
     line-height: 1;
-    letter-spacing: 10px
 }
 .category-hero {
     background-color: black;
@@ -4213,15 +4194,12 @@ blockquote.right {
     position: relative;
     background-attachment: fixed;
     background-position: center bottom;
-    padding-bottom: 200px;
 }
 .category-hero .category-title {
-    position: relative;
-    top: 100%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -20%);
-    -ms-transform: translate(-50%, -20%);
-    transform: translate(-50%, -20%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     text-align: left;
 }
 
