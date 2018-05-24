@@ -3019,6 +3019,7 @@ FOOTER
     border-radius: 15px;
 }
 
+
 .page-title2 {
     background-color: rgba(0,0,0,0);
     padding-left: 10%;
@@ -4166,45 +4167,71 @@ blockquote.right {
 
 -------------------------------- */
 
-.post-hero, {
+.post-hero {
     background-color: black;
     background-size: cover;
-    height: 600px;
-    width: 100%;
+    height: 500px;
+    width: 95%;
     position: relative;
     background-attachment: fixed;
     background-position: center bottom;
-    padding-bottom: 200px;
 }
 
 
 .post-hero .post-title {
-    position: relative;
-    top: 100%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -20%);
-    -ms-transform: translate(-50%, -20%);
-    transform: translate(-50%, -20%);
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
     text-align: left;
+    width: 100%;
+    padding-left: 5%; 
+    left: 0; 
+    bottom: 0;
 }
 
-.post-title {
-    background-color: rgba(0,0,0,0.5);
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    border-radius: 15px;
-}
 
 .post-hero h2{
     color: white;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 45px;
-    line-height: 1;
-    letter-spacing: 10px
+    line-height: 2;
+    letter-spacing: 7px;
 }
+
+.post-small-title{
+    color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .category-hero {
     background-color: black;
     background-size: cover;
