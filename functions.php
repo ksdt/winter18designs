@@ -144,6 +144,65 @@ function add_query_vars_filter( $vars ){
   return $vars;
 }
 add_filter( 'query_vars', 'add_query_vars_filter' );
+
+function create_post_type() {
+
+  /* creates custom 'album review' posts */
+  register_post_type( 'albumreviews',
+    array(
+      'labels' => array(
+        'name' => __( 'Album Reviews' ),
+        'singular_name' => __( 'Album Review' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+      'rewrite' => array('slug' => 'writings/albumreviews', 'with_front' => false),
+      'hierarchical' => true,
+      'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields', 'trackbacks', 'excerpt'),
+			/* supports are the properties that will show up in the backend wordpress menu */
+			'taxonomies' => array('category'),
+    )
+  );
+
+  /* creates custom 'weeklypicks' posts */
+  register_post_type( 'weeklypicks',
+    array(
+      'labels' => array(
+        'name' => __( 'Weekly Picks' ),
+        'singular_name' => __( 'Weekly Picks' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+      'rewrite' => array('slug' => 'writings/weeklypicks', 'with_front' => false),
+      'hierarchical' => true,
+      'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields', 'trackbacks', 'excerpt'),
+			/* supports are the properties that will show up in the backend wordpress menu */
+			'taxonomies' => array('category'),
+    )
+  );
+
+  /* creates custom 'concertreviews' posts */
+  register_post_type( 'concertreviews',
+    array(
+      'labels' => array(
+        'name' => __( 'Concert Reviews' ),
+        'singular_name' => __( 'Concert Reviews' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+      'rewrite' => array('slug' => 'writings/concertreviews', 'with_front' => false),
+      'hierarchical' => true,
+      'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields', 'trackbacks', 'excerpt'),
+			/* supports are the properties that will show up in the backend wordpress menu */
+			'taxonomies' => array('category'),
+    )
+  );
+
+
+}
+
+
+
 /**
  * Enqueue scripts and styles.
  * Note: The order of loading CSS matters!  Check it against the raw template code in a browser

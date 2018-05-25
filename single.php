@@ -6,7 +6,6 @@
  *
  * @package winter18redesign
  */
-
 get_header();
 ?>
 
@@ -39,7 +38,7 @@ $post_id = the_ID();
 
 			get_template_part( 'template-parts/content', get_post_type() );
 
-			the_post_navigation();
+			//the_post_navigation(); I dont like this
 
 		endwhile; // End of the loop.
 		?>

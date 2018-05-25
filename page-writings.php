@@ -55,6 +55,67 @@ get_header(); ?>
 				<?php endwhile; 
 				endif ?>
 
+
+                <div class="section-title">
+                    <h2 class="section-title-3 dark-section-text mt-25 mb-25" style="font-size:40px; color: black;width:50%;"><a href="writings/concertreviews">Concert Reviews</a></h2>
+                </div>
+
+				<?php
+
+				$args = array(
+				    'post_type'=> 'concertreviews',
+				    'posts_per_page' => 4,
+				    );
+
+				$the_query = new WP_Query( $args );
+				$count = 0;
+				if($the_query->have_posts() ) : 
+					while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+					<div class="col-sm-3 wow fadeInUp img-playing2" data-wow-delay=".1s">
+						<img src="<?php the_post_thumbnail_url();?>" alt="img" style="width:100%;">
+							<a href="<?php the_permalink();?>">
+				    		<div class="text-home" style="background-color: #4B5257;">
+				    			<?php the_title();?><br>By <?php the_author();?>
+				    		</div>
+				    		</a>
+					</div>
+				<?php endwhile; 
+				endif ?>
+
+
+
+                <div class="section-title">
+                    <h2 class="section-title-3 dark-section-text mt-25 mb-25" style="font-size:40px; color: black;width:50%;"><a href="writings/weeklypicks">Weekly Picks</a></h2>
+                </div>
+
+				<?php
+
+				$args = array(
+				    'post_type'=> 'weeklypicks',
+				    'posts_per_page' => 4,
+				    );
+
+				$the_query = new WP_Query( $args );
+				$count = 0;
+				if($the_query->have_posts() ) : 
+					while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+					<div class="col-sm-3 wow fadeInUp img-playing2" data-wow-delay=".1s">
+						<img src="<?php the_post_thumbnail_url();?>" alt="img" style="width:100%;">
+							<a href="<?php the_permalink();?>">
+				    		<div class="text-home" style="background-color: #4B5257;">
+				    			<?php the_title();?><br>By <?php the_author();?>
+				    		</div>
+				    		</a>
+					</div>
+				<?php endwhile; 
+				endif ?>
+
+
+
+
+
+
+
 			    </article>
 			</div>
 		</main><!-- #main -->
