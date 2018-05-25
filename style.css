@@ -3019,7 +3019,6 @@ FOOTER
     border-radius: 15px;
 }
 
-
 .page-title2 {
     background-color: rgba(0,0,0,0);
     padding-left: 10%;
@@ -4167,71 +4166,26 @@ blockquote.right {
 
 -------------------------------- */
 
-.post-hero {
-    background-color: black;
-    background-size: cover;
-    height: 500px;
-    width: 95%;
-    position: relative;
-    background-attachment: fixed;
-    background-position: center bottom;
-}
-
-
-.post-hero .post-title {
+.post-title {
     background-color: rgba(0,0,0,0.5);
-    position: absolute;
-    text-align: left;
-    width: 100%;
-    padding-left: 5%; 
-    left: 0; 
+    padding-left: 1%;
+    padding-right: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 15px;
     bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
 }
-
 
 .post-hero h2{
     color: white;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 45px;
-    line-height: 2;
-    letter-spacing: 7px;
+    line-height: 1;
 }
-
-.post-small-title{
-    color: white;
-    font-weight: 700;
-    letter-spacing: 1px;
-    font-size: 24px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .category-hero {
     background-color: black;
     background-size: cover;
@@ -4240,15 +4194,12 @@ blockquote.right {
     position: relative;
     background-attachment: fixed;
     background-position: center bottom;
-    padding-bottom: 200px;
 }
 .category-hero .category-title {
-    position: relative;
-    top: 100%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -20%);
-    -ms-transform: translate(-50%, -20%);
-    transform: translate(-50%, -20%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     text-align: left;
 }
 
