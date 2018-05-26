@@ -96,10 +96,24 @@ get_header(); ?>
 
     function get_djs($show) {
         $string = '';
+        if(sizeof($show['ShowUsers'])> 1) {
+          $host_str = 'Hosts:';
+        }
+        else
+          $host_str = 'Host:';
         foreach($show['ShowUsers'] as $user) {
-            $string .= 'dj ' . $user['DJName'] . ' & ';
+            $string .= $user['DJName'] . ' & ';
         }
         return substr($string, 0, -3);
+    }
+    function get_host_str($show) {
+        $string = '';
+        if(sizeof($show['ShowUsers'])> 1) {
+          $string = 'Hosts:';
+        }
+        else
+          $string = 'Host:';
+        return $string;
     }
 
     function get_random_shows($shows) {
@@ -116,6 +130,7 @@ get_header(); ?>
             <div class="page-title">
                 <h2 style="font-size: 35px;"><?php echo $show['ShowName']; ?></h2>
                 <div class="small-title-Events">
+                    <?php echo get_host_str($show);?> <br>
                     <?php echo get_djs($show); ?><br><br>
                     <?php echo get_times($show); ?></div>
         </div>
@@ -144,7 +159,7 @@ get_header(); ?>
         <?php foreach($firstPlaylist as $song): ?>
             <div class="card">
                 <div class="card-block">
-                    <h4 class="card-title-am"><span class="time-header"><?php echo timestamp($song['Timestamp']); ?></span> | <?php echo $song['SongName']; ?>
+                    <h4 class="card-title-am"><span class="time-header"><?php echo $song['SongName'];  ?></span> | <?php echo timestamp($song['Timestamp']); ?>
                     </h4>
                     <div class="cardContent inline">
                         <h6 class="card-subtitle mb-2 text-muteds">by <?php echo $song['ArtistName']; ?></h6>
@@ -163,7 +178,7 @@ get_header(); ?>
         <?php foreach ($allPlaylists as $playlist): ?>
             <a href="/playlist/<?php echo $playlist['PlaylistID']; ?>">
                 <h4 class="card-title-am"><span class="time-header"><?php echo $playlist['PlaylistDate']; ?>
-                </h4>
+                </span></h4>
             </a>
         <?php endforeach; ?>
     </div>

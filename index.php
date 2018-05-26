@@ -104,7 +104,7 @@ get_header();
 	    	<!--CAROUSEL-->
 		    <div class="autoplay">
 		    	<?php 
-		    		$i = 0; 
+		    		$i = 0;
 		    		/*reset show variable or else the loop is buggy */
 		    		unset($show);
 		    		$initialIndex = 0;
@@ -115,7 +115,7 @@ get_header();
 						<img src="<?php echo $imgUrl;$imgUrl = '';?>"alt="" style="width:100%;">
 				    		<?php //Todo: make the div a link w/o messing up layout?>
 
-				    		<div class="text-home" style="background-color: #4B5257;"><?php $time = $show['OnairTime'] % 12; if($time == 0) $time = 12; echo $time . $show['OnairTimeAMPM'];?> | <?php echo $show['djs'];?><br><?php echo $show['ShowName']?></div>
+				    		<div class="text-home<?php if($currentShow != $show['ShowID']) echo '3"';else echo '" style="background-color: #4B5257;"';?>"><?php $time = $show['OnairTime'] % 12; if($time == 0) $time = 12; echo $time . $show['OnairTimeAMPM'];?> | <?php echo $show['djs'];?><br><?php echo $show['ShowName']?></div>
 						</div>
 		    	<?php } ?>
 			</div>
