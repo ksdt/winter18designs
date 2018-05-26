@@ -11,7 +11,6 @@
  *
  * @package winter18redesign
  */
-
 get_header(); ?>
 
 <?php
@@ -19,17 +18,12 @@ get_header(); ?>
     permalink              rewrite rule
     /shows/Burger Town  -> show/?showName=Burger Town
     /shows/rtfm         -> show/?showName=rtfm
-
     spinpapi api: https://spinitron.com/user-guide/pdf/SpinPapi-v2.pdf
     */
-
     include(get_template_directory() . '/inc/SpinPapiConf.inc.php');
-
     $sp = new SpinPapiClient($mySpUserID, $mySpSecret, $myStation, true, $papiVersion);
     $sp->fcInit(get_template_directory() . '/.fc');
-
     $showName = get_query_var('showName');
-
     if ($showName) { /* if showName exists and isn't blank */
         /* get all shows from spinitron */
         $shows = $sp->query(array(
@@ -37,12 +31,10 @@ get_header(); ?>
             'When' => 'all'
         ));
         //echo '<pre>' . var_export($shows, true) . '</pre>';
-
         /* if the spiniron request was successful and has results */
         if ($shows['success'] && $shows['results']) {
             $shows = $shows['results']; /* set $shows to the results */
             $show = ''; /* placeholder for our matched show */
-
             /* search for show by show name */
             $showMatch = 0; /* similar_text returns a higher int if match is closer */
             foreach ($shows as $s) {
@@ -51,7 +43,6 @@ get_header(); ?>
                     $showMatch = similar_text(strtolower($s['ShowName']), strtolower($showName));
                 }
             }
-
             /* grab all playlists for matched show */
             $playlistsQ = $sp->query(array(
                 'method' => 'getPlaylistsInfo',
@@ -59,9 +50,7 @@ get_header(); ?>
                 'Num' => 99,
                 'EndDate' => date('Y-m-d')
             ));
-
             $firstPlaylist = array();
-
             /* parse first playlist to get song information */
             if ($playlistsQ['success'] && $playlistsQ['results']) {
                 $firstPlaylist = $sp->query(array(
@@ -69,7 +58,6 @@ get_header(); ?>
                         'PlaylistID' => $playlistsQ['results'][0]['PlaylistID']
                     ))['results'];
             }
-
             $allPlaylists = $playlistsQ['results'];
         } else { /* spinitron query failed */
         echo 'spinitron failed';
@@ -81,19 +69,16 @@ get_header(); ?>
         status_header( 404 );
        // get_template_part( 404 ); exit();
     }
-
     function get_times($show) {
         $weekday = DateTime::CreateFromFormat('D', $show['Weekdays'][0]);
         $start = DateTime::CreateFromFormat('G:i:s', $show['OnairTime']);
         $end = DateTime::CreateFromFormat('G:i:s', $show['OffairTime']);
         return $weekday->format('l\s') . ' from ' . $start->format('ga') . '-' . $end->format('ga');
     }
-
     function timestamp($time) {
         $time = DateTime::CreateFromFormat('G:i:s', $time);
         return $time->format('g:ia');
     }
-
     function get_djs($show) {
         $string = '';
         if(sizeof($show['ShowUsers'])> 1) {
@@ -115,14 +100,12 @@ get_header(); ?>
           $string = 'Host:';
         return $string;
     }
-
     function get_random_shows($shows) {
         return array_rand($shows, 10);
     }
-
 ?>
-	<div id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
+  <div id="primary" class="content-area">
+  <main id="main" class="site-main" role="main">
     <div class="container">
     <!-- SPLASH IMAGE  -->
         <div class="show-hero">
@@ -137,7 +120,6 @@ get_header(); ?>
         </div>
 
 
-    <div class="blackbg" style="background-color: black;">
     <!-- Blurb -->
     <section class="about_descr" style="background-color:#353789">
         <div class="container">
@@ -150,16 +132,18 @@ get_header(); ?>
             </div>
         </div>
     </section>
-    <div class="section-title" style="background: #353789; padding-bottom: 30px;">
-        <h2 class="section-title-3 dark-section-text mb-25" style="font-size:40px; color: white"><strong>Most Recent Show</strong>
+
+    <div class="blackbg" style="background-color: black;">
+
+        <h2 class="section-title-3 dark-section-text mb-25" style="font-size:40px; color: white;text-align: center;padding-top: 10px;"><strong>Most Recent Show</strong>
         </h2>
-    </div>
+
     <!-- Recent Playlist Slider -->
     <div class="autoplay">
         <?php foreach($firstPlaylist as $song): ?>
             <div class="card">
                 <div class="card-block">
-                    <h4 class="card-title-am"><span class="time-header"><?php echo $song['SongName'];  ?></span> | <?php echo timestamp($song['Timestamp']); ?>
+                    <h4 class="card-title-am"><span class="time-header"style="font-style: italic; "><?php echo $song['SongName'];  ?></span> | <?php echo timestamp($song['Timestamp']); ?>
                     </h4>
                     <div class="cardContent inline">
                         <h6 class="card-subtitle mb-2 text-muteds">by <?php echo $song['ArtistName']; ?></h6>
@@ -169,17 +153,14 @@ get_header(); ?>
         <?php endforeach; ?>
     </div>
 
-    <div class="section-title" style="background: #353789; padding-bottom: 30px;">
-        <h2 class="section-title-3 dark-section-text mb-25" style="font-size:40px; color: white"><strong>All Playlists</strong>
+        <h2 class="section-title-3 dark-section-text mb-25" style="font-size:40px; color: white;text-align: center;"><strong>All Playlists</strong>
         </h2>
-    </div>
 
     <div class="autoplay1">
-        <?php foreach ($allPlaylists as $playlist): ?>
-            <a href="/playlist/<?php echo $playlist['PlaylistID']; ?>">
+        <?php foreach ($allPlaylists as $playlist): 
+                //TODO: style this h4 to be only as long as the text?>
                 <h4 class="card-title-am"><span class="time-header"><?php echo $playlist['PlaylistDate']; ?>
                 </span></h4>
-            </a>
         <?php endforeach; ?>
     </div>
 
@@ -192,8 +173,25 @@ get_header(); ?>
 </div>
 
 <script type="text/javascript">
-
         jQuery(document).ready(function(){
+            //I think this needs to be wrapped in a function or something to take the text from each h4
+            jQuery(".card-title-am").click(function() {
+              jQuery.ajax({
+                type: "GET",
+                url: <?php admin_url( 'admin-ajax.php' );?>,
+                data: {
+                  playlist_id: //this is the playlist id from $playlist (the one in the for loop)
+                  playlist_date: //This is the date text from the slider
+                },
+                dataType: 'json',
+                sucess: function(data) {
+                  alert("success");
+                }
+              });              }
+            });
+
+
+
 
             jQuery('.autoplay').slick({
               initialSlide:  0,
@@ -211,7 +209,6 @@ get_header(); ?>
                     slidesToShow: 3,
                     slidesToScroll: 3,
                     infinite: true,
-
                   }
                 },
                 {
@@ -220,7 +217,6 @@ get_header(); ?>
                     slidesToShow: 3,
                     slidesToScroll: 3,
                     infinite: true,
-
                   }
                 },
                 {
@@ -228,7 +224,6 @@ get_header(); ?>
                   settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2,
-
                   }
                 },
                 {
@@ -236,7 +231,6 @@ get_header(); ?>
                   settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1
-
                   }
                 }
              ]
@@ -257,7 +251,6 @@ get_header(); ?>
                     slidesToShow: 3,
                     slidesToScroll: 3,
                     infinite: true,
-
                   }
                 },
                 {
@@ -266,7 +259,6 @@ get_header(); ?>
                     slidesToShow: 3,
                     slidesToScroll: 3,
                     infinite: true,
-
                   }
                 },
                 {
@@ -274,7 +266,6 @@ get_header(); ?>
                   settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2,
-
                   }
                 },
                 {
@@ -282,14 +273,12 @@ get_header(); ?>
                   settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1
-
                   }
                 }
              ]
             });
-            
+          
          });
-
     </script>
 <?php
 get_sidebar();
