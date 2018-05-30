@@ -14,6 +14,9 @@
 
 get_header(); ?>
 
+<?php global $wp;
+$current_url = home_url(add_query_arg(array(), $wp->request));?>
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<!-- SPLASH IMAGE  -->
@@ -30,7 +33,7 @@ get_header(); ?>
 
 			        
                 <div class="section-title">
-                    <h2 class="section-title-3 dark-section-text mt-25 mb-25" style="font-size:40px; color: black;width:50%;"><a href="writings/blog">Blog</a></h2>
+                    <h2 class="section-title-3 dark-section-text mt-25 mb-25" style="font-size:40px; color: black;width:50%;"><a href="<?php echo $current_url . '/blog'?>">Blog</a></h2>
                 </div>
 
 				<?php
@@ -57,7 +60,7 @@ get_header(); ?>
 
 
                 <div class="section-title">
-                    <h2 class="section-title-3 dark-section-text mt-25 mb-25" style="font-size:40px; color: black;width:50%;"><a href="writings/concertreviews">Concert Reviews</a></h2>
+                    <h2 class="section-title-3 dark-section-text mt-25 mb-25" style="font-size:40px; color: black;width:50%;"><a href="<?php echo $current_url . '/concertreviews'?>">Concert Reviews</a></h2>
                 </div>
 
 				<?php
@@ -83,9 +86,8 @@ get_header(); ?>
 				endif ?>
 
 
-				
                 <div class="section-title">
-                    <h2 class="section-title-3 dark-section-text mt-25 mb-25" style="font-size:40px; color: black;width:50%;"><a href="writings/weeklypicks">Weekly Picks</a></h2>
+                    <h2 class="section-title-3 dark-section-text mt-25 mb-25" style="font-size:40px; color: black;width:50%;"><a href="<?php echo $current_url . '/weeklypicks'?>">Weekly Picks</a></h2>
                 </div>
 
 				<?php
