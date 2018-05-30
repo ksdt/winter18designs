@@ -218,6 +218,7 @@ function winter18redesign_scripts() {
 	wp_enqueue_style( 'winter18redesign-slick', get_template_directory_uri() . '/js/slick/slick.css' );
 	wp_enqueue_style( 'winter18redesign-slick-theme', get_template_directory_uri() . '/js/slick/slick-theme.css' );
 
+
 	/*JS scripts */
 	wp_enqueue_script( 'winter18redesign-boostrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '20151215', true );
 	wp_enqueue_script( 'winter18redesign-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );

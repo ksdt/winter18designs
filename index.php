@@ -79,7 +79,7 @@ get_header();
 			<section class="box-intro bg-film">
 				<div class="button-area">
 					<!--<div id="listen-live">TUNE IN NOW</div>-->
-					<a href="https://ksdt.ucsd.edu/listen/stream.mp3" target="_blank" class="button-listen-live" style="font-size: 20px;">TUNE IN NOW&nbsp;<i class="lnr lnr-music-note"></i></a>
+					<a id="mobile-listen"href="https://ksdt.ucsd.edu/listen/stream.mp3" target="_blank" class="button-listen-live" style="font-size: 20px;">TUNE IN NOW&nbsp;<i class="lnr lnr-music-note"></i></a>
 				</div>
 			</section>
 			<!-- end box-intro -->

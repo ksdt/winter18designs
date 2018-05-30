@@ -49,17 +49,18 @@
 		      	<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 		      		<img src="<?php echo get_template_directory_uri();?>/img/Logos/LOGO.png" width="80" alt="KSDT">
 		      	</a>
+		      	<div id="player-desktop"class="player">
+		          <i class="fa fa-play" aria-hidden="true"></i>
+		          <span class="live-circle"></span>
+		          <span class="listen">LIVE</span>
+		          <div class="show-info">
+		            <a href=""><span class="show-name"></span></a>
+		            <span class="show-djs"></span>
+          		  </div>
+      			</div>
 	    	</div>
 	    
-	    	      <div class="player">
-          <i class="fa fa-play" aria-hidden="true"></i>
-          <span class="live-circle"></span>
-          <span class="listen">LIVE</span>
-          <div class="show-info">
-            <a href=""><span class="show-name"></span></a>
-            <span class="show-djs"></span>
-          </div>
-      </div>
+	
 
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -74,7 +75,7 @@
 			            $title = $menu_item->title;
 			            $url = $menu_item->url;
 			            ?>
-		            	<li>
+		            	<li class="nav-item">
 		              		<a href="<?php echo $url; ?>"><?php echo $title; ?></a>
 		            	</li>
 			          <?php endforeach; ?>
