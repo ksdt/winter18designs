@@ -232,7 +232,8 @@ function get_playlist() {
         else 
             echo 'failure';
     }
-    echo $playlist;  
+    echo json_encode($songs);
+    //return $playlist;  
     die();       
 }
 add_action('wp_ajax_get_playlist','get_playlist');

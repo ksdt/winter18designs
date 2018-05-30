@@ -175,15 +175,18 @@ get_header(); ?>
 <script type="text/javascript">
         jQuery(document).ready(function(){
             jQuery(".old_playlist").click(function() {
+            	console.log('clicked');
               jQuery.ajax({
                 url: '<?php echo admin_url( 'admin-ajax.php' );?>',
                 data: {
                   'action': 'get_playlist',
-                  'playlist_id': this.id, //this is the playlist id from $playlist (the one in the for loop)
-                  'playlist_date': jQuery(this).text()//This is the date text from the slider
+                  'playlist_id': this.id
                 },
-                sucess: function(data) {
-                  alert(data);
+                success: function(playlist) {
+                  console.log(JSON.parse(playlist));
+                },
+                error: function(err) {
+                  console.log(err);
                 }
               });
             });           
