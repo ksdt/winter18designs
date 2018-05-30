@@ -159,7 +159,7 @@ get_header(); ?>
     <div class="autoplay1">
         <?php foreach ($allPlaylists as $playlist): 
                 //TODO: style this h4 to be only as long as the text?>
-                <h4 class="card-title-am"><span class="time-header"><?php echo $playlist['PlaylistDate']; ?>
+                <h4 id="<?php echo $playlist['PlaylistID']?>"class="card-title-am old_playlist"><span class="time-header"><?php echo $playlist['PlaylistDate']; ?>
                 </span></h4>
         <?php endforeach; ?>
     </div>
@@ -174,25 +174,20 @@ get_header(); ?>
 
 <script type="text/javascript">
         jQuery(document).ready(function(){
-            //I think this needs to be wrapped in a function or something to take the text from each h4
-            jQuery(".card-title-am").click(function() {
+            jQuery(".old_playlist").click(function() {
               jQuery.ajax({
-                type: "GET",
-                url: <?php admin_url( 'admin-ajax.php' );?>,
+                url: '<?php echo admin_url( 'admin-ajax.php' );?>',
                 data: {
-                  playlist_id: //this is the playlist id from $playlist (the one in the for loop)
-                  playlist_date: //This is the date text from the slider
+                  'action': 'get_playlist',
+                  'playlist_id': this.id, //this is the playlist id from $playlist (the one in the for loop)
+                  'playlist_date': jQuery(this).text()//This is the date text from the slider
                 },
-                dataType: 'json',
                 sucess: function(data) {
-                  alert("success");
+                  alert(data);
                 }
-              });              }
-            });
-
-
-
-
+              });
+            });           
+          
             jQuery('.autoplay').slick({
               initialSlide:  0,
               slidesToShow: 3,

@@ -203,6 +203,44 @@ function create_post_type() {
 add_action( 'init', 'create_post_type' );
 
 
+
+function get_playlist() {
+    include(get_template_directory() . '/inc/SpinPapiConf.inc.php');
+    include('../../wp-config.php');
+    $sp = new SpinPapiClient($mySpUserID, $mySpSecret, $myStation, true, $papiVersion);
+    $sp->fcInit(get_template_directory() . '/.fc');
+
+    $playlist = $_REQUEST['playlist_id'];
+    function isInteger($input) {
+        return(ctype_digit(strval($input)));
+    }
+    if (!isInteger($playlist)) {
+        echo 'failure';
+    } 
+    else if ($playlist) {
+        $playlistQ = $sp->query(array(
+            'method' => 'getPlaylistInfo',
+            'PlaylistID' => $playlist
+        ));
+        if ($playlistQ['success'] && $playlistQ['results']) {
+            $playlist = $playlistQ['results'];
+            $songs = $sp->query(array(
+                'method' => 'getSongs',
+                'PlaylistID' => $playlist['PlaylistID']
+            ))['results'];
+        } 
+        else 
+            echo 'failure';
+    }
+    echo $playlist;  
+    die();       
+}
+add_action('wp_ajax_get_playlist','get_playlist');
+add_action('wp_ajax_nopriv_get_playlist','get_playlist');
+
+
+
+
 /**
  * Enqueue scripts and styles.
  * Note: The order of loading CSS matters!  Check it against the raw template code in a browser
