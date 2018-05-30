@@ -29,6 +29,7 @@
 	<span class="frame-line bottom-frame visible-lg"></span>
 	<span class="frame-line left-frame visible-lg"></span>
 
+<header class="site-header">
 	<!-- Begin Nav Bar -->
 	<nav role="nav" class="nav-pos navbar navbar-default navbar-fixed-top">
   		<div class="container-fluid">
@@ -50,15 +51,23 @@
 		      	</a>
 	    	</div>
 	    
+	    	      <div class="player">
+          <i class="fa fa-play" aria-hidden="true"></i>
+          <span class="live-circle"></span>
+          <span class="listen">LIVE</span>
+          <div class="show-info">
+            <a href=""><span class="show-name"></span></a>
+            <span class="show-djs"></span>
+          </div>
+      </div>
+
+
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		    	<ul class="nav navbar-nav navbar-right">
 		    		<!--php code to nativly get the menu items and find the current
 		    			page to color the link underneath-->
-		    			<audio controls>
-							<source src="https://ksdt.ucsd.edu/stream.mp3" type="audio/mpeg">
-							Your browser does not support the audio element.
-						</audio> 
+
 					<?php $main_menu = wp_get_nav_menu_items('Main'); ?>
 			        	<?php foreach ((array) $main_menu as $key => $menu_item): ?>
 			        	<?php
@@ -74,6 +83,7 @@
   		</div><!-- /.container-fluid -->
 	</nav>
 	<!-- End nav bar -->
+</header>
 
 	<!-- BACK TO TOP -->
 	<a id="top"></a>
