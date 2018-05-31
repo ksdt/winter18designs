@@ -270,6 +270,8 @@ function winter18redesign_scripts() {
 	wp_enqueue_script( 'winter18redesign-slick-min', get_template_directory_uri() . '/js/slick/slick.min.js', array(), '20151215', true );
 	wp_enqueue_script( 'winter18redesign-wow', get_template_directory_uri() . '/js/wow.min.js', array(), '20151215', true );
 	wp_enqueue_script( 'winter18redesign-top-function', get_template_directory_uri() . '/js/top-function.js', array(), '20151215', true );
+	wp_enqueue_script( 'winter18redesign-radio', get_template_directory_uri() . '/js/radio.js', array(), '20151215', true );
+
 
 
 
