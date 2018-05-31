@@ -159,13 +159,16 @@ get_header(); ?>
     <div class="autoplay1">
         <?php foreach ($allPlaylists as $playlist): 
                 //TODO: style this h4 to be only as long as the text?>
-                <h4 id="<?php echo $playlist['PlaylistID']?>"class="card-title-am old_playlist"><span class="time-header"><?php echo $playlist['PlaylistDate']; ?>
+                <h4 id="<?php echo $playlist['PlaylistID']?>"class="card-title-am old_playlist"><span id="<?php echo $playlist['PlaylistDate']; ?>"class="time-header"><?php echo $playlist['PlaylistDate']; ?>
                 </span></h4>
         <?php endforeach; ?>
     </div>
+    <h2 class="section-title-3 dark-section-text mb-25" style="font-size:40px; color: white;text-align: center;"><strong id="playlistDate"></strong>
+        </h2>
 
-
-
+    <div class="autoplay2">
+        
+    </div>
 
 
 
@@ -175,7 +178,7 @@ get_header(); ?>
 <script type="text/javascript">
         jQuery(document).ready(function(){
             jQuery(".old_playlist").click(function() {
-            	console.log('clicked');
+              const fds = toString(jQuery(this));
               jQuery.ajax({
                 url: '<?php echo admin_url( 'admin-ajax.php' );?>',
                 data: {
@@ -183,7 +186,57 @@ get_header(); ?>
                   'playlist_id': this.id
                 },
                 success: function(playlist) {
-                  console.log(JSON.parse(playlist));
+                  if(jQuery('.autoplay2').hasClass('slick-initialized')) {
+                    jQuery('.autoplay2').slick('unslick');
+                    jQuery('.autoplay2').empty();
+                  }
+                  console.log(fds);
+                  jQuery('.autoplay2').slick({
+              initialSlide:  0,
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              centerMode: false,
+              autoplay: false,
+              autoplaySpeed: 2000,
+              arrows: true,
+              dots: false,
+              responsive: [
+                {
+                  breakpoint: 1024,
+                  settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                  }
+                },
+                {
+                  breakpoint: 800,
+                  settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                  }
+                },
+                {
+                  breakpoint: 600,
+                  settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                  }
+                },
+                {
+                  breakpoint: 480,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                  }
+                }
+               ]
+                  });
+                  playlist = (JSON.parse(playlist));
+                  for(var i = 0; i < playlist.length; i++) {
+                    jQuery('.autoplay2').slick('slickAdd','<div class="card"><div class="card-block"><h4 class="card-title-am"><span class="time-header"style="font-style: italic; "></span>' + playlist[i].SongName + ' | ' + playlist[i].Timestamp + '</h4><div class="cardContent inline"><h6 class="card-subtitle mb-2 text-muteds">by ' + playlist[i].ArtistName + '</h6></div></div></div>');
+                  }                  
                 },
                 error: function(err) {
                   console.log(err);
