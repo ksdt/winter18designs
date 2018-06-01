@@ -209,7 +209,19 @@ get_header(); ?>
 
     
     <h2 class="section-title-3 dark-section-text mb-25" style="font-size:40px; color: white;text-align: center;"><strong id="playlistDate"></strong>
-        </h2>
+    </h2>
+
+
+
+    <!-- Player Goes Here-->
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/plyr.css'; ?>" type="text/css" />
+
+  <div id="playlistPlayer">
+    
+  </div>
+            
+
+
 
     <div class="autoplay2">
         

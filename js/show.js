@@ -1,12 +1,13 @@
 jQuery(document).ready(function(){
     jQuery(".old_playlist").click(function() {
       const playlistDate =jQuery(this).text();
+      const id = this.id;
       jQuery.ajax({
         //TODO: get the admin ajax url properly
         url: 'http://local.wordpress.test/wp-admin/admin-ajax.php',
         data: {
           'action': 'get_playlist',
-          'playlist_id': this.id
+          'playlist_id': id
         },
         success: function(playlist) {
           if(jQuery('.autoplay2').hasClass('slick-initialized')) {
@@ -15,6 +16,14 @@ jQuery(document).ready(function(){
           }
           
           jQuery('#playlistDate').text(playlistDate);
+          var audioTag =   '<audio controls src="https://ksdt.ucsd.edu/playlists/' + id + '.mp3">Your browser does not support the <code>audio</code> element.</audio>';
+
+          jQuery('#playlistPlayer').append(audioTag);
+          
+
+
+
+
           jQuery('.autoplay2').slick({
       initialSlide:  0,
       slidesToShow: 3,
@@ -58,6 +67,8 @@ jQuery(document).ready(function(){
        ]
           });
           playlist = (JSON.parse(playlist));
+
+
           for(var i = 0; i < playlist.length; i++) {
             jQuery('.autoplay2').slick('slickAdd','<div class="card"><div class="card-block"><h4 class="card-title-am"><span class="time-header"style="font-style: italic; "></span>' + playlist[i].SongName + ' | ' + playlist[i].Timestamp + '</h4><div class="cardContent inline"><h6 class="card-subtitle mb-2 text-muteds">by ' + playlist[i].ArtistName + '</h6></div></div></div>');
           }                  
