@@ -138,7 +138,50 @@ get_header(); ?>
         <h2 class="section-title-3 dark-section-text mb-25" style="font-size:40px; color: white;text-align: center;padding-top: 10px;"><strong>Most Recent Show</strong>
         </h2>
 
+
+
+
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/plyr.css'; ?>" type="text/css" />
+            <audio controls src="https://ksdt.ucsd.edu/playlists/<?php echo $allPlaylists[0]['PlaylistID']  . '.mp3' ?>">
+                Your browser does not support the <code>audio</code> element.
+            </audio>
+            <script src="<?php echo get_template_directory_uri() . '/js/plyr.js'; ?>"></script>
+        <script>
+           var audios = plyr.setup({
+               controls: ['play', 'progress', 'current-time', 'mute', 'volume']
+           });
+           audios.forEach(function (audio) {
+               audio.on('error', function(e) {
+                   console.log(e);
+                   audio.destroy();
+                   jQuery('audio').replaceWith('Error retrieving show.');
+               });
+           }); 
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Recent Playlist Slider -->
+
     <div class="autoplay">
         <?php foreach($firstPlaylist as $song): ?>
             <div class="card">

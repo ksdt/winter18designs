@@ -79,6 +79,12 @@
 		              		<a href="<?php echo $url; ?>"><?php echo $title; ?></a>
 		            	</li>
 			          <?php endforeach; ?>
+			          <li id="tune-in"class="nav-item">
+			          	<a href="https://tunein.com/radio/KSDT-s18746/">TuneIn</a>
+			          </li>
+			          <li id="listen-live-li"class="nav-item">
+			          	<a href="https://ksdt.ucsd.edu/listen/stream.mp3">Listen Live</a>
+			          </li>
 	      		</ul>
 	    	</div><!-- /.navbar-collapse -->
   		</div><!-- /.container-fluid -->
