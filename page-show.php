@@ -138,44 +138,10 @@ get_header(); ?>
         <h2 class="section-title-3 dark-section-text mb-25" style="font-size:40px; color: white;text-align: center;padding-top: 10px;"><strong>Most Recent Show</strong>
         </h2>
 
-
-
-
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/plyr.css'; ?>" type="text/css" />
-            <audio controls src="https://ksdt.ucsd.edu/playlists/<?php echo $allPlaylists[0]['PlaylistID']  . '.mp3' ?>">
-                Your browser does not support the <code>audio</code> element.
-            </audio>
-            <script src="<?php echo get_template_directory_uri() . '/js/plyr.js'; ?>"></script>
-        <script>
-           var audios = plyr.setup({
-               controls: ['play', 'progress', 'current-time', 'mute', 'volume']
-           });
-           audios.forEach(function (audio) {
-               audio.on('error', function(e) {
-                   console.log(e);
-                   audio.destroy();
-                   jQuery('audio').replaceWith('Error retrieving show.');
-               });
-           }); 
-        </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <audio controls src="https://ksdt.ucsd.edu/playlists/<?php echo $allPlaylists[0]['PlaylistID']  . '.mp3' ?>"style="width:50%;">
+            Your browser does not support the <code>audio</code> element.
+        </audio>
+            
 
 
 
@@ -207,8 +173,17 @@ get_header(); ?>
         <?php endforeach; ?>
     </div>
 
-    
-    <h2 class="section-title-3 dark-section-text mb-25" style="font-size:40px; color: white;text-align: center;"><strong id="playlistDate"></strong>
+    	
+    	<!--This is where ajax content goes-->
+    	<div id="loading">
+    		<img src="<?php echo get_template_directory_uri();?>/img/gif/loading.gif">
+    	</div>
+
+
+
+
+
+    <h2 id="playlistHeading"class="section-title-3 dark-section-text mb-25" style="font-size:40px; color: white;text-align: center;"><strong id="playlistDate"></strong>
     </h2>
 
 
