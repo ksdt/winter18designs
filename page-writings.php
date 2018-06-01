@@ -49,7 +49,7 @@ $current_url = home_url(add_query_arg(array(), $wp->request));?>
 
 		while ( $query->have_posts() ) : $query->the_post();
 		?>
-		<div class ="row row-index"style="margin-top: 30px">
+		<div class ="row row-index row-eq-height"style="margin-top: 30px">
 			
 				<!-- ********************* -->
 
@@ -70,9 +70,9 @@ $current_url = home_url(add_query_arg(array(), $wp->request));?>
 						<div class="col-lg-8 post-text">
 							<div class="meta">
 								<a class="cya-styles index-post-link" href="<?php the_permalink(); ?>">
-								<span style="position: relative;"><?php the_title(); ?> <span>/ <?php echo get_post_type()?></span></span></a>
+								<span style="position: relative;"><?php the_title(); ?> <span>/ <?php echo get_post_type();//change this to single category?></span></span></a>
 								<br>
-								<span class="entry-date"style="color: black;"><?php echo get_the_date(); ?> / by <?php the_author(); ?></span>
+								<span class="entry-date"style="color: black;"><?php echo get_the_date(); ?> | <?php the_author(); ?></span>
 
 							</div>
 							<?php endif; ?>
