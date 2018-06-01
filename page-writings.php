@@ -1,4 +1,4 @@
-<?php
+`<?php
 /**
  * The template for displaying show pages.
  *
@@ -30,95 +30,67 @@ $current_url = home_url(add_query_arg(array(), $wp->request));?>
 			<div class="container" style = "">
 			    <article class = "page writings">
 			        <div class = "entry-content">
+	<?php
 
-			        
-                <div class="section-title">
-                    <h2 class="section-title-3 dark-section-text mt-25 mb-25" style="font-size:40px; color: black;width:50%;"><a href="<?php echo $current_url . '/blog'?>">Blog</a></h2>
-                </div>
+	$regularQuery = [
+		'posts_per_page' => 10,
+		'post_type' => array(
+			'post',
+			'weeklypicks',
+			'concertreviews',
+			'albumreviews'
+		)
+	];
 
-				<?php
+	$query = new WP_Query( $regularQuery );
 
-				$args = array(
-				    'post_type'=> 'post',
-				    'posts_per_page' => 4,
-				    );
+	if ( $query->have_posts() ) :
+		/* Start the Loop */
 
-				$the_query = new WP_Query( $args );
-				$count = 0;
-				if($the_query->have_posts() ) : 
-					while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-					<div class="col-sm-3 wow fadeInUp img-playing2" data-wow-delay=".1s"style="padding-bottom: 30px;">
-						<img src="<?php the_post_thumbnail_url();?>" alt="img" style="width:100%;">
-							<a href="<?php the_permalink();?>">
-				    		<div class="text-home" style="background-color: #4B5257;">
-				    			<?php the_title();?><br>By <?php the_author();?>
-				    		</div>
-				    		</a>
-					</div>
-				<?php endwhile; 
-				endif ?>
+		while ( $query->have_posts() ) : $query->the_post();
+		?>
+		<div class ="row row-index"style="margin-top: 30px">
+			
+				<!-- ********************* -->
+
+				<article class="index-post" data-url="<?php the_permalink(); ?>">
 
 
-                <div class="section-title">
-                    <h2 class="section-title-3 dark-section-text mt-25 mb-25" style="font-size:40px; color: black;width:50%;"><a href="<?php echo $current_url . '/concertreviews'?>">Concert Reviews</a></h2>
-                </div>
+					<!-- if(get_the_category() && get_the_time() ) -->
+					<?php if (get_the_time() ): ?>
+						<div class="col-lg-4 col-image">
+							<div class="post-image">
+								<?php if(has_post_thumbnail()): ?>
+									<img class = "card-img-top image-extended" src = "<?php the_post_thumbnail_url() ?>"style="max-width: 300px;height:auto;">
+								<?php else: ?>
+									<img class = "card-img-top image-extended" src="<?php echo get_template_directory_uri() . '/ksdt.png'; ?>"style="max-width: 300px;height:auto;">
+								<?php endif; ?>
+							</div>
+						</div>
+						<div class="col-lg-8 post-text">
+							<div class="meta">
+								<a class="cya-styles index-post-link" href="<?php the_permalink(); ?>">
+								<span style="position: relative;"><?php the_title(); ?> <span>/ <?php echo get_post_type()?></span></span></a>
+								<br>
+								<span class="entry-date"style="color: black;"><?php echo get_the_date(); ?> / by <?php the_author(); ?></span>
 
-				<?php
+							</div>
+							<?php endif; ?>
+							<p class="snippet"style="display: flex;">
+								<?php the_excerpt(); ?>
+							</p>
+						</div>
 
-				$args = array(
-				    'post_type'=> 'concertreviews',
-				    'posts_per_page' => 4,
-				    );
+				</article>
+			
 
-				$the_query = new WP_Query( $args );
-				$count = 0;
-				if($the_query->have_posts() ) : 
-					while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-					<div class="col-sm-3 wow fadeInUp img-playing2" data-wow-delay=".1s"style="padding-bottom: 30px;">
-						<img src="<?php the_post_thumbnail_url();?>" alt="img" style="width:100%;">
-							<a href="<?php the_permalink();?>">
-				    		<div class="text-home" style="background-color: #4B5257;">
-				    			<?php the_title();?><br>By <?php the_author();?>
-				    		</div>
-				    		</a>
-					</div>
-				<?php endwhile; 
-				endif ?>
+		</div>
 
+		<?php
 
-                <div class="section-title">
-                    <h2 class="section-title-3 dark-section-text mt-25 mb-25" style="font-size:40px; color: black;width:50%;"><a href="<?php echo $current_url . '/weeklypicks'?>">Weekly Picks</a></h2>
-                </div>
-
-				<?php
-
-				$args = array(
-				    'post_type'=> 'weeklypicks',
-				    'posts_per_page' => 4,
-				    );
-
-				$the_query = new WP_Query( $args );
-				$count = 0;
-				if($the_query->have_posts() ) : 
-					while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-					<div class="col-sm-3 wow fadeInUp img-playing2" data-wow-delay=".1s"style="padding-bottom: 30px;">
-						<img src="<?php the_post_thumbnail_url();?>" alt="img" style="width:100%;">
-							<a href="<?php the_permalink();?>">
-				    		<div class="text-home" style="background-color: #4B5257;">
-				    			<?php the_title();?><br>By <?php the_author();?>
-				    		</div>
-				    		</a>
-					</div>
-				<?php endwhile; 
-				endif ?>
-
-
-
-
-
-
-
-			    </article>
+	endwhile;
+endif;
+?>
 			</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
