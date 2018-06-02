@@ -59,13 +59,11 @@ $current_url = home_url(add_query_arg(array(), $wp->request));?>
 					<!-- if(get_the_category() && get_the_time() ) -->
 					<?php if (get_the_time() ): ?>
 						<div class="col-lg-4 col-image">
-							<div class="post-image">
-								<?php if(has_post_thumbnail()): ?>
-									<img class = "card-img-top image-extended" src = "<?php the_post_thumbnail_url() ?>"style="max-width: 300px;height:auto;">
-								<?php else: ?>
-									<img class = "card-img-top image-extended" src="<?php echo get_template_directory_uri() . '/ksdt.png'; ?>"style="max-width: 300px;height:auto;">
-								<?php endif; ?>
-							</div>
+							<?php if(has_post_thumbnail()): ?>
+								<img class = "card-img-top image-extended" src = "<?php the_post_thumbnail_url('medium') ?>"style="max-width: 300px;max-height:300px;">
+							<?php else: ?>
+								<img class = "card-img-top image-extended" src="<?php echo get_template_directory_uri() . '/ksdt.png'; ?>"style="max-width: 300px;max-height:300px;">
+							<?php endif; ?>
 						</div>
 						<div class="col-lg-8 post-text">
 							<div class="meta">
@@ -76,7 +74,7 @@ $current_url = home_url(add_query_arg(array(), $wp->request));?>
 
 							</div>
 							<?php endif; ?>
-							<p class="snippet"style="display: flex;">
+							<p>
 								<?php the_excerpt(); ?>
 							</p>
 						</div>
