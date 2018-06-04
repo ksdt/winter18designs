@@ -59,25 +59,25 @@ $current_url = home_url(add_query_arg(array(), $wp->request));?>
 					<!-- if(get_the_category() && get_the_time() ) -->
 					<?php if (get_the_time() ): ?>
 						<div class="col-lg-4 col-image">
-							<div class="post-image">
+							<div class="post-image"style="max-width: 300px;max-height: 300px;">
 								<?php if(has_post_thumbnail()): ?>
-									<img class = "card-img-top image-extended" src = "<?php the_post_thumbnail_url() ?>"style="max-width: 300px;height:auto;">
+									<img class = "card-img-top image-extended" src = "<?php the_post_thumbnail_url('medium') ?>"style="max-width: 300px;max-height:300px;">
 								<?php else: ?>
-									<img class = "card-img-top image-extended" src="<?php echo get_template_directory_uri() . '/ksdt.png'; ?>"style="max-width: 300px;height:auto;">
+									<img class = "card-img-top image-extended" src="<?php echo get_template_directory_uri() . '/ksdt.png'; ?>"style="max-width: 300px;max-height: 300px;">
 								<?php endif; ?>
 							</div>
 						</div>
-						<div class="col-lg-8 post-text">
+						<div class="col-lg-8 post-text"style="max-height: 300px;height: 100%;">
 							<div class="meta">
 								<a class="cya-styles index-post-link" href="<?php the_permalink(); ?>">
-								<span style="position: relative;"><?php the_title(); ?> <span>/ <?php echo get_post_type();//change this to single category?></span></span></a>
+								<span style="position: relative;font-size: large;font-weight: bold"><?php the_title(); ?> </span></a>
 								<br>
-								<span class="entry-date"style="color: black;"><?php echo get_the_date(); ?> | <?php the_author(); ?></span>
+								<span class="entry-date"style="color: grey;"><?php echo get_the_date(); ?> in <?php  echo (get_the_category_list(__(', ')));?> | <?php the_author(); ?> </span>
 
 							</div>
 							<?php endif; ?>
 							<p class="snippet"style="display: flex;">
-								<?php the_excerpt(); ?>
+								<?php the_excerpt(); ?><a href="<?php echo get_permalink(); ?>"> Read More...</a>
 							</p>
 						</div>
 

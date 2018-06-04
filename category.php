@@ -35,15 +35,42 @@ $imgUrl =  $arr[1];?>
 			//Thats why I only do it first in get_permalink
 			$highlight_first_post = true;
 			while ( have_posts() ) : ?>
-				<!--CAROUSEL-->
-			    	<div class="col-md-6 wow fadeInUp img-playing<?php if($highlight_first_post) echo "";else echo "2"; $highlight_first_post = false;?>" data-wow-delay=".1s">
-						<img src="<?php echo get_the_post_thumbnail_url(the_post());?>" alt="img" style="width:100%;">
-						<a style="display: block;"href="<?php echo get_the_permalink(get_the_ID())?>">
-				    		<div class="text-home" style="background-color: #4B5257;">
-				    			<?php echo get_the_title();?><br>By <?php echo get_the_author();?>
-				    		</div>
-				    	</a>
-					</div>
+<div class ="row row-index row-eq-height"style="margin-top: 30px">
+			
+				<!-- ********************* -->
+
+				<article class="index-post" data-url="<?php the_permalink(the_post()); ?>">
+
+
+					<!-- if(get_the_category() && get_the_time() ) -->
+					<?php if (get_the_time() ): ?>
+						<div class="col-lg-4 col-image">
+							<div class="post-image"style="max-width: 300px;max-height: 300px;">
+								<?php if(has_post_thumbnail()): ?>
+									<img class = "card-img-top image-extended" src = "<?php the_post_thumbnail_url('medium') ?>"style="max-width: 300px;max-height:300px;">
+								<?php else: ?>
+									<img class = "card-img-top image-extended" src="<?php echo get_template_directory_uri() . '/ksdt.png'; ?>"style="max-width: 300px;max-height: 300px;">
+								<?php endif; ?>
+							</div>
+						</div>
+						<div class="col-lg-8 post-text"style="max-height: 300px;height: 100%;">
+							<div class="meta">
+								<a class="cya-styles index-post-link" href="<?php the_permalink(); ?>">
+								<span style="position: relative;font-size: large;font-weight: bold"><?php the_title(); ?> </span></a>
+								<br>
+								<span class="entry-date"style="color: grey;"><?php echo get_the_date(); ?> in <?php  echo (get_the_category_list(__(', ')));?> | <?php the_author(); ?> </span>
+
+							</div>
+							<?php endif; ?>
+							<p class="snippet"style="display: flex;">
+								<?php the_excerpt(); ?><a href="<?php echo get_permalink(); ?>"> Read More...</a>
+							</p>
+						</div>
+
+				</article>
+			
+
+		</div>
 				<?php			
 
 				/*
@@ -61,58 +88,7 @@ $imgUrl =  $arr[1];?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-	<script type="text/javascript">
-		jQuery(document).ready(function(){
 
-			jQuery('.autoplay').slick({
-			  slidesToShow: 4,
-			  slidesToScroll: 1,
-			  centerMode: false,
-			  autoplay: false,
-			  autoplaySpeed: 2000,
-			  arrows: true,
-			  dots: false,
-			  responsive: [
-			    {
-			      breakpoint: 1024,
-			      settings: {
-			        slidesToShow: 3,
-			        slidesToScroll: 3,
-			        infinite: true,
-
-			      }
-			    },
-			    {
-			      breakpoint: 800,
-			      settings: {
-			        slidesToShow: 3,
-			        slidesToScroll: 3,
-			        infinite: true,
-
-			      }
-			    },
-			    {
-			      breakpoint: 600,
-			      settings: {
-			        slidesToShow: 2,
-			        slidesToScroll: 2,
-
-			      }
-			    },
-			    {
-			      breakpoint: 480,
-			      settings: {
-		          	slidesToShow: 1,
-		          	slidesToScroll: 1
-
-			      }
-			    }
- 			 ]
-			});
-			
-		 });
-
-	</script>
 <?php
 get_sidebar();
 get_footer();

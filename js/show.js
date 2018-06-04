@@ -11,6 +11,16 @@ jQuery(document).ready(function(){
     jQuery(".old_playlist").click(function() {
       const playlistDate = jQuery(this).text();
       const id = this.id;
+      //Clean up previous playlist
+                jQuery('#playlistDate').text('');
+
+          jQuery('#playlistPlayer').empty();
+          jQuery('#playlistHeading').css('padding-bottom','0px');
+
+          if(jQuery('.autoplay2').hasClass('slick-initialized')) {
+              jQuery('.autoplay2').slick('unslick');
+              jQuery('.autoplay2').empty();
+          }
       jQuery.ajax({
         //TODO: get the admin ajax url properly
         url: 'http://local.wordpress.test/wp-admin/admin-ajax.php',
