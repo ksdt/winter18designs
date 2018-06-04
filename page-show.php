@@ -175,7 +175,7 @@ get_header(); ?>
 
     	
     	<!--This is where ajax content goes-->
-<div id="loading"class="lds-css ng-scope"><div style="width:100%;height:100%;" class="lds-ripple"><div></div><div></div></div><style type="text/css">@keyframes lds-ripple {
+<div id="loading"class="lds-css ng-scope"style="display:none;"><div style="width:100%;height:100%;margin: 0 auto;" class="lds-ripple"><div></div><div></div></div><style type="text/css">@keyframes lds-ripple {
   0% {
     top: 96px;
     left: 96px;

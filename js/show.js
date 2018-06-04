@@ -1,10 +1,9 @@
 jQuery(document).ready(function(){
 
-
       jQuery(document).ajaxStart(function () {
-        jQuery("#loading").show();
+        jQuery("#loading").css('display','block');
       }).ajaxStop(function () {
-        jQuery("#loading").hide();
+        jQuery("#loading").css('display','none');
     });
 
 

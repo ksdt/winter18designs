@@ -1,9 +1,8 @@
 	function updateShowInfo() {
-        console.log('updateShowInfo');
 		jQuery.getJSON('./radio-data')
 			.done(function(data) {
 				if (data.success && !data.results) {
-					console.log(data);
+					//console.log(data);
 					jQuery('.player .show-name').text('Rotation');
 					jQuery('.player .show-djs').text('rotation');
 					jQuery('.player .show-name')
