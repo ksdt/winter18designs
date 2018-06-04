@@ -178,120 +178,195 @@ get_header(); ?>
         </div>
     </div>
 
-	<div class="contact-wrapper">
-		<div class="row center" style="margin: 0px 30px 0px 30px">
-			<div class="col-md-12 col-sm-12 mb-50">
+	<div class="container mt-50">		
+			<div class="row">
+                <!-- single member -->
+                <div class="team-member col-md-3 col-sm-6 text-center">
+                 <h6><span>Manager</span></h6>
+                 <p><span>gm@ksdt.org</span></p>
+               
+                    <div class="member-thumb">
+                    	<div class="cover"><div class="cover-inner-left"></div></div>
+                        <img src="<?php echo the_field('gm1_pic')?>" alt="Manager - <?php echo the_field('gm1');?>" class="img-staff">
+                        <div class="team_cover"><div class="team_cover_inner"></div></div>
+                            <div class="overlay">
+                                <h6><?php echo the_field('gm1');?></h6>
+                                <p>gm@ksdt.org</br><?php echo the_field('gm1-oh');?></p>
+                            </div>
+                    	
+                	</div>
+                </div>
+                <!-- end single member -->
 
-				<!--first column-->
-				<div class="col-md-4">
-					<div class="row">	
-						<ul class="staff-list">
-							<div class="contact-card">
-								<li>
-									<p class="module-subtitle-contact2" style="text-align:center"><strong>General Manager</strong></p>
-									<p class="small-title-contact3" style="color:black;"><?php the_field('gm1');?><br> <span>gm@ksdt.org</span></p>
-									<p class="small-title-contact2" style="color:black;"><?php the_field('gm1-oh');?></p>
-								</li>
-							</div>
+ 
+              <!-- single member -->
+              <div class="team-member col-md-3 col-sm-6 text-center">
+                <h6><span>Manager</span></h6>
+                <p><span>gm@ksdt.org</span></p>
+                
+                    <div class="member-thumb">
+                    	<div class="cover"><div class="cover-inner-middle"></div></div>
+                        <img src="<?php echo the_field('gm2_pic')?>" alt="Manager - <?php echo the_field('gm2');?>" class="img-staff">
+                        <div class="team_cover"><div class="team_cover_inner"></div></div>
+                            <div class="overlay">
+                                <h6><?php echo the_field('gm2');?></h6>
+                                <p>gm@ksdt.org</br><?php echo the_field('gm2');?></p>
+                            </div>
+                    </div>	
+
+                </div>
+                <!-- end single member -->
+
+                <!-- single member -->
+                <div class="team-member col-md-3 col-sm-6 text-center ">
+                <h6><span>Promotions</span></h6>
+                <p><span>promotions@ksdt.org</span></p>
+                
+                 	<div class="member-thumb">
+                    <div class="cover"><div class="cover-inner-right"></div></div>
+                        <img src="<?php echo the_field('promotions_pic')?>" alt="Promotions - <?php echo the_field('promotions');?>" class="img-staff">
+                        <div class="team_cover"><div class="team_cover_inner"></div></div>
+                            <div class="overlay">
+                                <h6><?php echo the_field('promotions');?></h6>
+                                <p>promotions@ksdt.org </br><?php echo the_field('promotions-oh');?></p>
+                            </div>
+                    </div>
+               	</div>
+
+                <!-- single member -->
+                <div class="team-member col-md-3 col-sm-6 text-center">
+                 <h6><span>Music</span></h6>
+                 <p><span>music@ksdt.org</span></p>
+               
+                    <div class="member-thumb">
+                        <div class="cover"><div class="cover-inner-left"></div></div>
+                        <img src="<?php echo the_field('music_director_pic')?>" alt="Promotions - <?php echo the_field('music_director');?>" class="img-staff">
+                        <div class="team_cover"><div class="team_cover_inner"></div></div>
+                            <div class="overlay">
+                                <h6>K<?php echo the_field('music_director');?></h6>
+                                <p>music@ksdt.org</br><?php echo the_field('music_director-oh');?></p>
+                            </div>
+                        
+                    </div>
+                </div>
+                <!-- end single member -->
+            </div>
 
 
-			                <div class="contact-card">
-				                <li>
-				                	<p class="module-subtitle-contact2" style="text-align:center"> <strong>Programming</strong></p>
-				                  	<p class="small-title-contact3" style="color:black;"><?php the_field('programming');?><br> <span>programming@ksdt.org</span></p>
-				                  	<p class="small-title-contact2" style="color:black;"><?php the_field('programming-oh');?></p>
-				                </li>
-			                </div>
+            <div class="row">
+                <!-- single member -->
+                <div class="team-member col-md-3 col-sm-6 text-center">
+                 <h6><span>Technology</span></h6>
+                 <p><span>webmaster@ksdt.org</span></p>
+               
+                    <div class="member-thumb">
+                        <div class="cover"><div class="cover-inner-left"></div></div>
+                        <img src="<?php echo the_field('tech_pic')?>" alt="Promotions - <?php echo the_field('tech');?>" class="img-staff">
+                        <div class="team_cover"><div class="team_cover_inner"></div></div>
+                            <div class="overlay">
+                                <h6><?php echo the_field('tech');?></h6>
+                                <p>webmaster@ksdt.org</br><?php echo the_field('tech-oh');?></p>
+                            </div>
+                        
+                    </div>
+                </div>
+                <!-- end single member -->
 
+ 
+              <!-- single member -->
+              <div class="team-member col-md-3 col-sm-6 text-center">
+                <h6><span>Audio</span></h6>
+                <p><span>engineer@ksdt.org</span></p>
+                
+                    <div class="member-thumb">
+                        <div class="cover"><div class="cover-inner-middle"></div></div>
+                        <img src="<?php echo the_field('engineer1_pic')?>" alt="Programming - <?php echo the_field('engineer1');?>" class="img-staff">
+                        <div class="team_cover"><div class="team_cover_inner"></div></div>
+                            <div class="overlay">
+                                <h6><?php echo the_field('engineer1');?></h6>
+                                <p>engineer@ksdt.org</br><?php echo the_field('engineer1-oh');?></p>
+                                
+                            </div>
+                    </div>  
 
-			                <div class="contact-card">
-				                <li>
-				                	<p class="module-subtitle-contact2" style="text-align:center"> <strong>Engineer</strong></p>
-				                  	<p class="small-title-contact3" style="color:black;"><?php the_field('engineer1');?><br> <span>engineer@ksdt.org</span></p>
-				                  	<p class="small-title-contact2" style="color:black;"><?php the_field('engineer1-oh');?></p>
-				                </li>
-			                </div>
+                </div>
+                <!-- end single member -->
 
+                <!-- single member -->
+                <div class="team-member col-md-3 col-sm-6 text-center ">
+                <h6><span>Audio</span></h6>
+                <p><span>engineer@ksdt.org</span></p>
+                
+                    <div class="member-thumb">
+                    <div class="cover"><div class="cover-inner-right"></div></div>
+                        <img src="<?php echo the_field('engineer2_pic')?>" alt="Audio Engineer - <?php echo the_field('engineer2');?>" class="img-staff">
+                        <div class="team_cover"><div class="team_cover_inner"></div></div>
+                            <div class="overlay">
+                                <h6><?php echo the_field('engineer2');?></h6>
+                                <p>engineer@ksdt.org </br><?php echo the_field('engineer2-oh');?></p>
+                            </div>
+                    </div>
+                </div>
 
+                <!-- single member -->
+                <div class="team-member col-md-3 col-sm-6 text-center">
+                 <h6><span>Graphics</span></h6>
+                 <p><span>graphics@ksdt.org</span></p>
+               
+                    <div class="member-thumb">
+                        <div class="cover"><div class="cover-inner-left"></div></div>
+                        <img src="<?php echo the_field('graphics_pic')?>" alt="Promotions - <?php echo the_field('graphics');?>" class="img-staff">
+                        <div class="team_cover"><div class="team_cover_inner"></div></div>
+                            <div class="overlay">
+                                <h6><?php echo the_field('graphics');?></h6>
+                                <p>graphics@ksdt.org</br><?php echo the_field('graphics-oh');?></p>
+                            </div>
+                        
+                    </div>
+                </div>
+                <!-- end single member -->
+            </div>
 
-							  
-						</ul>
-					</div>
-				</div>
-				<!--end of first column-->
+              <div class="row center">
+                <!-- single member -->
+                <div class="team-member col-md-3 text-center">
+                 <h6><span>Secretary</span></h6>
+                 <p><span>secretary@ksdt.org</span></p>
+               
+                    <div class="member-thumb">
+                    	<div class="cover"><div class="cover-inner-left"></div></div>
+                        <img src="<?php echo the_field('secretary_pic')?>" alt="Promotions - <?php echo the_field('secretary');?>" class="img-staff">
+                        <div class="team_cover"><div class="team_cover_inner"></div></div>
+                            <div class="overlay">
+                                <h6><?php echo the_field('secretary');?></h6>
+                                <p>secretary@ksdt.org</br><?php echo the_field('secretary-oh');?></p>
+                            </div>
+                    	
+                	</div>
+                </div>
+                <!-- end single member -->
 
-				<!--second column-->
-				<div class="col-md-4">
-					<div class="row center">
-						<ul class="staff-list">
+ 
+              <!-- single member -->
+              <div class="team-member col-md-3 text-center">
+                <h6><span>Programming</span></h6>
+                <p><span>programming@ksdt.org</span></p>
+                
+                    <div class="member-thumb">
+                    	<div class="cover"><div class="cover-inner-middle"></div></div>
+                        <img src="<?php echo the_field('programming_pic')?>" alt="Programming - <?php echo the_field('programming');?>" class="img-staff">
+                        <div class="team_cover"><div class="team_cover_inner"></div></div>
+                            <div class="overlay">
+                                <h6><?php echo the_field('programming');?></h6>
+                                <p>programming@ksdt.org</br><?php echo the_field('programming-oh');?></p>
+                            </div>
+                    </div>	
 
-							<div class="contact-card">
-								<li>
-									<p class="module-subtitle-contact2" style="text-align:center"><strong>General Manager</strong></p>
-									<p class="small-title-contact3" style="color:black;"><?php the_field('gm2');?><br> <span>gm@ksdt.org</span></p>
-									<p class="small-title-contact2" style="color:black;"><?php the_field('gm2-oh');?></p>
-								</li>
-							</div>
+                </div>
+                <!-- end single member -->
 
-							<div class="contact-card">
-								<li>
-									<p class="module-subtitle-contact2" style="text-align:center"> <strong>Music Director</strong></p>
-									<p class="small-title-contact3" style="color:black;"><?php the_field('music_director');?><br> <span>music@ksdt.org</span></p>
-									<p class="small-title-contact2" style="color:black;"><?php the_field('music_director-oh');?></p>
-								</li>
-							</div>
-
-							<div class="contact-card">
-								<li>
-									<p class="module-subtitle-contact2" style="text-align:center"> <strong>Graphics</strong></p>
-									<p class="small-title-contact3" style="color:black;"><?php the_field('graphics');?><br> <span>graphics@ksdt.org</span></p>
-									<p class="small-title-contact2" style="color:black;"><?php the_field('graphics-oh');?></p>
-								</li>
-							</div>
-
-
-						
-						</ul>
-					</div>
-				</div>
-				<!--end of second column-->
-
-				<!--third column-->
-				<div class="col-md-4">
-					<div class="row">
-						<ul class="staff-list">
-							<div class="contact-card item7">
-								<li>
-									<p class="module-subtitle-contact2" style="text-align:center"> <strong>Promotions</strong></p>
-									<p class="small-title-contact3" style="color:black;"><?php the_field('promotions');?><br> <span>promotions@ksdt.org</span></p>
-									<p class="small-title-contact2" style="color:black;"><?php the_field('promotions-oh');?></p>
-								</li>
-							</div>
-
-							<div class="contact-card">
-								<li>
-									<p class="module-subtitle-contact2" style="text-align:center"> <strong>Technology</strong></p>
-									<p class="small-title-contact3" style="color:black;"><?php the_field('tech');?><br> <span>webmaster@ksdt.org</span></p>
-									<p class="small-title-contact2" style="color:black;"><?php the_field('tech-oh');?></p>
-								</li>
-							</div>
-
-					
-
-			                <div class="contact-card item9">
-				                <li>
-				                	<p class="module-subtitle-contact2" style="text-align:center"> <strong>Secretary</strong></p>
-				                  	<p class="small-title-contact3" style="color:black;"><?php the_field('secretary');?><br> <span>secretary@ksdt.org</span></p>
-				                  	<p class="small-title-contact2" style="color:black;"><?php the_field('secretary-oh');?></p>
-				                </li>
-			                </div>
-          				</ul>
-        			</div>
-      			</div>
-
-			</div>
-		</div>
-	</div>
+            </div><!--END ROW-->
+		<div class="bottom-separator hidden-xs"></div>
 </section>
 <!--END OF STAFF MEETINGS-->
 
