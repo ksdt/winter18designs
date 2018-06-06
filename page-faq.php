@@ -14,7 +14,7 @@
 
 get_header(); ?>
 <style>
-a {font-size: large;}
+.faq-link {font-size: large;}
 </style>
 <div id="primary" class="content-area">
   <main id="main" class="site-main" role="main">
@@ -28,7 +28,7 @@ a {font-size: large;}
             <div class="card">
               <div class="card-header" role="tab" id="heading1">
                 <h6 class="mb-0">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                  <a class="faq-link"data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
                     What does "K.S.D.T." stand for?
                   </a>
                 </h6>
@@ -51,7 +51,7 @@ a {font-size: large;}
             <div class="card">
               <div class="card-header" role="tab" id="heading2">
                 <h6 class="mb-0">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                  <a class="collapsed faq-link faq-link" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
                     Did we ever have a radio tower/ frequency?
                   </a>
                 </h6>
@@ -66,7 +66,7 @@ a {font-size: large;}
             <div class="card">
               <div class="card-header" role="tab" id="heading3">
                 <h6 class="mb-0">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                  <a class="collapsed faq-link" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
                     Where can I apply to be a DJ?
                   </a>
                 </h6>
@@ -81,7 +81,7 @@ a {font-size: large;}
             <div class="card">
               <div class="card-header" role="tab" id="heading5">
                 <h6 class="mb-0">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                  <a class="collapsed faq-link" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
                     What is the best time to have a show?
                   </a>
                 </h6>
@@ -98,7 +98,7 @@ a {font-size: large;}
             <div class="card">
               <div class="card-header" role="tab" id="heading7">
                 <h6 class="mb-0">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                  <a class="collapsed faq-link" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
                     What is the phone number?
                   </a>
                 </h6>
@@ -115,7 +115,7 @@ a {font-size: large;}
             <div class="card">
               <div class="card-header" role="tab" id="heading8">
                 <h6 class="mb-0">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                  <a class="collapsed faq-link" data-toggle="collapse" data-parent="#accordion" href="#collapse8" aria-expanded="false" aria-controls="collapse8">
                     What is the practice room?
                   </a>
                 </h6>
@@ -130,7 +130,7 @@ a {font-size: large;}
             <div class="card">
               <div class="card-header" role="tab" id="heading9">
                 <h6 class="mb-0">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                  <a class="collapsed faq-link" data-toggle="collapse" data-parent="#accordion" href="#collapse9" aria-expanded="false" aria-controls="collapse9">
                     How do I get to rehearse with my band?
                   </a>
                 </h6>
@@ -145,7 +145,7 @@ a {font-size: large;}
             <div class="card">
               <div class="card-header" role="tab" id="heading10">
                 <h6 class="mb-0">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse10" aria-expanded="false" aria-controls="collapse10">
+                  <a class="collapsed faq-link" data-toggle="collapse" data-parent="#accordion" href="#collapse10" aria-expanded="false" aria-controls="collapse10">
                     Can I get recorded here at KSDT? How much does it cost?
                   </a>
                 </h6>
@@ -160,7 +160,7 @@ a {font-size: large;}
             <div class="card">
               <div class="card-header" role="tab" id="heading4">
                 <h6 class="mb-0">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                  <a class="collapsed faq-link" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
                     How can I get more involved in the station?
                   </a>
                 </h6>
@@ -175,7 +175,7 @@ a {font-size: large;}
             <div class="card">
               <div class="card-header" role="tab" id="heading11">
                 <h6 class="mb-0">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse11" aria-expanded="false" aria-controls="collapse11">
+                  <a class="collapsed faq-link" data-toggle="collapse" data-parent="#accordion" href="#collapse11" aria-expanded="false" aria-controls="collapse11">
                     How can I get involved with the station besides being a DJ?
                   </a>
                 </h6>
@@ -190,7 +190,7 @@ a {font-size: large;}
             <div class="card">
               <div class="card-header" role="tab" id="heading12">
                 <h6 class="mb-0">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12" aria-expanded="false" aria-controls="collapse12">
+                  <a class="collapsed faq-link" data-toggle="collapse" data-parent="#accordion" href="#collapse12" aria-expanded="false" aria-controls="collapse12">
                     I'm trying to talk to someone named Caleb?
                   </a>
                 </h6>
