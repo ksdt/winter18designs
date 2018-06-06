@@ -351,5 +351,4 @@ get_header();
 	</script>
 
 <?php
-get_sidebar();
 get_footer();

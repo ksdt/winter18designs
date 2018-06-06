@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package xx
+ * @package winter18redesign
  */
 
 get_header(); ?>
@@ -212,5 +212,4 @@ get_header(); ?>
   </main>
 
 <?php
-get_sidebar();
 get_footer();
