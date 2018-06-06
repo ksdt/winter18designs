@@ -243,7 +243,7 @@ get_header(); ?>
                         <img src="<?php echo the_field('music_director_pic')?>" alt="Promotions - <?php echo the_field('music_director');?>" class="img-staff">
                         <div class="team_cover"><div class="team_cover_inner"></div></div>
                             <div class="overlay">
-                                <h6>K<?php echo the_field('music_director');?></h6>
+                                <h6><?php echo the_field('music_director');?></h6>
                                 <p>music@ksdt.org</br><?php echo the_field('music_director-oh');?></p>
                             </div>
                         
