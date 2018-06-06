@@ -56,9 +56,18 @@
 				            		<i class="fa fa-instagram"></i>
 				            	</a>
 				            </li>
+				            <li>
+				            	<a class="flickr" href="https://www.flickr.com/photos/138845705@N02/albums/">
+				            		<i class="fa fa-flickr"></i>
+				            	</a>
+				            </li>
+				            <li>
+				            	<a class="github" href="https://github.com/ksdt/winter18designs">
+				            		<i class="fa fa-github"></i>
+				            	</a>
+				            </li>
 	          			</ul>                 
 	          		</div>
-
 	        	</div><!-- .col-md-3 -->
 	        	<!-- End Twitter Widget -->
 

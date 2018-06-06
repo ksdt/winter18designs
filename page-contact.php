@@ -371,5 +371,4 @@ get_header(); ?>
 <!--END OF STAFF MEETINGS-->
 
 <?php
-get_sidebar();
 get_footer();

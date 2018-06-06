@@ -50,5 +50,4 @@ $post_id = the_ID();
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

@@ -108,7 +108,10 @@ get_header(); ?>
   <main id="main" class="site-main" role="main">
     <div class="container">
     <!-- SPLASH IMAGE  -->
-        <div class="show-hero">
+        <?php $max = 5;
+            $num = rand(1,$max);
+            $str = 'pic' . $num;?>
+        <div class="show-hero"style="background: url('<?php the_field($str);?>')no-repeat center;background-size:contain;">
             <div class="section-overlay"></div>
             <div class="page-title">
                 <h2 style="font-size: 35px;"><?php echo $show['ShowName']; ?></h2>
@@ -267,5 +270,4 @@ get_header(); ?>
 
 </div>
 <?php
-get_sidebar();
 get_footer();

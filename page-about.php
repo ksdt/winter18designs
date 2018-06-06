@@ -273,11 +273,10 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-        <a href="https://ksdt.ucsd.edu/faq/" target="_blank"><button class="button-home">View FAQ</button></a>
+        <a href="/index.php?page_id=93" target="_blank"><button class="button-home">View FAQ</button></a>
     </section>
 
   
-
   <script type="text/javascript">
         jQuery(document).ready(function(){
             jQuery('.autoplay').slick({
@@ -327,5 +326,4 @@ get_header(); ?>
 </div>
 
 <?php
-//get_sidebar();
 get_footer();

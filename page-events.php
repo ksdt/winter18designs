@@ -12,7 +12,7 @@ get_header(); ?>
     <div class="section-overlay"></div>
     <div class="page-title">
         <h2 style="font-size: 35px;">EVENTS</h2>
-        <div class="small-title-Events">We like to throw dance parties and give away tickets</div>
+        <div class="small-title-Events">We like to throw concerts and give away tickets</div>
     </div>
 </div>
 
@@ -243,7 +243,7 @@ get_header(); ?>
                 <div class="row center">
                     <div class="col-md-8 col-md-offset-2 col-sm-12">
                         <h2 class="section-title-3 dark-section-text mb-25" style="font-size:40px">CONCERT GIVEAWAYS</h2>
-                        <p class="white-font module-subtitle mb-25">Follow us on<span><a href="https://www.facebook.com/KSDTCollegeRadio/" target="_blank" class="event-link" style="padding-left:8px; color: #D53B80;"><strong>facebook</strong></a></span> and never miss a beat! KSDT throws awesome events and concerts that are free for all UCSD students!</p>
+                        <p class="white-font module-subtitle mb-25">Follow us on<span><a href="https://www.facebook.com/KSDTCollegeRadio/" target="_blank" class="event-link" style="padding-left:8px; color: #D53B80;"><strong>facebook</strong></a></span> to keep up! KSDT gives away tickets to concerts all over San Diego!</p>
                     </div>
                 </div>
             </div>
@@ -354,4 +354,3 @@ get_header(); ?>
 
 <?php 
 get_footer();
-?>
