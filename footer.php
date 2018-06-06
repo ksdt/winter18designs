@@ -23,7 +23,7 @@
 	        	<!-- Start Contact Widget -->
 	        	<div class="col-md-4">
 	          		<div class="footer-widget contact-widget">
-	             		<p class="footerText">The views presented on this website are not necessarily those of The University of California Regents, The University of California San Diego, or KSDT Radio. GIT TEST</p>
+	             		<p class="footerText">The views presented on this website are not necessarily those of The University of California Regents, The University of California San Diego, or KSDT Radio.</p>
 	           		</div>
 	         	</div>
 	        
