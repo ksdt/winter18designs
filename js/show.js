@@ -22,7 +22,7 @@ jQuery(document).ready(function(){
           }
       jQuery.ajax({
         //TODO: get the admin ajax url properly
-        url: 'http://ksdt.ucsd.edu/wp-admin/admin-ajax.php',
+        url: 'https://ksdt.ucsd.edu/wp-admin/admin-ajax.php',
         data: {
           'action': 'get_playlist',
           'playlist_id': id
