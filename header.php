@@ -50,7 +50,7 @@
 		      		<img src="<?php echo get_template_directory_uri();?>/img/Logos/LOGO.png" width="80" alt="KSDT">
 		      	</a>
 		      	<div id="player-desktop"class="player">
-		          <i class="fa fa-play" aria-hidden="true"></i>
+		          <a id="play-pause-button" class="fa fa-play"style="font-size: 20px;cursor: pointer;"></a>
 		          <span class="live-circle"></span>
 		          <span class="listen">LIVE</span>
 		          <div class="show-info">
@@ -60,7 +60,29 @@
       			</div>
 	    	</div>
 	    
-	
+	      <script>
+        var audio = new Audio("https://ksdt.ucsd.edu/stream.mp3");
+
+jQuery('#play-pause-button').on("click",function(){
+  if(jQuery(this).hasClass('fa-play'))
+   {
+     jQuery(this).removeClass('fa-play');
+     jQuery(this).addClass('fa-pause');
+     audio.play();
+   }
+  else
+   {
+     jQuery(this).removeClass('fa-pause');
+     jQuery(this).addClass('fa-play');
+     audio.pause();
+   }
+});
+
+audio.onended = function() {
+     jQuery("#play-pause-button").removeClass('fa-pause');
+     jQuery("#play-pause-button").addClass('fa-play');
+};
+</script>
 
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -83,7 +105,7 @@
 			          	<a href="https://tunein.com/radio/KSDT-s18746/">TuneIn</a>
 			          </li>
 			          <li id="listen-live-li"class="nav-item">
-			          	<a href="https://ksdt.ucsd.edu/listen/stream.mp3">Listen Live</a>
+			          	<a href="https://ksdt.persona.co/">Listen Live</a>
 			          </li>
 	      		</ul>
 	    	</div><!-- /.navbar-collapse -->
