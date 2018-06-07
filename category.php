@@ -20,7 +20,7 @@ $imgUrl =  $arr[1];?>
 
 			</header><!-- .page-header -->
 			
-			<div class="category-hero"style="background: url('<?php echo get_template_directory_uri();?>/img/category/<?php echo $imgUrl;?>.jpg') no-repeat">
+			<div class="category-hero"style="background: url('<?php echo get_template_directory_uri()?>/img/category/writings.png')no-repeat center; background-size:contain">
 				<div class="section-overlay"></div>
 					<div class="category-title">
 						<h2 style="font-size: 35px;"><?php the_archive_title();?></h2>

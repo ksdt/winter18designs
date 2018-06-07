@@ -20,7 +20,8 @@ $current_url = home_url(add_query_arg(array(), $wp->request));?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<!-- SPLASH IMAGE  -->
-    <div class="about-hero">
+    <div class="about-hero"style="background: url('<?php echo get_template_directory_uri()?>/img/category/writings.png')no-repeat center;
+    background-size:contain">
         <div class="section-overlay"></div>
         <div class="page-title">
             <h2 style="font-size: 35px;">Writings</h2>

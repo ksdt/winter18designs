@@ -111,8 +111,12 @@ get_header();
 		    		foreach ($shows as $show) {
 		    		if($currentShow == $show['ShowID']) $initialIndex =  $i; $i++;?>
 			    	<div class="col-md-6 wow fadeInUp img-playing<?php if($currentShow != $show['ShowID']) echo "2"?>" data-wow-delay=".1s">
-			    		<?php if(array_key_exists('ShowImgL',$show)) $imgUrl = $show['ShowImgL']['href'];?>
-						<img src="<?php echo $imgUrl;$imgUrl = '';?>"alt="" style="width:100%;">
+			    		<?php if(array_key_exists('ShowImgL',$show)) $imgUrl = $show['ShowImgL']['href'];
+			    		else {
+			    			$fld_str = 'pic' . rand(1,5);
+			    			$imgUrl = '';
+			    		}?>
+						<img src="<?php if($imgUrl != '')echo $imgUrl;else the_field($fld_str); $imgUrl = '';?>"alt="" style="width:100%;">
 				    		<?php //Todo: make the div a link w/o messing up layout?>
 				    		<a href="/show/<?php echo $show['ShowName']; ?>">
 				    		<div class="text-home<?php if($currentShow != $show['ShowID']) echo '3"';else echo '" style="background-color: #4B5257;"';?>"><?php $time = $show['OnairTime'] % 12; if($time == 0) $time = 12; echo $time . $show['OnairTimeAMPM'];?> | <?php echo $show['djs'];?><br><?php echo $show['ShowName']?></div></a>
@@ -152,40 +156,53 @@ get_header();
 			<div class="row">
 
 			  	<!-- single member -->
-		      	<div class="team-member col-md-4 col-sm-4 text-center">
+		      	<div class="team-member col-md-3 col-sm-3 text-center">
 		      		<div class="member-thumb">
 		          		<div class="cover"><div class="cover-inner-left"></div></div>
-		              	<img src="img/Home/dj-standout1.jpg" alt="Team Member" class="img-responsive">
+		              	<img src="<?php the_field('dj1_pic');?>" alt="Team Member" class="img-responsive"style="width:250px;overflow: hidden;">
 		              	<div class="team_cover"><div class="team_cover_inner"></div></div>  
 		          	</div>
-		          	<h6 style="color:white;">dj&nbsp;soctopus</h6>
-		          	<span style="color: #9F9F9F;"><strong>Thursdays @ 1pm</strong></span>
+		          	<h6 style="color:white;"><?php the_field('dj1_name');?></h6>
+		          	<span style="color: #9F9F9F;"><strong><?php the_field('dj1_time');?></strong></span>
 
 		      	</div>
 		    	<!-- end single member -->
 
 		    	<!-- single member -->
-		      	<div class="team-member col-md-4 col-sm-4 text-center">
+		      	<div class="team-member col-md-3 col-sm-3 text-center">
 		          	<div class="member-thumb">
 		          		<div class="cover"><div class="cover-inner-middle"></div></div>
-		              	<img src="img/Home/ray-standout.jpg" alt="Team Member" class="img-responsive">
+		              	<img src="<?php the_field('dj2_pic');?>" alt="Team Member" class="img-responsive"style="width:250px;overflow: hidden;">
 		              	<div class="team_cover"><div class="team_cover_inner"></div></div>        
 		          	</div>
-		          	<h6 style="color:white;">dj&nbsp;blah blah</h6>
-		          	<span style="color: #9F9F9F;"><strong>Wednesdays @ 2pm</strong></span>
+		          	<h6 style="color:white;"><?php the_field('dj2_name');?></h6>
+		          	<span style="color: #9F9F9F;"><strong><?php the_field('dj2_time');?></strong></span>
 
 		      	</div>
 		    	<!-- end single member -->
 
   				<!-- single member -->
-	      		<div class="team-member col-md-4 col-sm-4 text-center">
+	      		<div class="team-member col-md-3 col-sm-3 text-center">
 	          		<div class="member-thumb">
 	          			<div class="cover"><div class="cover-inner-right"></div></div>
-	              		<img src="img/Home/cindy-standout.JPG" alt="Team Member" class="img-responsive">
+	              		<img src="<?php the_field('dj3_pic');?>" alt="Team Member" class="img-responsive"style="width:250px;overflow: hidden;">
 	              		<div class="team_cover"><div class="team_cover_inner"></div></div>    
 	          		</div>
-	          		<h6 style="color:white;">dj&nbsp;tangy</h6>
-	          		<span style="color: #9F9F9F;"><strong>Mondays @ 5pm</strong></span>
+	          		<h6 style="color:white;"><a href="<?php the_field('dj1_url');?>"><?php the_field('dj3_name');?></a></h6>
+	          		<span style="color: #9F9F9F;"><strong><?php the_field('dj3_time');?></strong></span>
+
+	      		</div>
+		    	<!-- end single member -->
+
+		    	  				<!-- single member -->
+	      		<div class="team-member col-md-3 col-sm-3 text-center">
+	          		<div class="member-thumb">
+	          			<div class="cover"><div class="cover-inner-right"></div></div>
+	              		<img src="<?php the_field('dj4_pic');?>" alt="Team Member" class="img-responsive"style="width:250px;overflow: hidden;">
+	              		<div class="team_cover"><div class="team_cover_inner"></div></div>    
+	          		</div>
+	          		<h6 style="color:white;"><?php the_field('dj4_name');?></h6>
+	          		<span style="color: #9F9F9F;"><strong><?php the_field('dj4_time');?></strong></span>
 
 	      		</div>
 		    	<!-- end single member -->
