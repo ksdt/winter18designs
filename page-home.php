@@ -162,7 +162,7 @@ get_header();
 		              	<img src="<?php the_field('dj1_pic');?>" alt="Team Member" class="img-responsive"style="width:250px;overflow: hidden;">
 		              	<div class="team_cover"><div class="team_cover_inner"></div></div>  
 		          	</div>
-		          	<h6 style="color:white;"><?php the_field('dj1_name');?></h6>
+		          	<h6 style="color:white;"><a class = "dj_month" href="<?php the_field('dj1_url');?>"><?php the_field('dj1_name');?></a></h6>
 		          	<span style="color: #9F9F9F;"><strong><?php the_field('dj1_time');?></strong></span>
 
 		      	</div>
@@ -175,7 +175,7 @@ get_header();
 		              	<img src="<?php the_field('dj2_pic');?>" alt="Team Member" class="img-responsive"style="width:250px;overflow: hidden;">
 		              	<div class="team_cover"><div class="team_cover_inner"></div></div>        
 		          	</div>
-		          	<h6 style="color:white;"><?php the_field('dj2_name');?></h6>
+		          	<h6 style="color:white;"><a class = "dj_month" href="<?php the_field('dj2_url');?>"><?php the_field('dj2_name');?></a></h6>
 		          	<span style="color: #9F9F9F;"><strong><?php the_field('dj2_time');?></strong></span>
 
 		      	</div>
@@ -188,7 +188,7 @@ get_header();
 	              		<img src="<?php the_field('dj3_pic');?>" alt="Team Member" class="img-responsive"style="width:250px;overflow: hidden;">
 	              		<div class="team_cover"><div class="team_cover_inner"></div></div>    
 	          		</div>
-	          		<h6 style="color:white;"><a href="<?php the_field('dj1_url');?>"><?php the_field('dj3_name');?></a></h6>
+	          		<h6 style="color:white;"><a class = "dj_month" href="<?php the_field('dj3_url');?>"><?php the_field('dj3_name');?></a></h6>
 	          		<span style="color: #9F9F9F;"><strong><?php the_field('dj3_time');?></strong></span>
 
 	      		</div>
@@ -201,7 +201,7 @@ get_header();
 	              		<img src="<?php the_field('dj4_pic');?>" alt="Team Member" class="img-responsive"style="width:250px;overflow: hidden;">
 	              		<div class="team_cover"><div class="team_cover_inner"></div></div>    
 	          		</div>
-	          		<h6 style="color:white;"><?php the_field('dj4_name');?></h6>
+	          		<h6 style="color:white;"><a class = "dj_month"href="<?php the_field('dj4_url');?>"><?php the_field('dj4_name');?></a></h6>
 	          		<span style="color: #9F9F9F;"><strong><?php the_field('dj4_time');?></strong></span>
 
 	      		</div>
@@ -301,7 +301,11 @@ get_header();
 
 	<!-- SCRIPTS -->
 
-	
+	<style>
+	.dj_month, .dj_month:hover{
+		color: white;
+	}
+</style>
 
 	<script type="text/javascript">
 

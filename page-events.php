@@ -45,9 +45,9 @@ get_header(); ?>
                             <div class="team_cover_inner"></div>
                         </div>
                         <div class="overlay" style="background-color:black">
-                        	<p><strong>03.07.18</strong></p>
-                            <h6 style="padding: 0px 15px 0px 15px; color:white">ANOTHER GODDAMN OPEN MIC NIGHT </h6>
-                            <p><strong>7PM</strong> @ <em>KSDT</em></p>
+                        	<p><strong><?php the_field('upcoming_date');?></strong></p>
+                            <h6 style="padding: 0px 15px 0px 15px; color:white">KSDTs 50th B-Day Bash!</h6>
+                            <p><strong><?php the_field('upcoming_time');?></strong> @ <em>KSDT</em></p>
                             <div class="social-links">
                                 <a href=""><i class="fa fa-twitter"></i></a>
                                 <a href="https://www.facebook.com/events/156816381687237/?active_tab=discussion"><i class="fa fa-facebook"></i></a>
@@ -60,16 +60,12 @@ get_header(); ?>
                 <div class="col-md-6  mt-50" style="margin-left:40px">
                     <div class="card-event">
                         <div class="card-block">
-                            <h4 class="card-title" style="text-align:left; font-size: 24px"> 03.07 | God Damn Open Mic Night</h4>
+                            <h4 class="card-title" style="text-align:left; font-size: 24px"><?php the_field('upcoming_title');?></h4>
                             <div class="cardContent inline">
-                                <p class="events-card-text mb-25">Did you miss open mic eagle? Did you fail your midterms? Are you not sure what you can do with all this emotion?<br><br>COME TO OUR GOD DAMN OPEN MIC NIGHT!!!</p>
-                                <a href="https://www.facebook.com/events/156816381687237/" class="default-btn-events-fb" style="align-content: center;"> FACEBOOK 
+                                <p class="events-card-text mb-25"><?php the_field('upcoming_desc');?></p>
+                                <a href="<?php the_field('facebook_link')?>" class="default-btn-events-fb" style="align-content: center;"> FACEBOOK 
                                     <i class="fa fa-angle-double-right" aria-hidden="true"></i>
                                 </a><br>
-
-							    <a href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=MzhtZnF1dDA1dXBzdjA1amRuMmU0dG9qcjEgZHZuMDIzQHVjc2QuZWR1&amp;tmsrc=dvn023%40ucsd.edu" class="default-btn-events-google" style="align-self: center"> GOOGLE CALENDAR 
-                                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                                </a>
                             </div>
                         </div>
              	    </div>
@@ -117,11 +113,11 @@ get_header(); ?>
                 <div class="team-member col-md-3 col-sm-6 text-center">
                     <div class="member-thumb">
                         
-                        <img src="<?php echo get_template_directory_uri();?>/img/Events/flyer-1.jpg" alt="Event Flyer" class="img-responsive">
+                        <img src="<?php the_field('past1_pic');?>" alt="Event Flyer" class="img-responsive">
                         
                                 
                     </div>
-                        <h5 style="color:white">Jan 25th</h5>      
+                        <h5 style="color:white"><?php the_field('past1_date');?></h5>      
                 </div>
                 <!-- end single member -->
                 
@@ -129,9 +125,9 @@ get_header(); ?>
                 <div class="team-member col-md-3 col-sm-6 text-cente mb-">
                     <div class="member-thumb">
                     
-                        <img src="<?php echo get_template_directory_uri();?>/img/Events/flyer6.png" alt="Event Flyer" class="img-responsive">
+                        <img src="<?php the_field('past2_pic');?>" alt="Event Flyer" class="img-responsive">
                     </div>
-                    <h5>Nov 30th</h5>
+                    <h5><?php the_field('past2_date');?></h5>
                 </div>
                 <!-- end single member -->
 
@@ -139,10 +135,10 @@ get_header(); ?>
                 <div class="team-member col-md-3 col-sm-6  text-center ">
                     <div class="member-thumb">
                         <div class="cover"><div class="cover-inner-right"></div></div>
-                        <img src="<?php echo get_template_directory_uri();?>/img/Events/flyer7.png" alt="Event Flyer" class="img-responsive">
+                        <img src="<?php the_field('past3_pic');?>" alt="Event Flyer" class="img-responsive">
                         <div class="team_cover"><div class="team_cover_inner"></div></div>
                     </div>
-                    <h5>June 8th</h5>
+                    <h5><?php the_field('past3_date');?></h5>
                 </div>
                 <!-- end single member -->
 
@@ -150,9 +146,9 @@ get_header(); ?>
                 <div class="team-member col-md-3 col-sm-6  text-center ">
                     <div class="member-thumb">
                         <div class="cover"><div class="cover-inner-right"></div></div>
-                        <img src="<?php echo get_template_directory_uri();?>/img/Events/flyer-5.png" alt="Event Flyer" class="img-responsive">
+                        <img src="<?php the_field('past4_pic');?>" alt="Event Flyer" class="img-responsive">
                     </div>
-                    <h5>Feb 17th</h5>
+                    <h5><?php the_field('past4_date');?></h5>
                 </div>
                 <!-- end single member -->
 
