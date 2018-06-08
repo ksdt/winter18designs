@@ -273,7 +273,7 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-        <a href="/index.php?page_id=93" target="_blank"><button class="button-home">View FAQ</button></a>
+        <a href="/index.php?page_id=1073" target="_blank"><button class="button-home">View FAQ</button></a>
     </section>
 
   
