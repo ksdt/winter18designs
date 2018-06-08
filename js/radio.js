@@ -20,7 +20,7 @@
 						.parent().css('pointer-events', 'all')
 					jQuery('.player .show-name')
 						.parent()
-						.attr('href', 'show/' + jQuery('.player .show-name').text())
+						.attr('href', '/show/' + jQuery('.player .show-name').text())
 				}
 
 			})

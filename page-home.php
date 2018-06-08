@@ -111,7 +111,10 @@ get_header();
 		    		foreach ($shows as $show) {
 		    		if($currentShow == $show['ShowID']) $initialIndex =  $i; $i++;?>
 			    	<div class="col-md-6 wow fadeInUp img-playing<?php if($currentShow != $show['ShowID']) echo "2"?>" data-wow-delay=".1s">
-			    		<?php if(array_key_exists('ShowImgL',$show)) $imgUrl = $show['ShowImgL']['href'];
+			    		<?php if(array_key_exists('ShowImgL',$show)) {
+			    			$imgUrl = $show['ShowImgL']['href'];
+							$imgUrl = preg_replace("/^http:/i", "https:", $imgUrl);
+						}
 			    		else {
 			    			$fld_str = 'pic' . rand(1,5);
 			    			$imgUrl = '';
