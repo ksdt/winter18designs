@@ -114,7 +114,7 @@ get_header(); ?>
         <div class="show-hero"style="background: url('<?php the_field($str);?>')no-repeat center;background-size:contain;">
             <div class="section-overlay"></div>
             <div class="page-title">
-                <h2 style="font-size: 35px;"><?php echo $show['ShowName']; ?></h2>
+                <h2 style="font-size: 35px;padding: 0;"><?php echo $show['ShowName']; ?></h2>
                 <div class="small-title-Events">
                     <?php echo get_host_str($show);?> <br>
                     <?php echo get_djs($show); ?><br><br>

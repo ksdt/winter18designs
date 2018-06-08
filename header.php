@@ -49,7 +49,7 @@
 		      	<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 		      		<img src="<?php echo get_template_directory_uri();?>/img/Logos/LOGO.png" width="80" alt="KSDT">
 		      	</a>
-		      	<div id="player-desktop"class="player">
+		      	<div id="player-desktop"class="player"style="float:right;">
 		          <a id="play-pause-button" class="fa fa-play"style="font-size: 20px;cursor: pointer;"></a>
 		          <span class="live-circle"></span>
 		          <span class="listen">LIVE</span>
