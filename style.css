@@ -4311,3 +4311,27 @@ mobile only displaying
 
 
 
+div.egg {
+  position: fixed;
+  width: 90%;
+  bottom: 0;
+  pointer-events: none;
+  height: 100px;
+  right: 0;
+  z-index: 9999999;
+  transform: translateY(45px);
+  transition: transform 0.3s ease-out;
+  opacity: 0.2;
+
+}
+div.egg > img {
+    position: absolute;
+    width: 100px;
+    bottom: 0;
+    pointer-events: all;
+    right: 0;
+    transition: transform 0.3s ease-out;
+}
+div.egg >img:hover {
+    transform: rotate(10deg);
+}

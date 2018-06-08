@@ -34,7 +34,7 @@
 
 	         	<!-- Start Twitter Widget -->
 	         	<div class="col-md-4 footer-right">
-	          		<div class="footer-widget twitter-widget">
+	          		<div class="footer-widget twitter-widget"style="text-align: right;">
 	            		<h4> Contact </h4>
 	            		<p> Email: gm@ksdt.org</p>
 	            		<p> Phone: (858) 534 – KSDT </p>
@@ -73,8 +73,8 @@
 
       		</div><!-- .row -->
     	</div>
-    		<div class="egg"style="transform: inherit; opacity: 1;">
-		<img src="<?php //echo get_template_directory_uri() . '/van.png'; ?>"scale="0">
+    		<div class="egg">
+		<img src="<?php echo get_template_directory_uri() . '/van.png'; ?>"scale="0">
 	</div>
   	</footer>
 </div><!-- #page -->
