@@ -146,9 +146,9 @@ get_header(); ?>
                 <div class="team-member col-md-3 col-sm-6  text-center ">
                     <div class="member-thumb">
                         <div class="cover"><div class="cover-inner-right"></div></div>
-                        <img src="<?php the_field('past4_pic');?>" alt="Event Flyer" class="img-responsive">
+                        <img src="<?php echo get_template_directory_uri();?>/img/Events/flyer-1.jpg" alt="Event Flyer" class="img-responsive">
                     </div>
-                    <h5><?php the_field('past4_date');?></h5>
+                    <h5>JAN 25TH</h5>
                 </div>
                 <!-- end single member -->
 
