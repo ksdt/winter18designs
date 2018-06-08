@@ -210,7 +210,7 @@ get_header(); ?>
                         <div class="team_cover"><div class="team_cover_inner"></div></div>
                             <div class="overlay">
                                 <h6><?php echo the_field('gm2');?></h6>
-                                <p>gm@ksdt.org</br><?php echo the_field('gm2');?></p>
+                                <p>gm@ksdt.org</br><?php echo the_field('gm2-oh');?></p>
                             </div>
                     </div>	
 
