@@ -183,7 +183,7 @@ get_header(); ?>
                                             <div class="about-cardContent inline">
                                                 <h6 class="about-card-subtitle mb-2 text-muteds">Host your show</h6>
                                                 <p>Host your show, play your music, and give voice to anything that's important to you. You have the power!</p>
-                                                <a href="https://docs.google.com/forms/d/1vRgsudf_68NkxYkxNQ7TiWTjFZdRRIY7CJpuCJDIdPY/viewform?edit_requested=true" class="default-btn"> APPLY </i></a>
+                                                <a href="<?php the_field('dj_app');?>" class="default-btn"> APPLY </i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -202,7 +202,7 @@ get_header(); ?>
                                             <div class="about-cardContent inline">
                                                 <h6 class="about-card-subtitle mb-2 text-muteds">Gain experience</h6>
                                                 <p>We're looking for design and audio interns. Help us out while putting some experience on your resume!</p>
-                                                <p> Applications for Winter 2018 are closed. Check back next quarter!</p>
+                                                <a href="<?php the_field('intern_app');?>" class="default-btn"> APPLY </i></a>
                                                 <br>
                                             </div>
                                         </div>
@@ -223,10 +223,9 @@ get_header(); ?>
                                             <div class="about-cardContent inline">
                                                 <h6 class="about-card-subtitle mb-2 text-muteds">Jam out</h6>
                                                 <p>We offer practice rooms for people to jam out in. Orientation required!</p>
-                                                <p> Applications for Winter 2018 are closed. Check back next quarter! </p>
-                                                </br>
-                                                </br>
-                                                </br>
+                                                <br><br>
+                                                <a href="<?php the_field('practice_room_app');?>" class="default-btn"> APPLY </i></a>
+                                                <br>
                                             </div>
                                         </div>
                                     </div>
@@ -246,7 +245,7 @@ get_header(); ?>
                                             <div class="about-cardContent inline">
                                                 <h6 class="about-card-subtitle mb-2 text-muteds">Help out</h6>
                                                 <p>Become a volunteer and help us out at some of our events! We try to host at least one concert per every quarter!</p>
-                                                <p> Applications for Winter 2018 are closed. Check back next quarter!</p>
+                                                <a href="<?php the_field('volunteer_app');?>" class="default-btn"> APPLY </i></a>
                                                 <br>
                                             </div>
                                         </div>

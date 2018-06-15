@@ -33,7 +33,7 @@
 	        	<!-- End Contact Widget -->
 
 	         	<!-- Start Twitter Widget -->
-	         	<div class="col-md-4 footer-right">
+	         	<div class="col-md-4 footer-right"style="padding-right: 6%;">
 	          		<div class="footer-widget twitter-widget"style="text-align: right;">
 	            		<h4> Contact </h4>
 	            		<p> Email: gm@ksdt.org</p>
