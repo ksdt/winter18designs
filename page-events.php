@@ -39,18 +39,18 @@ get_header(); ?>
 
 				<!--START SLIDER-->
 				<div class="team-member col-md-4 col-md-offset-1 text-center">
-					<div class="member-thumb" style="border: 0px solid black">	
+					<div class="member-thumb" style="border: 0px solid black">
                     	<img src="<?php the_field('upcoming_pic');?>" alt="Event Flyer" class="img-responsive">
                     	<div class="team_cover">
                             <div class="team_cover_inner"></div>
                         </div>
                         <div class="overlay" style="background-color:black">
                         	<p><strong><?php the_field('upcoming_date');?></strong></p>
-                            <h6 style="padding: 0px 15px 0px 15px; color:white">KSDTs 50th B-Day Bash!</h6>
+                            <h6 style="padding: 0px 15px 0px 15px; color:white">KSDT Off The Air Presents: luv.ly and Jay James</h6>
                             <p><strong><?php the_field('upcoming_time');?></strong> @ <em>KSDT</em></p>
                             <div class="social-links">
                                 <a href=""><i class="fa fa-twitter"></i></a>
-                                <a href="https://www.facebook.com/events/156816381687237/?active_tab=discussion"><i class="fa fa-facebook"></i></a>
+                                <a href="https://www.facebook.com/events/335718570330538/"><i class="fa fa-facebook"></i></a>
                                 <a href=""><i class="fa fa-calendar"></i></a>
                             </div>
                         </div>
@@ -63,7 +63,7 @@ get_header(); ?>
                             <h4 class="card-title" style="text-align:left; font-size: 24px"><?php the_field('upcoming_title');?></h4>
                             <div class="cardContent inline">
                                 <p class="events-card-text mb-25"><?php the_field('upcoming_desc');?></p>
-                                <a href="<?php the_field('facebook_link')?>" class="default-btn-events-fb" style="align-content: center;"> FACEBOOK 
+                                <a href="<?php the_field('facebook_link')?>" class="default-btn-events-fb" style="align-content: center;"> FACEBOOK
                                     <i class="fa fa-angle-double-right" aria-hidden="true"></i>
                                 </a><br>
                             </div>
@@ -98,7 +98,7 @@ get_header(); ?>
 
     <section class="past-events" style="background-color: black; padding-top:50px; padding-bottom: 0px">
         <div class="container">
-    
+
             <!--PAST EVENTS-->
             <div class="col-sm-12-offset-2">
                 <div class="row center mb-50" >
@@ -107,24 +107,24 @@ get_header(); ?>
                        Shoulda, coulda, woulda! These events are over but you can still relive the fun on our gallery.</p>
                 </div>
             </div>
-    
+
             <div class="row center" style="margin-bottom: 200px"">
                 <!-- single member -->
                 <div class="team-member col-md-3 col-sm-6 text-center">
                     <div class="member-thumb">
-                        
+
                         <img src="<?php the_field('past1_pic');?>" alt="Event Flyer" class="img-responsive">
-                        
-                                
+
+
                     </div>
-                        <h5 style="color:white"><?php the_field('past1_date');?></h5>      
+                        <h5 style="color:white"><?php the_field('past1_date');?></h5>
                 </div>
                 <!-- end single member -->
-                
+
                  <!-- single member -->
                 <div class="team-member col-md-3 col-sm-6 text-cente mb-">
                     <div class="member-thumb">
-                    
+
                         <img src="<?php the_field('past2_pic');?>" alt="Event Flyer" class="img-responsive">
                     </div>
                     <h5><?php the_field('past2_date');?></h5>
@@ -158,7 +158,7 @@ get_header(); ?>
 
     <section class="portfolio">
         <div class="top-right-separator hidden-xs" style="border-color: transparent transparent #fff transparent;"></div>
-        <div class="container"></div>       
+        <div class="container"></div>
     </section>
 
 
@@ -178,7 +178,7 @@ get_header(); ?>
             </div>
 
             <!--BEGIN CAROUSEL-->
-            <div class="responsive mb-50">      
+            <div class="responsive mb-50">
                 <div class="col-md-6 wow fadeInUp" data-wow-delay=".1s">
                     <img src="<?php echo get_template_directory_uri();?>/img/Events/carousel/openmic1.jpg" alt="img" style="width:100%;">
                 </div>
@@ -187,7 +187,7 @@ get_header(); ?>
                 <div class="col-md-6 wow fadeInUp" data-wow-delay=".1s">
                     <img src=<?php echo get_template_directory_uri();?>/img/Events/carousel/openmic2.jpg" alt="img" style="width:100%">
                 </div>
-            
+
                 <div class="col-md-6 wow fadeInUp" data-wow-delay=".1s">
                     <img src=<?php echo get_template_directory_uri();?>/img/Events/carousel/openmic3.jpg" alt="img" style="width:100%">
                 </div>
@@ -251,7 +251,7 @@ get_header(); ?>
 	<section class="about_descr" style="background-color: white; padding-top:50px;">
 		<div class="container mb-25">
 			<div class="row center">
-                
+
                 <!-- single member -->
                 <div class="team-member col-md-4 col-sm-4 text-center">
                     <div class="member-thumb">
@@ -262,7 +262,7 @@ get_header(); ?>
                     <h4 style="color:black">FEB 20TH</h4>
                 </div>
                 <!-- end single member -->
-                
+
                  <!-- single member -->
                 <div class="team-member col-md-4 col-sm-4 text-cente mb-">
                     <div class="member-thumb">
@@ -348,5 +348,5 @@ get_header(); ?>
          });
     </script>
 
-<?php 
+<?php
 get_footer();
