@@ -46,7 +46,7 @@ get_header(); ?>
                         </div>
                         <div class="overlay" style="background-color:black">
                         	<p><strong><?php the_field('upcoming_date');?></strong></p>
-                            <h6 style="padding: 0px 15px 0px 15px; color:white">KSDT Off The Air Presents: luv.ly and Jay James</h6>
+                            <h6 style="padding: 0px 15px 0px 15px; color:white"><?php the_field('upcoming_title');?></h6>
                             <p><strong><?php the_field('upcoming_time');?></strong> @ <em>KSDT</em></p>
                             <div class="social-links">
                                 <a href=""><i class="fa fa-twitter"></i></a>
