@@ -244,11 +244,11 @@ get_header();
 
 	<div id="features" class="features2 mbr-box mbr-section mbr-section--relative" style="background-color:white;">
 		<div class="container">
-			<div class="row center mb-25">
+			<div class="row center">
 
 				<!--intern service -->
 				<div class="feature-item">
-					<div class="col-md-3 col-sm-6">
+					<div class="col-md-2 col-sm-6">
 						<div class="item-head">
 							<i class="lnr lnr-briefcase" style="color:#353789;"></i>
 						</div>
@@ -260,7 +260,7 @@ get_header();
 
 				<!--DJ service -->
 				<div class="feature-item">
-					<div class="col-md-3 col-sm-6">
+					<div class="col-md-2 col-sm-6">
 						<div class="item-head">
 							<i class="lnr lnr-music-note" style="color:#353789;"></i>
 						</div>
@@ -273,7 +273,7 @@ get_header();
 
 				<!--practice service -->
 				<div class="feature-item">
-					<div class="col-md-3 col-sm-6">
+					<div class="col-md-2 col-sm-6">
 						<div class="item-head">
 							<i class="lnr lnr-enter" style="color:#353789;"></i>
 						</div>
@@ -285,7 +285,7 @@ get_header();
 
 				<!--volunteer service -->
 				<div class="feature-item">
-					<div class="col-md-3 col-sm-6">
+					<div class="col-md-2 col-sm-6">
 						<div class="item-head">
 							<i class="lnr lnr-smile" style="color:#353789;"></i>
 						</div>
@@ -294,12 +294,25 @@ get_header();
 					</div>
 				</div>
 				<!--end volunteer service-->
+				<!--Subscribe Newsletter service -->
+				<div class="feature-item">
+					<div class="col-md-2 col-sm-6">
+						<div class="item-head">
+							<i class="lnr lnr-envelope" style="color:#353789;"></i>
+						<h6>Subscribe</h6>
+						<p>Subscribe to our newsletter and stay up to date!</p>
+						<?php es_subbox( $namefield = "NO", $desc = "", $group = "" ); ?> 
+					</div>
+				</div>
 
 			</div>
 		</div>
 	</div>
 
+
+
 	<a href="/index.php?page_id=25"><button class="button-home">Learn More</button></a>	
+
 	<!-- END OF GET INVOLVED -->
 
 	<!-- SCRIPTS -->
