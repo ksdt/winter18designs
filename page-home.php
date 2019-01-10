@@ -246,6 +246,8 @@ get_header();
 		<div class="container">
 			<div class="row center">
 
+				<div class="col-md-1"></div>
+
 				<!--intern service -->
 				<div class="feature-item">
 					<div class="col-md-2 col-sm-6">
