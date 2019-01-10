@@ -323,6 +323,9 @@ get_header();
 	.dj_month, .dj_month:hover{
 		color: white;
 	}
+	#es_text_email {
+		width: 90%;
+	}
 </style>
 
 	<script type="text/javascript">
