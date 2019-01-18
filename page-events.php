@@ -95,7 +95,6 @@ get_header(); ?>
     </section>
 
 
-
     <section class="past-events" style="background-color: black; padding-top:50px; padding-bottom: 0px">
         <div class="container">
 
