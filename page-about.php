@@ -201,7 +201,7 @@ get_header(); ?>
                                             <img class="about-showImg inline" src="<?php echo get_template_directory_uri();?>/img/About/intern2.jpg">
                                             <div class="about-cardContent inline">
                                                 <h6 class="about-card-subtitle mb-2 text-muteds">Gain experience</h6>
-                                                <p>We're looking for design and audio interns. Help us out while putting some experience on your resume!</p>
+                                                <p>Check back throughout the year for intern opportunities!</p><br><br>
                                                 <a href="<?php the_field('intern_app');?>" class="default-btn"> APPLY </i></a>
                                                 <br>
                                             </div>
