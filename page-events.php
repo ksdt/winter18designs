@@ -50,7 +50,7 @@ get_header(); ?>
                             <p><strong><?php the_field('upcoming_time');?></strong> @ <em>KSDT</em></p>
                             <div class="social-links">
                                 <a href=""><i class="fa fa-twitter"></i></a>
-                                <a href="https://www.facebook.com/events/335718570330538/"><i class="fa fa-facebook"></i></a>
+                                <a href="<?php the_field('facebook_link')?>"><i class="fa fa-facebook"></i></a>
                                 <a href=""><i class="fa fa-calendar"></i></a>
                             </div>
                         </div>
@@ -72,6 +72,8 @@ get_header(); ?>
                 </div>
 
 			</div><!-- end row -->
+
+            
 		</div><!-- end container -->
     </section>
 
