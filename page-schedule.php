@@ -27,8 +27,8 @@ get_header(); ?>
         include __DIR__ . '/inc/getClient.php'; //instantiate client
         $shows = $client->search('shows',['']);
 
-        /*Use this to debug spinitron request
-        echo '<pre>' . var_export($shows, true)  . '</pre>';*/
+        /*Use this to debug spinitron request*/
+        echo '<pre>' . var_export($shows, true)  . '</pre>';
         if ($shows) {
             $shows = $shows['items'];
            // echo '<pre>over here: '  . $shows[0]['links'] . '</pre>';
