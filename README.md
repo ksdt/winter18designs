@@ -18,7 +18,7 @@ Run this command to install some needed plugins, its possible
 VVV may complain later on about conflicts, if so, just uninstall the
 plugin that is conflicting and the problem should resolve.
 ```sh
-$ vagrant plugin install vagrant-hostsupdater vagrant-triggers vagrant-vbguest
+$ vagrant plugin install vagrant-hostsupdater vagrant-vbguest
 ```
 After this, considering rebooting your machine to be safe the install is configuring properly
 
