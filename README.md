@@ -28,32 +28,31 @@ Run this command, feel free to change the location and name of the folder to wha
 $ git clone -b master git://github.com/Varying-Vagrant-Vagrants/VVV.git ~/vagrant-local
 ```
 ### Initial Configuartion
-Once everything is installed, run this command within the VVV folder
+Once everything is installed, run this command within the VVV folder you specified above
 ```sh
 $ vagrant up
 ```
 to create a virtual machine and local environment.
 The first time this is run will take a while as a lot of software needs
 to be installed on the virtual machine, but future runs will only take
-a few seconds.
+a few seconds. **Note:** Make sure you have your CPU's virtualization technology turned on in the BIOS.
 
 ### Seeing the local site
 Go to [vvv.test] in a browser to verify the site is up.
-It will give you more links to go to, in particular,
-[local.wordpress.test], which is the local wordpress site.
+It will give you more links to go to: [one.wordpress.test], [two.wordpress.test]. For our purposes, we will be using `one.wordpress.test`, although it does not matter which of the two you pick.
 
-You can sign into wordpress via [local.wordpress.test/wp-admin]
-It will ask you some basic setup info(username,lang,etc).  What you put does not matter too much since it is exclusive to your machine.
+You can sign into wordpress via [one.wordpress.test/wp-admin]. If it does not ask you for basic sign-up instructions, the default *user:pass* is `administrator:password`
 
 ### Seting up the theme
-Clone this folder into
+Clone this repo into
 ```sh
-[your_vagrant_folder]/www/wordpress-default/public_html/wp-content/themes
+[your_vagrant_folder]/www/wordpress-one/public_html/wp-content/themes
 ```
-You can then go into the wordpress backend ([local.wordpress.test/wp-admin]),
-navigate to Appearance->Themes and the theme should already be installed if you cloned it properly.  
-Everything is now setup and you can begin working on the theme.
+You can then go into the wordpress backend ([one.wordpress.test/wp-admin]),
+navigate to Appearance->Themes and select the theme "winter18redesign"
 
-   [local.wordpress.test]: <http://local.wordpress.test>
-   [local.wordpress.test/wp-admin]: <http://local.wordpress.test/wp-admin>
+Finally, install the plugin All-In-One WP Migration and activate it. Get in touch the with Computer Engineer to have the person export a current KSDT site that will be used as an import for local development. 
+
+   [one.wordpress.test]: <http://one.wordpress.test>
+   [one.wordpress.test/wp-admin]: <http://local.wordpress.test/wp-admin>
    [vvv.test]: <http://vvv.test>
