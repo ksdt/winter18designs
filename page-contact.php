@@ -201,7 +201,7 @@ get_header(); ?>
 
               <!-- single member -->
               <div class="team-member col-md-3 col-sm-6 text-center">
-                <h6><span>Manager</span></h6>
+                <h6><span>Marketing</span></h6>
                 <p><span><?php echo the_field('marketing-email');?></span></p>
 
                     <div class="member-thumb">
