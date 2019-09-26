@@ -202,15 +202,15 @@ get_header(); ?>
               <!-- single member -->
               <div class="team-member col-md-3 col-sm-6 text-center">
                 <h6><span>Manager</span></h6>
-                <p><span><?php echo the_field('gm2-email');?></span></p>
+                <p><span><?php echo the_field('marketing-email');?></span></p>
 
                     <div class="member-thumb">
                     	<div class="cover"><div class="cover-inner-middle"></div></div>
-                        <img src="<?php echo the_field('gm2_pic')?>" alt="Manager - <?php echo the_field('gm2');?>" class="img-staff">
+                        <img src="<?php echo the_field('marketing_pic')?>" alt="Manager - <?php echo the_field('marketing');?>" class="img-staff">
                         <div class="team_cover"><div class="team_cover_inner"></div></div>
                             <div class="overlay">
-                                <h6><?php echo the_field('gm2');?></h6>
-                                <p><?php echo the_field('gm2-email');?></br><?php echo the_field('gm2-oh');?></p>
+                                <h6><?php echo the_field('marketing');?></h6>
+                                <p><?php echo the_field('marketing-email');?></br><?php echo the_field('marketing-oh');?></p>
                             </div>
                     </div>
 
