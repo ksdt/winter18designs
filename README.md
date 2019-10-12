@@ -41,7 +41,8 @@ a few seconds. **Note:** Make sure you have your CPU's virtualization technology
 Go to [vvv.test] in a browser to verify the site is up.
 It will give you more links to go to: [one.wordpress.test], [two.wordpress.test]. For our purposes, we will be using `one.wordpress.test`, although it does not matter which of the two you pick.
 
-You can sign into wordpress via [one.wordpress.test/wp-admin]. If it does not ask you for basic sign-up instructions, the default *user:pass* is `administrator:password`
+You can sign into wordpress via [one.wordpress.test/wp-admin]. If it does not
+ask you for basic sign-up instructions, the default *user:pass* is `admint:password`
 
 ### Seting up the theme
 Clone this repo into
