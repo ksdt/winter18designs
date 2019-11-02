@@ -1,34 +1,4 @@
-<?php
-/**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package winter18redesign
- */
-get_header(); ?>
-
-    	<!-- Schedule -->
-	<section class="about_descr mt-100">
-		<div class="container">
-			<div class="row center">
-				<div class="col-md-8 col-md-offset-2 col-sm-12">
-					<div class="section-title">
-            <h2 class="section-title-3 dark-section-text mb-25" style="font-size:40px; color: black">WEEKLY SCHEDULE</h2>
-						<p class="module-subtitle">Our schedule is updated quarterly</p>
-            <div class="km-space"></div>
-					</div>
-				</div>
-			</div>
-		</div><!-- end container -->
-
-    <?php
-  $j = '{
+spinJSON = {
     "items": [
         {
             "id": 202747759,
@@ -523,7 +493,7 @@ get_header(); ?>
             "va": false,
             "label": "RAL (Rush Associated Label)",
             "label-custom": "",
-            "song": "Tonights Da Night",
+            "song": "Tonight's Da Night",
             "note": "",
             "request": false,
             "local": false,
@@ -908,28 +878,6 @@ get_header(); ?>
         "currentPage": 1,
         "perPage": 20
     }
-}';
+};
 
-  echo $j;
-        
-?>
-
-  <!-- LAST DIVIDER -->
-  <div class="top-right-separator hidden-xs"></div>
-    <div class="container">
-      <div class="row center">
-        <div class="col-md-8 col-md-offset-2 col-sm-12">
-          <div class="section-title-parralax">
-            <div class="process-numbers-home3">KSDT</div>
-            <h2 style="color:#D63B80">KSDT</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- END LAST DIVIDER -->
-<!-- Script to make tabs active according to day of the week -->
-
-
-<?php
-get_footer();
-?>
+console.log(spinJSON)
