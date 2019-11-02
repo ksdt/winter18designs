@@ -12,7 +12,7 @@
   <title>KSDT Spinitron</title>
 </head>
 <body>
-  <iframe src="https://spinitron.com/ksdt/"></iframe>  
+  <iframe src="https://spinitron.com/ksdt/"></iframe>
 </body>
 </html>
 
