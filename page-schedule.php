@@ -910,8 +910,9 @@ get_header(); ?>
     }
 }';
 
-  echo $j;
-        
+echo $j[0];
+  
+       
 ?>
 
   <!-- LAST DIVIDER -->
