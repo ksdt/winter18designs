@@ -897,8 +897,10 @@
 }';
 
 $obj = json_decode($j);
+$i = 0;
 
 foreach($obj->items as $elem) {
+    
     print_r ($elem->start);
     echo "<br>";
 
@@ -913,6 +915,8 @@ foreach($obj->items as $elem) {
 
     print_r ($elem->song);
     echo "<br>";
+
+    $i = $i + 1;
 
 }
   
