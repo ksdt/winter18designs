@@ -898,22 +898,23 @@
 
 $obj = json_decode($j);
 
+foreach($obj->items as $elem) {
+    print_r ($elem->start);
+    echo "<br>";
 
-print_r ($obj->items[0]->start);
-echo "<br>";
+    print_r ($elem->end);
+    echo "<br>";
 
-print_r ($obj->items[0]->end);
-echo "<br>";
+    print_r ($elem->image);
+    echo "<br>";
 
-print_r ($obj->items[0]->image);
-echo "<br>";
+    print_r ($elem->artist);
+    echo "<br>";
 
-print_r ($obj->items[0]->artist);
-echo "<br>";
+    print_r ($elem->song);
+    echo "<br>";
 
-print_r ($obj->items[0]->song);
-echo "<br>";
-
+}
   
        
 ?>
