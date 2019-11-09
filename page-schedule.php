@@ -11,21 +11,7 @@
  *
  * @package winter18redesign
  */
-get_header(); ?>
-
-    	<!-- Schedule -->
-	<section class="about_descr mt-100">
-		<div class="container">
-			<div class="row center">
-				<div class="col-md-8 col-md-offset-2 col-sm-12">
-					<div class="section-title">
-            <h2 class="section-title-3 dark-section-text mb-25" style="font-size:40px; color: black">WEEKLY SCHEDULE</h2>
-						<p class="module-subtitle">Our schedule is updated quarterly</p>
-            <div class="km-space"></div>
-					</div>
-				</div>
-			</div>
-		</div><!-- end container -->
+?>
 
     <?php
   $j = '{
@@ -910,27 +896,28 @@ get_header(); ?>
     }
 }';
 
-echo $j[0];
+$obj = json_decode($j);
+
+
+print_r ($obj->items[0]->start);
+echo "<br>";
+
+print_r ($obj->items[0]->end);
+echo "<br>";
+
+print_r ($obj->items[0]->image);
+echo "<br>";
+
+print_r ($obj->items[0]->artist);
+echo "<br>";
+
+print_r ($obj->items[0]->song);
+echo "<br>";
+
   
        
 ?>
 
-  <!-- LAST DIVIDER -->
-  <div class="top-right-separator hidden-xs"></div>
-    <div class="container">
-      <div class="row center">
-        <div class="col-md-8 col-md-offset-2 col-sm-12">
-          <div class="section-title-parralax">
-            <div class="process-numbers-home3">KSDT</div>
-            <h2 style="color:#D63B80">KSDT</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- END LAST DIVIDER -->
-<!-- Script to make tabs active according to day of the week -->
-
-
 <?php
-get_footer();
+
 ?>
