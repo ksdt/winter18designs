@@ -151,7 +151,7 @@ get_header(); ?>
 
 
     <!-- GET INVOLVED CARDS-->
-    <section class="about_descr">
+    <section class="about_descr" id="get-involved" >
         <!-- Get Involved -->
         <div id="features" class="features mbr-box mbr-section mbr-section--relative" style="border-top: 0px; padding: 15px 0 100px 0;">
             <div class="container">

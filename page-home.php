@@ -252,7 +252,7 @@ get_header();
 				<div class="feature-item">
 					<div class="col-md-2 col-sm-6">
 						<div class="item-head">
-							<i class="lnr lnr-briefcase" style="color:#353789;"></i>
+							<a href="http:/ksdt.ucsd.edu/about#get-involved"><i class="lnr lnr-briefcase" style="color:#353789;"></i></a>
 						</div>
 						<h6>INTERN</h6>
 						<p>Become an intern, shadowing one of our many talented artists at KSDT!</p>
@@ -264,7 +264,7 @@ get_header();
 				<div class="feature-item">
 					<div class="col-md-2 col-sm-6">
 						<div class="item-head">
-							<i class="lnr lnr-music-note" style="color:#353789;"></i>
+						<a href="http:/ksdt.ucsd.edu/about#get-involved"><i class="lnr lnr-music-note" style="color:#353789;"></i></a>
 						</div>
 						<h6>BECOME A DJ</h6>
 						<p>Host your own show, jam out and get connected with a fan base!</p>
@@ -277,7 +277,7 @@ get_header();
 				<div class="feature-item">
 					<div class="col-md-2 col-sm-6">
 						<div class="item-head">
-							<i class="lnr lnr-enter" style="color:#353789;"></i>
+						<a href="http:/ksdt.ucsd.edu/about#get-involved"><i class="lnr lnr-enter" style="color:#353789;"></i></a>
 						</div>
 						<h6>BOOK A PRACTICE ROOM</h6>
 						<p>Use our practice rooms to record, play and edit your own tunes! </p>
@@ -289,7 +289,7 @@ get_header();
 				<div class="feature-item">
 					<div class="col-md-2 col-sm-6">
 						<div class="item-head">
-							<i class="lnr lnr-smile" style="color:#353789;"></i>
+						<a href="http:/ksdt.ucsd.edu/about#get-involved"><i class="lnr lnr-smile" style="color:#353789;"></i></a>
 						</div>
 						<h6>Volunteer</h6>
 						<p>Help out around the studio, or at some of our many concerts and events!</p>
