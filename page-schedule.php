@@ -1,18 +1,17 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<?php get_header(); ?>
   <style>
     iframe {
       width: 100%;
-      height: 50%;
+      height: 600px
     }
   </style>
   <title>KSDT Spinitron</title>
-</head>
-<body>
-  <iframe src="https://spinitron.com/ksdt/"></iframe>  
-</body>
-</html>
 
+  <section class="about_descr mt-100">
+		<div style="height: 600px;" class="container">
+			<div class="row center">
+        <iframe src="https://spinitron.com/ksdt/"></iframe>
+			</div>
+		</div><!-- end container -->
+  
+<?php get_footer(); ?>
