@@ -45,9 +45,7 @@ You can sign into wordpress via [one.wordpress.test/wp-admin]. If it does not
 ask you for basic sign-up instructions, the default *user:pass* is `admin:password`
 
 ### Seting up the theme
-Clone this repo into
-
-`[your_vagrant_folder]/www/wordpress-one/public_html/wp-content/themes`
+Clone this repo into the vagrant folder you created above
 ```sh
 $ git clone ~/[your_vagrant_folder]/www/wordpress-one/public_html/wp-content/themes
 ```
