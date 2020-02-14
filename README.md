@@ -10,17 +10,17 @@ from the Getting Started section at https://varyingvagrantvagrants.org/)
 To use VVV, we need some additional software:
   - Vagrant 2.x (the newest version is fine)
   -- https://www.vagrantup.com/downloads.html
-  - VirtualBox (5.1, newer versions will not work with VVV)
-  --https://www.virtualbox.org/wiki/Download_Old_Builds_5_1 
+  - VirtualBox (the latest version will do)
+  --https://www.virtualbox.org/wiki/Downloads 
 
 ### After installing Vagrant and VirtualBox
-Run this command to install some needed plugins, its possible
+Run this command to install some needed plugins, it's possible
 VVV may complain later on about conflicts, if so, just uninstall the
 plugin that is conflicting and the problem should resolve.
 ```sh
 $ vagrant plugin install vagrant-hostsupdater vagrant-vbguest
 ```
-After this, considering rebooting your machine to be safe the install is configuring properly
+After this, consider rebooting your machine to be safe the install was configured properly
 
 ### Installing VVV
 Run this command, feel free to change the location and name of the folder to what you want
@@ -28,7 +28,7 @@ Run this command, feel free to change the location and name of the folder to wha
 $ git clone -b master git://github.com/Varying-Vagrant-Vagrants/VVV.git ~/vagrant-local
 ```
 ### Initial Configuartion
-Once everything is installed, run this command within the VVV folder you specified above
+Once everything is installed, run this command **within** the VVV folder you specified above
 ```sh
 $ vagrant up
 ```
@@ -42,17 +42,19 @@ Go to [vvv.test] in a browser to verify the site is up.
 It will give you more links to go to: [one.wordpress.test], [two.wordpress.test]. For our purposes, we will be using `one.wordpress.test`, although it does not matter which of the two you pick.
 
 You can sign into wordpress via [one.wordpress.test/wp-admin]. If it does not
-ask you for basic sign-up instructions, the default *user:pass* is `admint:password`
+ask you for basic sign-up instructions, the default *user:pass* is `admin:password`
 
 ### Seting up the theme
 Clone this repo into
+
+`[your_vagrant_folder]/www/wordpress-one/public_html/wp-content/themes`
 ```sh
-[your_vagrant_folder]/www/wordpress-one/public_html/wp-content/themes
+$ git clone ~/[your_vagrant_folder]/www/wordpress-one/public_html/wp-content/themes
 ```
 You can then go into the wordpress backend ([one.wordpress.test/wp-admin]),
 navigate to Appearance->Themes and select the theme "winter18redesign"
 
-Finally, install the plugin All-In-One WP Migration and activate it. Get in touch the with Computer Engineer to have the person export a current KSDT site that will be used as an import for local development. 
+Finally, after you have logged into Wordpress, install the plugin "All-In-One WP Migration and activate it. Get in touch the with Computer Engineer to have him or her export a current KSDT site that will be used for local development. 
 
    [one.wordpress.test]: <http://one.wordpress.test>
    [one.wordpress.test/wp-admin]: <http://local.wordpress.test/wp-admin>
