@@ -50,7 +50,7 @@ Clone this repo into the vagrant folder you created above
 $ git clone [repo-url] ~/ksdt-local/www/wordpress-one/public_html/wp-content/themes
 ```
 You can then go into the wordpress backend ([one.wordpress.test/wp-admin]),
-navigate to Appearance->Themes and select the theme "winter18redesign"
+navigate to Appearance->Themes and activate the theme "winter18redesign"
 
 Finally, after you have logged into Wordpress, install the plugin "All-In-One WP Migration" and activate it. Get in touch the with Computer Engineer to have him or her export a current KSDT site that will be used for local development. 
 
