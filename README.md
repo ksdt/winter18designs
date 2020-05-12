@@ -47,7 +47,7 @@ ask you for basic sign-up instructions, the default *user:pass* is `admin:passwo
 ### Seting up the theme
 Clone this repo into the vagrant folder you created above
 ```sh
-$ git clone ~/ksdt-local/www/wordpress-one/public_html/wp-content/themes
+$ git clone [repo-url] ~/ksdt-local/www/wordpress-one/public_html/wp-content/themes
 ```
 You can then go into the wordpress backend ([one.wordpress.test/wp-admin]),
 navigate to Appearance->Themes and select the theme "winter18redesign"
