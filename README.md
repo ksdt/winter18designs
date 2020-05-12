@@ -33,7 +33,7 @@ Once everything is installed, run this command **within** the VVV folder you spe
 $ vagrant up
 ```
 to create a virtual machine and local environment.
-The first time this is run will take a while as a lot of software needs
+The first time this is ran it will take a while as a lot of software needs
 to be installed on the virtual machine, but future runs will only take
 a few seconds. **Note:** Make sure you have your CPU's virtualization technology turned on in the BIOS.
 
