@@ -25,7 +25,7 @@ After this, consider rebooting your machine to be safe the install was configure
 ### Installing VVV
 Run this command, feel free to change the location and name of the folder to what you want
 ```sh
-$ git clone -b master git://github.com/Varying-Vagrant-Vagrants/VVV.git ~/vagrant-local
+$ git clone -b master git://github.com/Varying-Vagrant-Vagrants/VVV.git ~/ksdt-local
 ```
 ### Initial Configuartion
 Once everything is installed, run this command **within** the VVV folder you specified above
@@ -47,7 +47,7 @@ ask you for basic sign-up instructions, the default *user:pass* is `admin:passwo
 ### Seting up the theme
 Clone this repo into the vagrant folder you created above
 ```sh
-$ git clone ~/[your_vagrant_folder]/www/wordpress-one/public_html/wp-content/themes
+$ git clone ~/ksdt-local/www/wordpress-one/public_html/wp-content/themes
 ```
 You can then go into the wordpress backend ([one.wordpress.test/wp-admin]),
 navigate to Appearance->Themes and select the theme "winter18redesign"
