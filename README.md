@@ -52,7 +52,7 @@ $ git clone [repo-url] ~/ksdt-local/www/wordpress-one/public_html/wp-content/the
 You can then go into the wordpress backend ([one.wordpress.test/wp-admin]),
 navigate to Appearance->Themes and select the theme "winter18redesign"
 
-Finally, after you have logged into Wordpress, install the plugin "All-In-One WP Migration and activate it. Get in touch the with Computer Engineer to have him or her export a current KSDT site that will be used for local development. 
+Finally, after you have logged into Wordpress, install the plugin "All-In-One WP Migration" and activate it. Get in touch the with Computer Engineer to have him or her export a current KSDT site that will be used for local development. 
 
    [one.wordpress.test]: <http://one.wordpress.test>
    [one.wordpress.test/wp-admin]: <http://local.wordpress.test/wp-admin>
