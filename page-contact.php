@@ -73,6 +73,15 @@ get_header(); ?>
 <!-- MEETINGS-->
 <section class="about_descr" style="background-color: #000; padding-bottom: 50px">
     <div id="features" class="features2 mbr-box mbr-section--relative" style="background-color:#000">
+
+        <div class="container">
+            <div class="row center">
+                <div class="col-md-8 col-md-offset-2 col-sm-12 mb-50">
+                    <h2 class="section-title-3 dark-section-text" style="font-size:40px; color:white">WE &hearts; ARTISTS & MUSICIANS</h2>
+                </div>
+            </div>
+        </div>
+
         <div class="container">
             <div class="row center">
 					<h2 class="section-title-3 dark-section-text mb-25" style = "font-size: 40px; font-color:white">MEETINGS</h2>
@@ -80,6 +89,8 @@ get_header(); ?>
 				</div>
 			</div>
 		</div>
+
+
 	</div>
 
     <div class="container" style="background-color:white; border-radius:5px">
@@ -120,14 +131,6 @@ get_header(); ?>
 
 <!--MUSICIANS CONTACT-->
 <section class="contact-brick" style="background-color:black">
-
-	<div class="container">
-		<div class="row center">
-			<div class="col-md-8 col-md-offset-2 col-sm-12 mb-50">
-				<h2 class="section-title-3 dark-section-text" style="font-size:40px; color:white">WE &hearts; ARTISTS & MUSICIANS</h2>
-			</div>
-		</div>
-	</div>
 
 	<div class="container">
 		<div class="row center mb-100">
@@ -269,6 +272,24 @@ get_header(); ?>
                             </div>
 
                     </div>
+                </div>
+                <!-- end single member -->
+
+                <!-- single member -->
+              <div class="team-member col-md-3 col-sm-6 text-center">
+                <h6><span>Events</span></h6>
+                <p><span><?php echo the_field('events-email');?></span></p>
+
+                    <div class="member-thumb">
+                    	<div class="cover"><div class="cover-inner-middle"></div></div>
+                        <img src="<?php echo the_field('events_pic')?>" alt="Events Director - <?php echo the_field('events');?>" class="img-staff">
+                        <div class="team_cover"><div class="team_cover_inner"></div></div>
+                            <div class="overlay">
+                                <h6><?php echo the_field('events');?></h6>
+                                <p><?php echo the_field('events-email');?></br><?php echo the_field('events-oh');?></p>
+                            </div>
+                    </div>
+
                 </div>
                 <!-- end single member -->
 
