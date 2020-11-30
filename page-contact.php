@@ -275,24 +275,6 @@ get_header(); ?>
                 </div>
                 <!-- end single member -->
 
-                <!-- single member -->
-              <div class="team-member col-md-3 col-sm-6 text-center">
-                <h6><span>Events</span></h6>
-                <p><span><?php echo the_field('events-email');?></span></p>
-
-                    <div class="member-thumb">
-                    	<div class="cover"><div class="cover-inner-middle"></div></div>
-                        <img src="<?php echo the_field('events_pic')?>" alt="Events Director - <?php echo the_field('events');?>" class="img-staff">
-                        <div class="team_cover"><div class="team_cover_inner"></div></div>
-                            <div class="overlay">
-                                <h6><?php echo the_field('events');?></h6>
-                                <p><?php echo the_field('events-email');?></br><?php echo the_field('events-oh');?></p>
-                            </div>
-                    </div>
-
-                </div>
-                <!-- end single member -->
-
 
               <!-- single member -->
               <div class="team-member col-md-3 col-sm-6 text-center">
@@ -346,7 +328,9 @@ get_header(); ?>
                     </div>
                 </div>
                 <!-- end single member -->
-            </div>
+
+
+            </div> <!--Start ROW-->
 
               <div class="row center">
                 <!-- single member -->
@@ -387,23 +371,41 @@ get_header(); ?>
                 <!-- end single member -->
 
 
-								<!-- single member -->
-								<div class="team-member col-md-3 text-center">
-									<h6><span>Media</span></h6>
-									<p><span><?php echo the_field('media-email');?></span></p>
+                <!-- single member -->
+                <div class="team-member col-md-3 text-center">
+                    <h6><span>Media</span></h6>
+                    <p><span><?php echo the_field('media-email');?></span></p>
 
-											<div class="member-thumb">
-												<div class="cover"><div class="cover-inner-middle"></div></div>
-													<img src="<?php echo the_field('media_pic')?>" alt="Media - <?php echo the_field('media');?>" class="img-staff">
-													<div class="team_cover"><div class="team_cover_inner"></div></div>
-															<div class="overlay">
-																	<h6><?php echo the_field('media');?></h6>
-																	<p><?php echo the_field('media-email');?></br><?php echo the_field('media-oh');?></p>
-															</div>
-											</div>
+                            <div class="member-thumb">
+                                <div class="cover"><div class="cover-inner-middle"></div></div>
+                                    <img src="<?php echo the_field('media_pic')?>" alt="Media - <?php echo the_field('media');?>" class="img-staff">
+                                    <div class="team_cover"><div class="team_cover_inner"></div></div>
+                                            <div class="overlay">
+                                                    <h6><?php echo the_field('media');?></h6>
+                                                    <p><?php echo the_field('media-email');?></br><?php echo the_field('media-oh');?></p>
+                                            </div>
+                            </div>
 
-									</div>
-									<!-- end single member -->
+                    </div>
+                    <!-- end single member -->
+
+                    <!-- single member -->
+              <div class="team-member col-md-3 col-sm-6 text-center">
+                <h6><span>Events</span></h6>
+                <p><span><?php echo the_field('events-email');?></span></p>
+
+                    <div class="member-thumb">
+                    	<div class="cover"><div class="cover-inner-middle"></div></div>
+                        <img src="<?php echo the_field('events_pic')?>" alt="Events Director - <?php echo the_field('events');?>" class="img-staff">
+                        <div class="team_cover"><div class="team_cover_inner"></div></div>
+                            <div class="overlay">
+                                <h6><?php echo the_field('events');?></h6>
+                                <p><?php echo the_field('events-email');?></br><?php echo the_field('events-oh');?></p>
+                            </div>
+                    </div>
+
+                </div>
+                <!-- end single member -->
 
             </div><!--END ROW-->
 		<div class="bottom-separator hidden-xs"></div>
