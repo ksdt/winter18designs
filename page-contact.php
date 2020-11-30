@@ -47,7 +47,7 @@ get_header(); ?>
 
  	<div class="row center">
    	 	<div class="col-md-6 col-sm-12 mb-25">
-      		<img src="<?php echo get_template_directory_uri();?>/img/Contact/outside.jpg" alt="img" class="img-responsive">
+      		<img src="<?php echo get_template_directory_uri();?>/img/Contact/outside.JPG" alt="img" class="img-responsive">
      	</div>
 
    		 <div class="col-md-6 col-sm-12 mb-25">
