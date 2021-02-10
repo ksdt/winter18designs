@@ -159,7 +159,7 @@ get_header();
 			<div class="row">
 
 			  	<!-- single member -->
-		      	<div class="team-member col-md-3 col-sm-3 text-center">
+		      	<div class="team-member col-md-2 col-sm-2 text-center">
 		      		<div class="member-thumb">
 		          		<div class="cover"><div class="cover-inner-left"></div></div>
 		              	<img src="<?php the_field('dj1_pic');?>" alt="Team Member" class="img-responsive"style="width:250px;overflow: hidden;">
@@ -172,7 +172,7 @@ get_header();
 		    	<!-- end single member -->
 
 		    	<!-- single member -->
-		      	<div class="team-member col-md-3 col-sm-3 text-center">
+		      	<div class="team-member col-md-2 col-sm-2 text-center">
 		          	<div class="member-thumb">
 		          		<div class="cover"><div class="cover-inner-middle"></div></div>
 		              	<img src="<?php the_field('dj2_pic');?>" alt="Team Member" class="img-responsive"style="width:250px;overflow: hidden;">
@@ -185,7 +185,7 @@ get_header();
 		    	<!-- end single member -->
 
   				<!-- single member -->
-	      		<div class="team-member col-md-3 col-sm-3 text-center">
+	      		<div class="team-member col-md-2 col-sm-2 text-center">
 	          		<div class="member-thumb">
 	          			<div class="cover"><div class="cover-inner-right"></div></div>
 	              		<img src="<?php the_field('dj3_pic');?>" alt="Team Member" class="img-responsive"style="width:250px;overflow: hidden;">
@@ -198,7 +198,7 @@ get_header();
 		    	<!-- end single member -->
 
 		    	  				<!-- single member -->
-	      		<div class="team-member col-md-3 col-sm-3 text-center">
+	      		<div class="team-member col-md-2 col-sm-2 text-center">
 	          		<div class="member-thumb">
 	          			<div class="cover"><div class="cover-inner-right"></div></div>
 	              		<img src="<?php the_field('dj4_pic');?>" alt="Team Member" class="img-responsive"style="width:250px;overflow: hidden;">
@@ -209,7 +209,19 @@ get_header();
 
 	      		</div>
 		    	<!-- end single member -->
-		     
+			 
+				<!-- single member -->
+				<div class="team-member col-md-2 col-sm-2 text-center">
+		      		<div class="member-thumb">
+		          		<div class="cover"><div class="cover-inner-left"></div></div>
+		              	<img src="<?php the_field('dj5_pic');?>" alt="Team Member" class="img-responsive"style="width:250px;overflow: hidden;">
+		              	<div class="team_cover"><div class="team_cover_inner"></div></div>  
+		          	</div>
+		          	<h6 style="color:white;"><a class = "dj_month" href="<?php the_field('dj5_url');?>"><?php the_field('dj5_name');?></a></h6>
+		          	<span style="color: #9F9F9F;"><strong><?php the_field('dj5_time');?></strong></span>
+
+		      	</div>
+		    	<!-- end single member -->
      	 	</div>
     	</div>
 		<div class="bottom-separator hidden-xs"></div>
